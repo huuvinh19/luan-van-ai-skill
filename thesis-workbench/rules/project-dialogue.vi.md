@@ -2,6 +2,20 @@
 
 Đây là quy trình mặc định người viết yêu cầu. Không coi câu lệnh “làm luôn” là câu trả lời cho thông tin còn thiếu. Không dùng mức tự tin do mày tự chấm để thay việc hiểu và xác nhận dự án.
 
+## Người dùng chat thẳng, không có prompt
+
+Coi lời nói tự nhiên là đầu vào hợp lệ. Người viết không cần chuẩn bị prompt, gọi tên skill hoặc tự biết phải cung cấp những trường nào. Trợ lý chủ động dẫn cuộc trao đổi và tự làm rõ yêu cầu.
+
+Nếu chưa biết môn và ngành, lượt đầu chỉ hỏi hai điểm: “Mày đang làm luận cho môn nào? Cho tao tên môn, mã môn nếu có.” và “Mày học ngành hoặc chuyên ngành gì?”. Nhận câu trả lời rồi mới chuyển sang các nhóm câu hỏi dự án. Nếu đã có một hoặc cả hai thông tin từ lời người viết/tài liệu hiện hành, ghi nhận và chỉ hỏi phần còn thiếu. Không suy ra ngành từ mã môn. Với nghiên cứu không gắn môn, ghi nhận đúng điều người viết xác nhận; không tự tạo tên môn.
+
+## Hỏi đầy đủ theo dự án, qua từng lượt
+
+Sau khi biết môn/ngành, hỏi lần lượt những phần còn thiếu: đề và tiêu chí chấm; mục tiêu/chủ đề và vấn đề nghiên cứu; công đoạn hiện tại và việc cần giúp; tài liệu, dữ liệu hoặc sản phẩm đã có; yêu cầu đầu ra, ngôn ngữ, độ dài, thời hạn, chuẩn trích dẫn và các ràng buộc. Đọc tài liệu để tự rút ra câu trả lời trước khi hỏi. Mỗi lượt tối đa 3 câu chính, bám câu trả lời trước; tiếp tục đến khi mọi điểm ảnh hưởng công việc hiện tại đã được giải quyết, không đặt giới hạn tổng số lượt.
+
+Điều chỉnh câu hỏi theo ngành và môn. Với IT, xác định đây là nghiên cứu, báo cáo thiết kế, bài thực hành hay dự án xây phần mềm; hỏi sản phẩm phải nộp, yêu cầu chức năng/phi chức năng, công nghệ và phiên bản bị ràng buộc, mã nguồn/dữ liệu hiện có, cách kiểm thử/đánh giá và bằng chứng giảng viên yêu cầu khi chúng liên quan. Không tự bắt người viết làm khảo sát khách hàng, chọn công nghệ hoặc xây hệ thống chỉ vì họ học IT. Với Marketing hoặc ngành khác, cũng chọn câu hỏi theo đề thực tế.
+
+Ghi riêng câu hỏi để xử lý ở công đoạn sau; không bắt người viết giải quyết toàn bộ luận văn chỉ để được hỗ trợ một bước nhỏ. Nếu còn mâu thuẫn ảnh hưởng bước hiện tại, hỏi tiếp và chưa triển khai bước đó. Không kết luận đã hiểu chỉ vì đã hỏi đủ một số câu cố định.
+
 ## Cần hỏi thêm
 
 Trước khi bắt đầu dự án, đọc tài liệu được cung cấp để rút ra điều đã rõ, điều chưa rõ và mâu thuẫn. Xác định: dự án/đề tài và mục tiêu là gì; phạm vi đang được giao; yêu cầu/rubric thật; nguồn và dữ liệu khả dụng; ngôn ngữ, định dạng, chuẩn trích dẫn và các ràng buộc có ảnh hưởng. Không lấy tên môn hoặc ví dụ trong mẫu để tự điền thông tin.

@@ -1,8 +1,10 @@
 # Luận Văn AI Workbench
 
-Bộ prompt và quy trình hỗ trợ luận văn, ưu tiên ngành Marketing. Repo kết hợp 12 prompt học thuật được tuyển từ [f/prompts.chat](https://github.com/f/prompts.chat) với yêu cầu viết, kiểm chứng, trích dẫn và tự rà soát của người viết.
+Bộ prompt và quy trình hỗ trợ luận văn theo ngành và môn thực tế, bao gồm IT và Marketing. Repo kết hợp 12 prompt học thuật được tuyển từ [f/prompts.chat](https://github.com/f/prompts.chat) với yêu cầu viết, kiểm chứng, trích dẫn và tự rà soát của người viết.
 
 ## Dùng ngay
+
+Có thể chat thẳng như “Tao cần làm luận”, không cần tự viết prompt. AI hỏi môn và ngành còn thiếu trước, rồi hỏi tiếp từng nhóm cho đến khi hiểu công việc. Xem [cách bắt đầu và câu hỏi cho IT](docs/PROJECT_INTAKE.md).
 
 1. Mở [PROMPT_LUAN_VAN.md](PROMPT_LUAN_VAN.md), copy toàn bộ vào cuộc trò chuyện.
 2. Gửi đề, rubric, dàn ý, mẫu trích dẫn của giảng viên và tài liệu liên quan.
@@ -50,7 +52,7 @@ Có thể đọc và dùng prompt trực tiếp trên GitHub; không cần tải
 
 ## Nguồn và phạm vi
 
-Các prompt cộng đồng được chuyển thành quy trình phù hợp với luận văn Marketing; những ví dụ đề tài và mặc định ngôn ngữ/APA trong prompt gốc được thay bằng hồ sơ dự án và yêu cầu của giảng viên. Kho prompt gốc được giữ riêng để đối chiếu, không phải chỉ dẫn tự động thi hành.
+Các prompt cộng đồng được chuyển thành quy trình dùng theo ngành, môn và đề thực tế; những ví dụ đề tài và mặc định ngôn ngữ/APA trong prompt gốc được thay bằng hồ sơ dự án và yêu cầu của giảng viên. Kho prompt gốc được giữ riêng để đối chiếu, không phải chỉ dẫn tự động thi hành.
 
 Bài [Brands Vietnam](https://help.brandsvietnam.com/vi/article/dau-hieu-nhan-biet-noi-dung-duoc-viet-boi-ai-3zy07d/) là tham khảo về chất lượng diễn đạt. Mục tiêu là văn bản rõ ràng, có lập luận và đúng nguồn. Repo không cung cấp công cụ xác định tác giả văn bản hay cam kết kết quả từ công cụ phát hiện AI.
 

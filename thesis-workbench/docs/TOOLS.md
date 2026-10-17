@@ -18,6 +18,8 @@ Task hợp lệ xem `prompts/README.md` hoặc `--help`. Nếu không truyền `
 
 Với task làm bài, nếu hồ sơ chưa rõ hoặc chưa xác nhận, script thay module công đoạn bằng module hỏi/làm rõ. Tạo được file prompt trả 0 không có nghĩa được phép làm bài: đọc trạng thái trong prompt. Lỗi đầu vào trả exit code 2. `--task optimize` chỉ sửa prompt, không thực hiện nhiệm vụ bên trong.
 
+Khi thiếu môn hoặc ngành, gate ưu tiên hỏi hai điểm đó trước (`intake_stage=course_and_discipline`), giữ các câu hỏi dự án khác để xử lý ở lượt sau. Không có prompt viết sẵn không cản việc hỗ trợ trong chat; script không phải điều kiện để bắt đầu. Ngành IT được xử lý theo đề và sản phẩm thực tế, không có mặc định ngành Marketing.
+
 ## Kiểm tra bước hỏi/xác nhận
 
 ```bash

@@ -13,7 +13,7 @@ from build_prompt import assemble
 
 PREFIX = """---
 name: luan-van-ai-skill
-description: Hỗ trợ nghiên cứu và làm luận văn bằng tiếng Việt, ưu tiên Marketing. Dùng khi người dùng yêu cầu áp dụng repo, làm luận, lập đề cương, tìm nguồn, phân tích dữ liệu, viết hoặc chấm sửa bài. Hỏi rõ và xác nhận dự án trước khi làm; tự chuẩn hóa yêu cầu, kiểm chứng nguồn, trích dẫn Harvard hoặc APA, phản biện có căn cứ và tự rà công tâm.
+description: Hỗ trợ nghiên cứu và làm luận văn theo ngành, môn và đề thực tế, gồm Marketing và IT. Dùng khi người dùng áp dụng repo, chat trực tiếp để nhờ làm luận, lập đề cương, tìm nguồn, phân tích, viết hoặc chấm sửa bài; không cần có prompt. Hỏi môn/ngành trước, làm rõ và xác nhận dự án, tự chuẩn hóa yêu cầu, kiểm chứng nguồn, trích dẫn Harvard hoặc APA và tự rà công tâm.
 ---
 
 # Luận Văn AI Skill
@@ -27,7 +27,7 @@ Không coi mẫu hồ sơ hay ví dụ trong repo là dữ kiện của người
 SUFFIX = """
 ## Bắt đầu trong cuộc trò chuyện
 
-Ở lần bắt đầu dự án, nêu ngắn điều đã hiểu và hỏi tối đa 3 điểm chưa rõ quan trọng nhất từ tài liệu thực tế. Khi đã đủ thông tin cho phạm vi hiện tại, tóm tắt dự án, công việc, dữ liệu/nguồn, đầu ra và tiêu chí để người viết xác nhận. Chưa viết hoặc chạy phân tích khi còn điểm cản cách làm. Không hỏi lại các dữ kiện đã được chốt và còn hiệu lực.
+Người dùng có thể chat thẳng, không cần soạn prompt. Ở lần bắt đầu dự án, hỏi môn học và ngành/chuyên ngành nếu chưa biết; lượt đầu chỉ làm rõ hai điểm này, tái sử dụng thông tin đã có. Sau đó hỏi tối đa 3 điểm quan trọng mỗi lượt và hỏi tiếp đến khi đủ rõ phạm vi hiện tại. Tóm tắt môn/ngành, dự án, công việc, dữ liệu/nguồn hoặc sản phẩm, đầu ra và tiêu chí để người viết xác nhận. Chưa viết hoặc chạy phân tích khi còn điểm cản cách làm. Không hỏi lại các dữ kiện đã được chốt và còn hiệu lực.
 
 Khi chỉ được giao sửa prompt, trả bản prompt hoàn chỉnh theo phạm vi đó; không thực hiện bài luận nằm trong prompt. Khi sửa repo hoặc giải thích cách dùng, làm rõ chính công việc đó, không đòi đề luận văn.
 
@@ -35,6 +35,7 @@ Khi chỉ được giao sửa prompt, trả bản prompt hoàn chỉnh theo ph�
 
 - [Công đoạn và prompt chuyên sâu](thesis-workbench/prompts/README.md).
 - [Quy trình dự án](thesis-workbench/docs/WORKFLOW.md) và [mẫu hồ sơ](thesis-workbench/templates/README.md).
+- [Hỏi dự án từ chat tự nhiên và điều chỉnh cho IT](thesis-workbench/docs/PROJECT_INTAKE.md).
 - [Nghiên cứu học thuật](skills/academic-research-vietnamese/SKILL.md), [tối ưu prompt](skills/prompt-optimizer/SKILL.md), [phản biện và tự rà](skills/candid-academic-mentor/SKILL.md).
 - [Nguồn và giấy phép theo thành phần](LICENSES.md).
 

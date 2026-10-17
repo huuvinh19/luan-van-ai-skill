@@ -4,8 +4,8 @@ Quy tắc của người viết, bổ sung ngày 2026-10-17: hỏi điều chưa
 
 ## Trong cuộc trò chuyện
 
-1. Đọc tài liệu hiện có, ghi những điều đã rõ, điều thiếu và mâu thuẫn.
-2. Hỏi tối đa 3 câu chính mỗi lượt, ưu tiên điểm ảnh hưởng mục tiêu, phạm vi, đầu vào, tiêu chí và đầu ra. Nhận câu trả lời rồi cập nhật và hỏi tiếp phần còn thiếu.
+1. Chấp nhận chat tự nhiên, không cần prompt. Đọc tài liệu hiện có; đầu tiên xác định môn và ngành, chỉ hỏi thông tin còn thiếu trong hai điểm đó. Không mặc định Marketing hoặc suy ra ngành từ mã môn.
+2. Sau khi đã biết môn/ngành, hỏi tối đa 3 câu chính mỗi lượt, ưu tiên điểm ảnh hưởng mục tiêu, phạm vi, đầu vào, tiêu chí và đầu ra. Nhận câu trả lời rồi cập nhật và hỏi tiếp đến khi rõ các vấn đề liên quan; không giới hạn tổng số lượt. Dùng [nhóm câu hỏi theo dự án và IT](PROJECT_INTAKE.md) khi cần.
 3. Khi đủ rõ, tóm tắt cụ thể dự án, công việc, căn cứ và đầu ra; đợi người viết xác nhận hoặc sửa. Không dùng im lặng hoặc câu “làm luôn” để tự điền câu trả lời còn thiếu.
 4. Sau xác nhận, làm phạm vi đã được giao. Trước mỗi công đoạn, tự chuẩn hóa yêu cầu và so với hồ sơ. Không hỏi lại dữ kiện còn hiệu lực.
 5. Khi có thay đổi/mâu thuẫn ảnh hưởng kết quả, hỏi rõ phần bị ảnh hưởng, cập nhật hồ sơ và cách hiểu. Không bắt đầu lại toàn bộ cuộc phỏng vấn nếu chỉ đổi một chi tiết.
@@ -28,6 +28,8 @@ Trước việc lớn, báo ngắn cách hiểu và đầu ra sẽ làm. Khi đ�
 | prompt_only | Chỉ yêu cầu tối ưu prompt | Sửa prompt, không thực hiện luận văn bên trong |
 
 `project_gate.py` đọc hồ sơ khai báo, không gọi mô hình và không tự ghi xác nhận. Nó không thể chứng minh người dùng thật sự đã nói câu xác nhận hoặc mô hình đã hiểu đúng. Chỉ lưu `message` sau khi có câu trả lời thực tế, gắn với tóm tắt đã trình bày. Nếu file chứa khai báo sai, script không thay thế việc đọc và đối chiếu thực tế.
+
+Khi thiếu `course_name` lẫn `course_code`, hoặc thiếu `discipline`, gate có `intake_stage=course_and_discipline`: chỉ đưa câu hỏi môn/ngành còn thiếu vào lượt hiện tại. Các câu hỏi dự án khác được giữ trong `all_blockers` để hỏi ở lượt sau. Có tên hoặc mã môn là đủ để ghi nhận thông tin ban đầu; việc hiểu nội dung môn vẫn cần đọc đề. Với nghiên cứu không gắn môn, lưu đúng mô tả đó khi người viết xác nhận, không tự đặt tên môn.
 
 Mọi sửa đổi `project.json` hoặc bản tóm tắt `brief_summary` làm fingerprint tương ứng thay đổi; xác nhận cũ không còn mở bước triển khai. Với tài liệu ngoài thay nội dung nhưng tên không đổi, tăng `context_revision`. Với điểm chưa rõ phát sinh trong lúc làm, ghi câu hỏi chặn tương ứng trong `project_state.json`. Hash hồ sơ không tự phát hiện mọi thay đổi hoặc mâu thuẫn ngữ nghĩa của tài liệu/yêu cầu tự do; mô hình vẫn cần đối chiếu nội dung thật ở mỗi lượt.
 

@@ -2,6 +2,7 @@
 
 | Yêu cầu | Nơi thực hiện |
 | --- | --- |
+| Bắt đầu từ chat tự nhiên, hỏi môn/ngành trước, dùng được theo bối cảnh IT | project-dialogue; intake/clarify; project_gate; PROJECT_INTAKE.md; discipline để null trong mẫu |
 | Chỉ tuyển prompt liên quan luận văn từ prompts.chat | 12 prompt có nguồn/hash trong upstream/manifest.json; công đoạn điều chỉnh trong PROVENANCE.md |
 | Tích hợp skill tối ưu prompt từ linshenkx/prompt-optimizer | skills/prompt-optimizer ở gốc repo; module optimize; request-refinement |
 | Đọc đề, rubric, dàn ý và tài liệu trước khi làm | `rules/core.vi.md` mục 1; module intake; `requirements.csv` |

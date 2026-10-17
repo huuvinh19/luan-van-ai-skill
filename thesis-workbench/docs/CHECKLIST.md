@@ -3,6 +3,7 @@
 Đánh dấu theo bằng chứng thực tế, ghi `chưa kiểm tra` khi chưa thực hiện. Không dùng số ô đã đánh dấu để suy ra điểm P/M/D.
 
 - [ ] Đúng đề, phần bài, phiên bản hướng dẫn và phạm vi được giao.
+- [ ] Đã xác định đúng môn/ngành từ lời người viết hoặc tài liệu, không mặc định Marketing; cách hỗ trợ phù hợp cả bài IT khi được giao.
 - [ ] Đã hỏi các điểm chưa rõ ảnh hưởng cách làm và được xác nhận cách hiểu hiện hành trước khi triển khai.
 - [ ] Yêu cầu mới đã được làm rõ trong phạm vi chốt; thay đổi/mâu thuẫn quan trọng đã được hỏi lại.
 - [ ] Mỗi yêu cầu bắt buộc có nội dung/bằng chứng đáp ứng cụ thể.

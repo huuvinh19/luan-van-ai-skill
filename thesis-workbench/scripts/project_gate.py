@@ -87,6 +87,16 @@ def evaluate_gate(profile: dict | None, state: dict | None, task: str) -> dict:
     def ask(qid: str, question: str, reason: str) -> None:
         blockers.append({"id": qid, "question": question, "reason": reason})
 
+    course_known = any(isinstance(profile.get(field), str) and profile[field].strip()
+                       for field in ("course_name", "course_code"))
+    if not course_known:
+        ask("course", "Mày đang làm luận cho môn nào? Cho tao tên môn, mã môn nếu có.",
+            "Cần xác định môn trước khi chọn cách hỗ trợ dự án.")
+    if not isinstance(profile.get("discipline"), str) or not profile["discipline"].strip():
+        ask("discipline", "Mày học ngành hoặc chuyên ngành gì?",
+            "Không mặc định Marketing, IT hoặc suy ra ngành từ mã môn.")
+    identity_questions = list(blockers)
+
     for field, qid, question in (
         ("topic", "topic", "Dự án đang về vấn đề/đề tài nào, hoặc mày đang cần cùng chọn đề tài?"),
         ("current_scope", "scope", "Phạm vi đang giao là toàn bài hay phần nào, và cần kết quả gì?"),
@@ -129,11 +139,15 @@ def evaluate_gate(profile: dict | None, state: dict | None, task: str) -> dict:
         status, action = "confirm", "Tóm tắt cách hiểu cụ thể, đợi người viết xác nhận; không tự ghi xác nhận."
     else:
         status, action = "ready", "Tiếp tục phạm vi đã được xác nhận; hỏi lại nếu phát hiện điểm mới ảnh hưởng cách làm."
+    questions = identity_questions or blockers[:3]
+    if identity_questions:
+        action = "Lượt này chỉ hỏi môn/ngành còn thiếu; chưa triển khai bài. Sau câu trả lời, tiếp tục làm rõ dự án theo ngành thực tế."
     return {
         "status": status, "can_execute": status == "ready", "requested_task": task,
-        "profile_sha256": digest, "questions": blockers[:3],
+        "intake_stage": "course_and_discipline" if identity_questions else "project_details" if blockers else status,
+        "profile_sha256": digest, "questions": questions,
         "brief_sha256": brief_fingerprint(summary) if isinstance(summary, str) else None,
-        "remaining_blocker_count": max(0, len(blockers) - 3), "all_blockers": blockers,
+        "remaining_blocker_count": max(0, len(blockers) - len(questions)), "all_blockers": blockers,
         "semantic_verification": "not_performed", "next_action": action,
     }
 

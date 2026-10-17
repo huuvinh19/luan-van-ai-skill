@@ -29,8 +29,51 @@ class ProjectGateTests(unittest.TestCase):
         result = evaluate_gate(None, None, "draft")
         self.assertEqual(result["status"], "clarify")
         self.assertFalse(result["can_execute"])
-        self.assertLessEqual(len(result["questions"]), 3)
+        self.assertEqual([q["id"] for q in result["questions"]], ["course", "discipline"])
+        self.assertEqual(result["intake_stage"], "course_and_discipline")
         self.assertGreater(result["remaining_blocker_count"], 0)
+
+    def test_it_discipline_is_reused_while_course_is_unknown(self):
+        result = evaluate_gate({"discipline": "Công nghệ thông tin"}, None, "draft")
+        self.assertEqual([q["id"] for q in result["questions"]], ["course"])
+        self.assertFalse(result["can_execute"])
+        self.assertIn("topic", {q["id"] for q in result["all_blockers"]})
+
+    def test_course_code_does_not_infer_discipline(self):
+        result = evaluate_gate({"course_code": "DEMO-IT-01"}, None, "review")
+        self.assertEqual([q["id"] for q in result["questions"]], ["discipline"])
+        self.assertFalse(result["can_execute"])
+
+    def test_confirmed_it_project_is_supported_without_marketing_default(self):
+        self.profile["discipline"] = "Công nghệ thông tin"
+        self.profile["course_name"] = "Cơ sở dữ liệu (GIẢ LẬP)"
+        self.resign_test_state()
+        result = evaluate_gate(self.profile, self.state, "draft")
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(result["questions"], [])
+
+    def test_course_or_discipline_change_requires_new_confirmation(self):
+        for field, value in (("course_name", "Môn mới (GIẢ LẬP)"),
+                             ("discipline", "Công nghệ thông tin")):
+            with self.subTest(field=field):
+                profile = copy.deepcopy(self.profile)
+                profile[field] = value
+                self.assertEqual(evaluate_gate(profile, self.state, "draft")["status"], "confirm")
+
+    def test_template_does_not_preselect_the_users_discipline(self):
+        template = json.loads((ROOT / "templates/project.json").read_text(encoding="utf-8"))
+        self.assertIsNone(template["discipline"])
+        result = evaluate_gate(template, None, "general")
+        self.assertEqual([q["id"] for q in result["questions"]], ["course", "discipline"])
+
+    def test_following_round_asks_project_details_after_course_and_discipline(self):
+        profile = {"course_name": "Software Engineering (GIẢ LẬP)", "discipline": "IT"}
+        result = evaluate_gate(profile, None, "draft")
+        self.assertEqual(result["intake_stage"], "project_details")
+        self.assertEqual([q["id"] for q in result["questions"]], ["topic", "scope", "format"])
+        self.assertGreater(result["remaining_blocker_count"], 0)
+        self.assertNotIn("course", {q["id"] for q in result["all_blockers"]})
+        self.assertNotIn("discipline", {q["id"] for q in result["all_blockers"]})
 
     def test_complete_fields_without_confirmation_still_wait(self):
         self.assertEqual(evaluate_gate(self.profile, None, "draft")["status"], "confirm")

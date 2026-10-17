@@ -1,6 +1,6 @@
 # Mẫu hồ sơ dự án
 
-Copy bộ file này sang thư mục dự án riêng rồi điền. Mẫu cố ý để trống các thông tin nghiên cứu chưa có; không dùng tên người học hoặc trường để suy ra đề hay rubric.
+Copy bộ file này sang thư mục dự án riêng rồi điền. Mẫu cố ý để trống cả ngành, môn và các thông tin nghiên cứu chưa có; không dùng tên người học hoặc trường để suy ra đề hay rubric. Lưu `discipline` theo câu trả lời thực tế, cùng `course_name` hoặc `course_code` nếu có. Chat không có file vẫn bắt đầu được: trợ lý hỏi và giữ bản tóm tắt, không yêu cầu người viết tự soạn prompt hay JSON.
 
 | File | Điền gì |
 | --- | --- |
