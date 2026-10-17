@@ -1,6 +1,6 @@
 # Mẫu hồ sơ dự án
 
-Copy bộ file này sang thư mục dự án riêng rồi điền. Mẫu cố ý để trống các thông tin nghiên cứu chưa có; không dùng tên Vinh/BTEC để suy ra đề hay rubric.
+Copy bộ file này sang thư mục dự án riêng rồi điền. Mẫu cố ý để trống các thông tin nghiên cứu chưa có; không dùng tên người học hoặc trường để suy ra đề hay rubric.
 
 | File | Điền gì |
 | --- | --- |

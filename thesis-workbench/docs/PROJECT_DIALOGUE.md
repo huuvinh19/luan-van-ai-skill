@@ -1,12 +1,12 @@
 # Hỏi rõ và tự làm rõ yêu cầu trong cả dự án
 
-Quy tắc của Vinh, bổ sung ngày 2026-10-17: hỏi điều chưa chắc chắn về dự án cho đến khi đủ hiểu để làm đúng phạm vi đang được giao. Hỏi trước khi bắt đầu và kiểm tra lại suốt dự án. Không viết/phân tích trước rồi mới hỏi.
+Quy tắc của người viết, bổ sung ngày 2026-10-17: hỏi điều chưa chắc chắn về dự án cho đến khi đủ hiểu để làm đúng phạm vi đang được giao. Hỏi trước khi bắt đầu và kiểm tra lại suốt dự án. Không viết/phân tích trước rồi mới hỏi.
 
 ## Trong cuộc trò chuyện
 
 1. Đọc tài liệu hiện có, ghi những điều đã rõ, điều thiếu và mâu thuẫn.
 2. Hỏi tối đa 3 câu chính mỗi lượt, ưu tiên điểm ảnh hưởng mục tiêu, phạm vi, đầu vào, tiêu chí và đầu ra. Nhận câu trả lời rồi cập nhật và hỏi tiếp phần còn thiếu.
-3. Khi đủ rõ, tóm tắt cụ thể dự án, công việc, căn cứ và đầu ra; đợi Vinh xác nhận hoặc sửa. Không dùng im lặng hoặc câu “làm luôn” để tự điền câu trả lời còn thiếu.
+3. Khi đủ rõ, tóm tắt cụ thể dự án, công việc, căn cứ và đầu ra; đợi người viết xác nhận hoặc sửa. Không dùng im lặng hoặc câu “làm luôn” để tự điền câu trả lời còn thiếu.
 4. Sau xác nhận, làm phạm vi đã được giao. Trước mỗi công đoạn, tự chuẩn hóa yêu cầu và so với hồ sơ. Không hỏi lại dữ kiện còn hiệu lực.
 5. Khi có thay đổi/mâu thuẫn ảnh hưởng kết quả, hỏi rõ phần bị ảnh hưởng, cập nhật hồ sơ và cách hiểu. Không bắt đầu lại toàn bộ cuộc phỏng vấn nếu chỉ đổi một chi tiết.
 

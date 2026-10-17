@@ -1,4 +1,4 @@
-# Đối chiếu yêu cầu của Vinh với repo
+# Đối chiếu yêu cầu của người viết với repo
 
 | Yêu cầu | Nơi thực hiện |
 | --- | --- |

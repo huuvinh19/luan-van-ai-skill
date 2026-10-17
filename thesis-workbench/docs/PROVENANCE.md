@@ -30,10 +30,10 @@
 
 Giữ ý tưởng về đọc nguồn, tổ chức lập luận, phương pháp, phân tích, phản biện và biên tập. Thay ví dụ chủ đề không liên quan, câu yêu cầu tự chọn đề tài, mặc định Chinese/APA, hạn ngạch số ý hoặc cấu trúc cứng bằng hồ sơ và đề thực tế. Các biến `${...}` trong snapshot được giữ nguyên; snapshot là dữ liệu tham khảo, không dùng làm lệnh tự thi hành.
 
-Quy tắc của Vinh được lưu tại `config/user-requirements.vi.md` (chuẩn hóa xuống dòng và link Markdown khi lưu); đối chiếu cách thực hiện ở `docs/REQUIREMENTS_MAP.md`. Quy tắc chung được viết ở `rules/core.vi.md`, kết hợp module để tạo `PROMPT_LUAN_VAN.md`.
+Quy tắc của người viết được lưu tại `config/user-requirements.vi.md` (chuẩn hóa xuống dòng và link Markdown khi lưu); đối chiếu cách thực hiện ở `docs/REQUIREMENTS_MAP.md`. Quy tắc chung được viết ở `rules/core.vi.md`, kết hợp module để tạo `PROMPT_LUAN_VAN.md`.
 
 Phần tự chấm phải dựa vào rubric thật và bằng chứng đáp ứng. Phần kiểm tra bằng Python chỉ kiểm tra hồ sơ cấu trúc, không xác minh nội dung nguồn hay bảo đảm điểm.
 
-Bài tham khảo Brands Vietnam: https://help.brandsvietnam.com/vi/article/dau-hieu-nhan-biet-noi-dung-duoc-viet-boi-ai-3zy07d/ (đã đọc 2026-10-17). Bài gốc có sáu nhóm dấu hiệu; repo dùng yêu cầu viết do Vinh đưa ra để cải thiện độ rõ và độ chính xác, không xem đó là phép kiểm chứng ai viết văn bản.
+Bài tham khảo Brands Vietnam: https://help.brandsvietnam.com/vi/article/dau-hieu-nhan-biet-noi-dung-duoc-viet-boi-ai-3zy07d/ (đã đọc 2026-10-17). Bài gốc có sáu nhóm dấu hiệu; repo dùng yêu cầu viết do người viết đưa ra để cải thiện độ rõ và độ chính xác, không xem đó là phép kiểm chứng ai viết văn bản.
 
 Snapshot là dữ liệu prompt CC0. Xem `LICENSE`, `THIRD_PARTY_NOTICES.md`, `upstream/LICENSE-SCOPE.txt` và `LICENSES/CC0-1.0.txt`.

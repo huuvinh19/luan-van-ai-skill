@@ -2,9 +2,9 @@
 
 ## Chuẩn áp dụng
 
-Mặc định Harvard theo mẫu giảng viên mà Vinh cung cấp. Đặt `citation_style` trong hồ sơ thành `Harvard` hoặc `APA`. Ghi đường dẫn/mô tả hướng dẫn vào `instructor_citation_guide`; để `null` khi chưa có, không tự cho rằng đã đọc mẫu. Chi tiết nhiều tác giả, cùng năm, loại tài liệu và dấu câu phải được đối chiếu với hướng dẫn thực tế.
+Mặc định Harvard theo mẫu giảng viên mà người viết cung cấp. Đặt `citation_style` trong hồ sơ thành `Harvard` hoặc `APA`. Ghi đường dẫn/mô tả hướng dẫn vào `instructor_citation_guide`; để `null` khi chưa có, không tự cho rằng đã đọc mẫu. Chi tiết nhiều tác giả, cùng năm, loại tài liệu và dấu câu phải được đối chiếu với hướng dẫn thực tế.
 
-Yêu cầu riêng của Vinh: trích dẫn tác giả–năm nằm ở cuối câu được hỗ trợ, trước dấu chấm. Đây là lựa chọn trình bày của dự án, không phải tuyên bố rằng mọi hệ Harvard/APA đều cấm cách dẫn nguồn trong câu.
+Yêu cầu riêng của người viết: trích dẫn tác giả–năm nằm ở cuối câu được hỗ trợ, trước dấu chấm. Đây là lựa chọn trình bày của dự án, không phải tuyên bố rằng mọi hệ Harvard/APA đều cấm cách dẫn nguồn trong câu.
 
 Ví dụ hình thức, không phải nguồn thật:
 

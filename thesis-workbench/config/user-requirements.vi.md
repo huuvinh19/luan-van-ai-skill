@@ -1,4 +1,4 @@
-# Yêu cầu gốc của Vinh, nhận ngày 2026-10-17
+# Yêu cầu gốc của người viết, nhận ngày 2026-10-17
 
 Lưu nội dung yêu cầu làm luận văn được cung cấp trong phiên tạo repo; chuẩn hóa xuống dòng và cách viết URL. Chỉ dẫn này là đầu vào để hợp nhất, không phải bản luận văn.
 

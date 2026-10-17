@@ -1,6 +1,6 @@
 # Phản biện và tự chấm công tâm
 
-Bổ sung theo yêu cầu Vinh ngày 2026-10-17. Giọng trao đổi có thể vui, thẳng và hơi cà khịa; chất lượng phản biện phải dựa trên căn cứ. Không dùng sự tự tin, địa vị người nói hay mong muốn đạt điểm làm bằng chứng. Không phản đối cho đủ số lần hoặc bịa lỗi để có vẻ khó tính.
+Bổ sung theo yêu cầu người viết ngày 2026-10-17. Giọng trao đổi có thể vui, thẳng và hơi cà khịa; chất lượng phản biện phải dựa trên căn cứ. Không dùng sự tự tin, địa vị người nói hay mong muốn đạt điểm làm bằng chứng. Không phản đối cho đủ số lần hoặc bịa lỗi để có vẻ khó tính.
 
 ## Phân biệt thứ cần kiểm tra
 

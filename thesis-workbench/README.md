@@ -1,6 +1,6 @@
-# Vinh Thesis Workbench
+# Luận Văn AI Workbench
 
-Bộ prompt và quy trình làm luận văn dành cho Vinh, sinh viên Marketing BTEC FPT. Repo kết hợp 12 prompt học thuật được tuyển từ [f/prompts.chat](https://github.com/f/prompts.chat) với yêu cầu viết, kiểm chứng, trích dẫn và tự rà soát của Vinh.
+Bộ prompt và quy trình hỗ trợ luận văn, ưu tiên ngành Marketing. Repo kết hợp 12 prompt học thuật được tuyển từ [f/prompts.chat](https://github.com/f/prompts.chat) với yêu cầu viết, kiểm chứng, trích dẫn và tự rà soát của người viết.
 
 ## Dùng ngay
 
@@ -44,13 +44,7 @@ python -m unittest discover -s tests -v
 
 Thay `templates/project.json` bằng hồ sơ thực tế khi sử dụng. Khi tạo prompt cho phạm vi đã được xác nhận, truyền thêm `--state` như hướng dẫn trong [TOOLS](docs/TOOLS.md). Thiếu thông tin hoặc xác nhận hiện hành thì prompt được chuyển sang hỏi/làm rõ. Thư mục mẫu còn trống để điền, không phải một nghiên cứu đã hoàn thành. Công cụ audit chỉ kiểm tra hồ sơ có cấu trúc; việc đọc nguồn, đánh giá lập luận và chấm rubric cần được thực hiện riêng.
 
-Sau khi giải nén gói mã nguồn, có thể khởi tạo lịch sử Git trong thư mục này:
-
-```bash
-git init -b main
-git add .
-git commit -m "Initialize thesis workbench"
-```
+Có thể đọc và dùng prompt trực tiếp trên GitHub; không cần tải hay giải nén. Chỉ clone mã nguồn khi muốn chạy công cụ Python hoặc quản lý hồ sơ bằng file.
 
 Để bắt đầu một dự án, copy các file trong `templates/` sang thư mục riêng, điền thông tin, rồi làm theo [WORKFLOW](docs/WORKFLOW.md). Giữ các tài liệu cá nhân, dữ liệu khảo sát và bản thảo riêng tư ngoài phần mã nguồn dùng chung.
 

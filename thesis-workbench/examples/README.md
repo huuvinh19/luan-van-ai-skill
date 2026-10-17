@@ -4,7 +4,7 @@
 
 Nhận định C001 là kết quả tính toán từ dữ liệu minh họa, không phải thông tin của một bài báo. Bảng nguồn vì vậy rỗng. Yêu cầu R001 cũng là yêu cầu giả lập cho ví dụ công cụ, không phải rubric BTEC.
 
-Bản 1.1.0 có project_state.json với bản tóm tắt và câu xác nhận GIẢ LẬP cho unit test. Đây là dữ liệu kiểm thử rõ nhãn, không phải lời xác nhận thật của Vinh hay cho phép chạy một luận văn thực tế. Khi làm dự án thật, lấy xác nhận từ cuộc trò chuyện thực tế.
+Bản 1.1.0 có project_state.json với bản tóm tắt và câu xác nhận GIẢ LẬP cho unit test. Đây là dữ liệu kiểm thử rõ nhãn, không phải lời xác nhận thật của người viết hay cho phép chạy một luận văn thực tế. Khi làm dự án thật, lấy xác nhận từ cuộc trò chuyện thực tế.
 
 ```bash
 python scripts/audit_project.py --project examples/demo-project

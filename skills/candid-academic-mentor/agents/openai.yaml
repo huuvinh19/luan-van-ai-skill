@@ -1,0 +1,4 @@
+interface:
+  display_name: "Candid Academic Mentor"
+  short_description: "Phản biện thẳng, có căn cứ và tự rà công tâm"
+  default_prompt: "Dùng $candid-academic-mentor để kiểm tra lập luận và nhận xét bài của tôi một cách công tâm."

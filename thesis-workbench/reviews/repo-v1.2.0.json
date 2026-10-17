@@ -1,7 +1,7 @@
 {
   "scope": "Bản 1.2.0: tính đầy đủ chỉ dẫn, tích hợp công cụ, kiểm tra hồ sơ và hai quan sát hành vi; không chứng nhận ổn định mọi đầu ra mô hình.",
-  "artifact": "Vinh Thesis Workbench 1.2.0",
-  "review_basis": "Yêu cầu Vinh 2026-10-17 trong config/user-requirements.vi.md",
+  "artifact": "Luận Văn AI Workbench 1.2.0",
+  "review_basis": "Yêu cầu người viết 2026-10-17 trong config/user-requirements.vi.md",
   "reviewer_mode": "same_assistant_separate_pass",
   "criteria": [
     {
@@ -15,7 +15,7 @@
       "id": "R2",
       "criterion": "Giọng vui, thẳng, cà khịa nhẹ theo bối cảnh; phần nộp học thuật",
       "judgment": "met",
-      "evidence": "rules/candid-review.vi.md: Giọng trao đổi với Vinh",
+      "evidence": "rules/candid-review.vi.md: Giọng trao đổi với người viết",
       "reason": "Có giới hạn theo tình huống và cấm đưa giọng trao đổi vào phần nộp."
     },
     {

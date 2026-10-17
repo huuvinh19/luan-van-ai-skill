@@ -20,4 +20,4 @@ Luôn dùng `rules/core.vi.md`, `rules/project-dialogue.vi.md`, `rules/request-r
 | clarify | [13-clarify.md](13-clarify.md) | Hỏi điểm chưa rõ và xác nhận cách hiểu trước khi triển khai |
 | self-review | [14-self-review.md](14-self-review.md) | Tự chấm bản hiện hành bằng bằng chứng, sửa và kiểm tra lại |
 
-Nguồn tuyển chọn và cách chuyển đổi từng vai trò được ghi ở [PROVENANCE](../docs/PROVENANCE.md). Module dịch và xuất bản là phần bổ sung của repo, kết hợp vai trò biên tập/kiểm tra với yêu cầu Vinh.
+Nguồn tuyển chọn và cách chuyển đổi từng vai trò được ghi ở [PROVENANCE](../docs/PROVENANCE.md). Module dịch và xuất bản là phần bổ sung của repo, kết hợp vai trò biên tập/kiểm tra với yêu cầu người viết.
