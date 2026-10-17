@@ -1,0 +1,14 @@
+interface:
+  display_name: Nghiên cứu và viết luận
+  short_description: Viết và sửa luận theo Academic Research Skills
+  default_prompt: Use $academic-research-vietnamese to research, write, and review
+    my essay in Vietnamese.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas

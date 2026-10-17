@@ -1,0 +1,14 @@
+interface:
+  display_name: Prompt Optimizer
+  short_description: Optimize prompts while preserving intent and variables
+  default_prompt: Use $prompt-optimizer to improve this prompt while preserving my
+    intent and constraints.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

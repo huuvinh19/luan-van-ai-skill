@@ -1,0 +1,12 @@
+{
+  "scope": null,
+  "artifact": null,
+  "review_basis": null,
+  "reviewer_mode": "same_assistant_separate_pass",
+  "criteria": [],
+  "findings": [],
+  "remaining_limits": [],
+  "overall_verdict": null,
+  "grade": null,
+  "grading_basis": null
+}

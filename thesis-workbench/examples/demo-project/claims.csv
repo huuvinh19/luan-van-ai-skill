@@ -1,0 +1,2 @@
+claim_id,text,claim_type,source_ids,support_status,evidence_locations
+C001,"Trung bình ba giá trị GIẢ LẬP 10,20,30 là 20.",data,,supported,data_demo.csv|output_demo.txt: mean=20

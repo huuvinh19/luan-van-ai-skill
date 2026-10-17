@@ -1,0 +1,3 @@
+GIẢ LẬP để kiểm thử repo. Dữ liệu tạo bởi repo, không phải khảo sát.
+n=3
+mean=20

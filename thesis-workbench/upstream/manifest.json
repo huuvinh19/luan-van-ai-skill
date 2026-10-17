@@ -1,0 +1,140 @@
+{
+  "upstream_repository": "https://github.com/f/prompts.chat",
+  "commit": "0abaca9695416d0bb8cfcf52552e60a1e15b5e2a",
+  "snapshot_date": "2026-10-17",
+  "upstream_dataset_rows": 2508,
+  "upstream_dataset_sha256": "be678671d7985a2adeccdc05d16243ab25c2fc248b72fa89dca1cade446b6e64",
+  "prompt_data_license": "CC0-1.0",
+  "selection_scope": "12 academic prompts; originals preserved, adapted modules authored separately",
+  "files_sha256": {
+    "upstream/selected-prompts.json": "e26e5818ba5e92b29e28a27ad007583a41552ca91d683afe5cf0a92c8090cb65",
+    "upstream/selected-prompts.csv": "14a4219f30fddaed122eb640c7bd8b0a022b6a89188ccf565a4c61e845e91cb4",
+    "upstream/LICENSE-SCOPE.txt": "82201d04d22eea74216fcacc9bc9e695184aef435a415e3564cf806c962854f8",
+    "LICENSES/CC0-1.0.txt": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+  },
+  "selected_prompts": [
+    {
+      "act": "Academician",
+      "contributor": "devisasari",
+      "source_row_index_zero_based": 71,
+      "prompt_sha256": "7785fcdacb6d20cbe63b00c86d74078a16359239b403cfc76ec703e1e6c1c92c",
+      "adapted_for_tasks": [
+        "general",
+        "sources",
+        "draft",
+        "citations"
+      ]
+    },
+    {
+      "act": "Essay Writer",
+      "contributor": "devisasari",
+      "source_row_index_zero_based": 83,
+      "prompt_sha256": "29c0d627d22ac043f47fea6fec5c8afec1e88f4f10c93aeac661e17a9920d11a",
+      "adapted_for_tasks": [
+        "outline",
+        "draft"
+      ]
+    },
+    {
+      "act": "Statistician",
+      "contributor": "tanersekmen",
+      "source_row_index_zero_based": 62,
+      "prompt_sha256": "6d9cff84d552015ed4fee47af60cf10ce545e49ae3c17ab844feb60e87d70c04",
+      "adapted_for_tasks": [
+        "methodology",
+        "analysis"
+      ]
+    },
+    {
+      "act": "Scientific Data Visualizer",
+      "contributor": "devisasari",
+      "source_row_index_zero_based": 86,
+      "prompt_sha256": "27b3ce1a4ec893b14fdfa10527ec49a099e20d3987f5ab41c45c4f69d82cf3bd",
+      "adapted_for_tasks": [
+        "analysis",
+        "export"
+      ]
+    },
+    {
+      "act": "Proofreader",
+      "contributor": "virtualitems",
+      "source_row_index_zero_based": 155,
+      "prompt_sha256": "a614ab89d33c0cd77b222fcebbfe2ba1f90bd08f56b7cf7a49ac59575d827a5f",
+      "adapted_for_tasks": [
+        "review",
+        "citations",
+        "translate",
+        "export"
+      ]
+    },
+    {
+      "act": "Comprehensive Academic Paper Writing Guide",
+      "contributor": "ggdvbs",
+      "source_row_index_zero_based": 393,
+      "prompt_sha256": "c58c489ac6af5df9334fc8f1506245541e6de76f53333e139bcaaf2a7d7a0300",
+      "adapted_for_tasks": [
+        "general",
+        "intake",
+        "outline",
+        "methodology"
+      ]
+    },
+    {
+      "act": "Act as a Senior Research Paper Evaluator",
+      "contributor": "Fisehazion",
+      "source_row_index_zero_based": 409,
+      "prompt_sha256": "eec3d86dc2b86f85a54525c4e451c1fcdbc9222100fb83bc45c8d21b628bc451",
+      "adapted_for_tasks": [
+        "review"
+      ]
+    },
+    {
+      "act": "Data Analyst",
+      "contributor": "ozzy2438",
+      "source_row_index_zero_based": 417,
+      "prompt_sha256": "0789b4fee3989891acbb11c4915492485c7cdf01011ed79595360fff9f19135a",
+      "adapted_for_tasks": [
+        "analysis"
+      ]
+    },
+    {
+      "act": "Literature Review Writing Assistant",
+      "contributor": "gs62183@student.upm.edu.my",
+      "source_row_index_zero_based": 765,
+      "prompt_sha256": "40c850d49ccfd965eebf8938e07841aa65a8ca488af8396f2ad7501758ce65f1",
+      "adapted_for_tasks": [
+        "literature"
+      ]
+    },
+    {
+      "act": "Academic Paper Rewriting Guide",
+      "contributor": "Zly1hyj",
+      "source_row_index_zero_based": 2051,
+      "prompt_sha256": "5f45fcccf1e2b8467b170604e806444f1c72d67629cfc4eaaa6efee0b7806cf0",
+      "adapted_for_tasks": [
+        "review",
+        "translate"
+      ]
+    },
+    {
+      "act": "Literature Reading Assistant",
+      "contributor": "ccchaos12",
+      "source_row_index_zero_based": 1669,
+      "prompt_sha256": "fdf298cf25c7dd2cae6819a81ca98e4b88b13f05c9a0f8c09364a2d022d20f6e",
+      "adapted_for_tasks": [
+        "sources",
+        "literature"
+      ]
+    },
+    {
+      "act": "Research Gap Finder",
+      "contributor": "Priyanshu3221",
+      "source_row_index_zero_based": 2489,
+      "prompt_sha256": "46bf64197f1e5a46714ecb9f79ff3f1a3423c61e005921d8dd48242f769a533c",
+      "adapted_for_tasks": [
+        "outline",
+        "sources"
+      ]
+    }
+  ]
+}

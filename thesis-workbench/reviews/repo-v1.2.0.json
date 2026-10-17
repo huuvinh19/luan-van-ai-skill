@@ -1,0 +1,59 @@
+{
+  "scope": "Bản 1.2.0: tính đầy đủ chỉ dẫn, tích hợp công cụ, kiểm tra hồ sơ và hai quan sát hành vi; không chứng nhận ổn định mọi đầu ra mô hình.",
+  "artifact": "Vinh Thesis Workbench 1.2.0",
+  "review_basis": "Yêu cầu Vinh 2026-10-17 trong config/user-requirements.vi.md",
+  "reviewer_mode": "same_assistant_separate_pass",
+  "criteria": [
+    {
+      "id": "R1",
+      "criterion": "Phản biện có căn cứ, không mặc nhiên đồng ý",
+      "judgment": "met",
+      "evidence": "rules/candid-review.vi.md: Không gật đầu vì người viết khẳng định; docs/CANDID_REVIEW.md",
+      "reason": "Phân biệt sở thích, lời kể, dữ liệu và phát biểu bên ngoài; có hướng kiểm tra/sửa và không cố cãi."
+    },
+    {
+      "id": "R2",
+      "criterion": "Giọng vui, thẳng, cà khịa nhẹ theo bối cảnh; phần nộp học thuật",
+      "judgment": "met",
+      "evidence": "rules/candid-review.vi.md: Giọng trao đổi với Vinh",
+      "reason": "Có giới hạn theo tình huống và cấm đưa giọng trao đổi vào phần nộp."
+    },
+    {
+      "id": "R3",
+      "criterion": "Tự chấm bằng cùng tiêu chí và bằng chứng, không tự cho điểm",
+      "judgment": "met",
+      "evidence": "rules/candid-review.vi.md: Tự rà trước khi giao; prompts/14-self-review.md",
+      "reason": "Yêu cầu lượt đọc riêng, bằng chứng, lỗi thực tế, sửa và kiểm tra lại; không giả reviewer độc lập."
+    },
+    {
+      "id": "R4",
+      "criterion": "Giữ bước hỏi và xác nhận suốt dự án",
+      "judgment": "met",
+      "evidence": "scripts/project_gate.py; tests/test_project_gate.py",
+      "reason": "Các kiểm tra trạng thái và câu hỏi chưa bị thay bằng sự tự tin hoặc lời khen."
+    },
+    {
+      "id": "R5",
+      "criterion": "Quan sát hai tình huống phản biện từ ngữ cảnh tách biệt",
+      "judgment": "met",
+      "evidence": "docs/behavior-samples.json",
+      "reason": "Phép tính được sửa, suy rộng thiếu căn cứ bị chặn và mức D không được tự xác nhận."
+    },
+    {
+      "id": "R6",
+      "criterion": "Kiểm tra tích hợp prompt và hồ sơ tự rà",
+      "judgment": "met",
+      "evidence": "docs/validation-results.json; tests/test_self_review.py",
+      "reason": "Kiểm tra thiếu bằng chứng, báo sửa xong chưa kiểm tra, điểm thiếu rubric và kết luận sẵn sàng mâu thuẫn."
+    }
+  ],
+  "findings": [],
+  "remaining_limits": [
+    "Hai tình huống chỉ là minh họa; chưa đủ chứng minh tính ổn định hoặc loại bỏ thiên vị trong mọi hội thoại.",
+    "Các script kiểm tra khai báo và cấu trúc; không tự chấm luận văn hay xác thực nguồn.",
+    "Tự rà bản repo là cùng trợ lý đối chiếu một lượt riêng, không phải đánh giá độc lập."
+  ],
+  "overall_verdict": "ready_for_scope",
+  "grade": null,
+  "grading_basis": null
+}

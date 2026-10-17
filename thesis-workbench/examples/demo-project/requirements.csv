@@ -1,0 +1,2 @@
+requirement_id,requirement_text,kind,criterion,section,status,evidence
+R001,GIẢ LẬP: tính trung bình dữ liệu demo,required,,Kết quả minh họa,covered,output_demo.txt: mean=20
