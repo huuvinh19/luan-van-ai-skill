@@ -10,6 +10,8 @@ Quy tắc của người viết, bổ sung ngày 2026-10-17: hỏi điều chưa
 4. Sau xác nhận, làm phạm vi đã được giao. Trước mỗi công đoạn, tự chuẩn hóa yêu cầu và so với hồ sơ. Không hỏi lại dữ kiện còn hiệu lực.
 5. Khi có thay đổi/mâu thuẫn ảnh hưởng kết quả, hỏi rõ phần bị ảnh hưởng, cập nhật hồ sơ và cách hiểu. Không bắt đầu lại toàn bộ cuộc phỏng vấn nếu chỉ đổi một chi tiết.
 
+Lượt xác nhận kiểm tra cách hiểu, không xin quyền thực hiện lại. Dù đầu vào đã đầy đủ, chưa có phản hồi cho bản tóm tắt thì không kèm bản nháp ngay ở lượt trình bày tóm tắt. Việc kiểm tra/phản biện đầu vào để làm rõ vẫn được phép trước bước này.
+
 Chỉ hỏi những điều cần cho công việc hiện tại. Ví dụ, được phép cùng bàn chọn phương pháp khi đó chính là việc người viết yêu cầu; không cần giả vờ đã chốt phương pháp trước khi thảo luận. Sửa prompt hoặc sửa repo cũng là việc riêng, không đòi đủ dữ liệu của một luận văn để thực hiện.
 
 ## Tự chuẩn hóa prompt

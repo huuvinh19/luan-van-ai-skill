@@ -12,6 +12,30 @@ TASK_NAMES = {"general", "intake", "outline", "sources", "literature", "methodol
               "analysis", "draft", "review", "citations", "translate", "export", "optimize", "clarify", "self-review"}
 
 
+def validate_profile(profile: dict) -> None:
+    """Validate the same input contract for both CLI and imported callers."""
+    if not isinstance(profile, dict):
+        raise ValueError("Hồ sơ phải là một JSON object.")
+    if profile.get("citation_style", "Harvard") not in ("Harvard", "APA"):
+        raise ValueError("citation_style chỉ nhận Harvard hoặc APA.")
+    limit = profile.get("word_limit")
+    if limit is not None and (type(limit) is not int or limit <= 0):
+        raise ValueError("word_limit phải là số nguyên dương hoặc null.")
+    for field in ("author", "institution", "discipline", "course_code", "course_name",
+                  "topic", "research_question", "current_scope", "language",
+                  "instructor_citation_guide", "target_language", "output_format",
+                  "assignment_status", "assignment_notes", "rubric_status", "rubric_notes",
+                  "data_status", "data_notes"):
+        value = profile.get(field)
+        if value is not None and not isinstance(value, str):
+            raise ValueError(f"{field} phải là chuỗi hoặc null.")
+    materials = profile.get("assignment_materials", [])
+    if not isinstance(materials, list) or not all(isinstance(x, str) for x in materials):
+        raise ValueError("assignment_materials phải là danh sách chuỗi.")
+    if "context_revision" in profile and (type(profile["context_revision"]) is not int or profile["context_revision"] < 1):
+        raise ValueError("context_revision phải là số nguyên dương.")
+
+
 def profile_fingerprint(profile: dict) -> str:
     canonical = json.dumps(profile, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
@@ -28,7 +52,7 @@ def load_state(path: Path) -> dict:
 
 
 def validate_state(state: dict) -> None:
-    if not isinstance(state, dict) or state.get("schema_version") != 1:
+    if not isinstance(state, dict) or type(state.get("schema_version")) is not int or state["schema_version"] != 1:
         raise ValueError("project_state.json cần object có schema_version=1.")
     summary = state.get("brief_summary")
     if summary is not None and not isinstance(summary, str):
@@ -70,8 +94,9 @@ def validate_state(state: dict) -> None:
 
 def evaluate_gate(profile: dict | None, state: dict | None, task: str) -> dict:
     profile = {} if profile is None else profile
-    if not isinstance(profile, dict):
-        raise ValueError("Hồ sơ dự án phải là object.")
+    validate_profile(profile)
+    if not isinstance(task, str) or task not in TASK_NAMES:
+        raise ValueError(f"Không có công đoạn {task!r}.")
     if state is not None:
         validate_state(state)
     digest = profile_fingerprint(profile)
@@ -108,7 +133,7 @@ def evaluate_gate(profile: dict | None, state: dict | None, task: str) -> dict:
         ask("language", "Ngôn ngữ bài cần dùng là gì?", "Cần xác định ngôn ngữ đầu ra.")
     assignment = profile.get("assignment_status")
     if assignment == "provided":
-        if not profile.get("assignment_materials"):
+        if not any(item.strip() for item in profile.get("assignment_materials", [])):
             ask("assignment", "Đề/hướng dẫn hiện hành là tài liệu nào?", "Chưa chỉ được đầu vào của đề.")
     elif assignment == "self_defined":
         if not (profile.get("assignment_notes") or "").strip():

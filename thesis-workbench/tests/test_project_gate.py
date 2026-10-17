@@ -11,8 +11,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from build_prompt import assemble
-from project_gate import brief_fingerprint, evaluate_gate, profile_fingerprint
+from build_prompt import TASKS, assemble
+from project_gate import TASK_NAMES, brief_fingerprint, evaluate_gate, profile_fingerprint
 
 
 class ProjectGateTests(unittest.TestCase):
@@ -121,6 +121,37 @@ class ProjectGateTests(unittest.TestCase):
                                          "status": "open", "affects": ["analysiss"]}]
         with self.assertRaises(ValueError):
             evaluate_gate(self.profile, self.state, "analysis")
+
+    def test_unknown_task_is_rejected_even_with_confirmed_profile(self):
+        for task in ("analysiss", "", None, ["draft"]):
+            with self.subTest(task=task), self.assertRaises(ValueError):
+                evaluate_gate(self.profile, self.state, task)
+
+    def test_invalid_profiles_are_rejected_by_gate_and_assembler(self):
+        for profile in ([], "not an object", {"assignment_status": "self_defined", "assignment_notes": 123},
+                        {"rubric_status": "provided", "rubric_notes": 123},
+                        {"citation_style": []}, {"assignment_materials": [1]}):
+            for operation in (lambda: evaluate_gate(profile, None, "draft"),
+                              lambda: assemble("draft", profile)):
+                with self.subTest(profile=profile), self.assertRaises(ValueError):
+                    operation()
+
+    def test_state_version_must_be_integer_one(self):
+        for value in (True, 1.0, "1", None, 2):
+            self.state["schema_version"] = value
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                evaluate_gate(self.profile, self.state, "draft")
+
+    def test_blank_assignment_entry_does_not_pass_gate(self):
+        self.profile["assignment_status"] = "provided"
+        self.profile["assignment_materials"] = ["   ", "\t"]
+        self.resign_test_state()
+        result = evaluate_gate(self.profile, self.state, "draft")
+        self.assertFalse(result["can_execute"])
+        self.assertIn("assignment", {q["id"] for q in result["all_blockers"]})
+
+    def test_task_names_agree_between_state_and_builder(self):
+        self.assertEqual(TASK_NAMES, set(TASKS))
 
     def test_future_questions_are_preserved_in_general_prompt(self):
         self.state["open_questions"] = [{"id": "Q001", "question": "Cần hỏi khi tới phân tích GIẢ LẬP",

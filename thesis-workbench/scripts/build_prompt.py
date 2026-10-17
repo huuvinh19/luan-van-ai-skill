@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import sys
 
-from project_gate import evaluate_gate, load_state
+from project_gate import evaluate_gate, load_state, validate_profile
 
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = {
@@ -31,43 +31,22 @@ TASKS = {
 
 def load_profile(path: Path) -> dict:
     profile = json.loads(path.read_text(encoding="utf-8-sig"))
-    if not isinstance(profile, dict):
-        raise ValueError("Hồ sơ phải là một JSON object.")
-    if profile.get("citation_style", "Harvard") not in {"Harvard", "APA"}:
-        raise ValueError("citation_style chỉ nhận Harvard hoặc APA.")
-    limit = profile.get("word_limit")
-    if limit is not None and (type(limit) is not int or limit <= 0):
-        raise ValueError("word_limit phải là số nguyên dương hoặc null.")
-    for field in ("author", "institution", "discipline", "course_code", "course_name",
-                  "topic", "research_question", "current_scope", "language",
-                  "instructor_citation_guide", "target_language", "output_format",
-                  "assignment_status", "assignment_notes", "rubric_status", "rubric_notes",
-                  "data_status", "data_notes"):
-        value = profile.get(field)
-        if value is not None and not isinstance(value, str):
-            raise ValueError(f"{field} phải là chuỗi hoặc null.")
-    materials = profile.get("assignment_materials", [])
-    if not isinstance(materials, list) or not all(isinstance(x, str) for x in materials):
-        raise ValueError("assignment_materials phải là danh sách chuỗi.")
-    if "context_revision" in profile and (type(profile["context_revision"]) is not int or profile["context_revision"] < 1):
-        raise ValueError("context_revision phải là số nguyên dương.")
+    validate_profile(profile)
     return profile
 
 
 def assemble(task: str, profile: dict | None = None, *, root: Path = ROOT,
              state: dict | None = None, request: str | None = None) -> str:
-    if task not in TASKS:
+    if not isinstance(task, str) or task not in TASKS:
         raise ValueError(f"Không có công đoạn {task!r}.")
+    gate = evaluate_gate(profile, state, task)
     style = (profile or {}).get("citation_style", "Harvard")
-    if style not in {"Harvard", "APA"}:
-        raise ValueError("citation_style chỉ nhận Harvard hoặc APA.")
     core = (root / "rules/core.vi.md").read_text(encoding="utf-8")
     if core.count("{{CITATION_STYLE}}") != 1:
         raise ValueError("Quy tắc phải có đúng một biến CITATION_STYLE.")
     sections = [core.replace("{{CITATION_STYLE}}", style).rstrip()]
     for name in ("project-dialogue.vi.md", "request-refinement.vi.md", "candid-review.vi.md"):
         sections.append((root / "rules" / name).read_text(encoding="utf-8").rstrip())
-    gate = evaluate_gate(profile, state, task)
     selected_task = task if gate["can_execute"] or task in {"intake", "clarify"} else "clarify"
     sections.append((root / "prompts" / TASKS[selected_task]).read_text(encoding="utf-8").rstrip())
     sections.append(

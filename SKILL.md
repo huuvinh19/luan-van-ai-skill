@@ -88,6 +88,8 @@ Chỉ hỏi thông tin cần cho phạm vi hiện tại. Chưa chọn được p
 
 ## Chờ xác nhận cách hiểu
 
+Đây là đối chiếu cách hiểu trong quy trình người viết đã chọn, không phải xin thêm quyền thực hiện. Một yêu cầu đầy đủ chưa tự xác nhận bản tóm tắt chưa được trình bày. Ở bước này, chỉ tóm tắt và hỏi xác nhận; chưa kèm bản nháp, kể cả khi đã đủ dữ kiện. Được kiểm tra và phản biện dữ kiện để làm rõ đầu vào trước đó.
+
 Khi các điểm ảnh hưởng cách làm đã được giải quyết, tóm tắt ngắn bằng lời cụ thể: “Tao hiểu dự án là…, phần cần làm là…, dùng…, đầu ra…, tiêu chí…”. Nêu rõ lựa chọn chưa áp dụng nếu cần. Hỏi người viết xác nhận hoặc sửa cách hiểu này trước khi triển khai lần đầu. Nếu câu trả lời bổ sung hoặc thay đổi điều quan trọng, cập nhật và làm rõ tiếp. Chỉ nhận xác nhận gắn với bản tóm tắt hiện hành; không mang một lời đồng ý cũ sang đề hoặc phạm vi khác.
 
 ## Được triển khai và tiếp tục dự án
