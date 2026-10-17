@@ -11,3 +11,5 @@ Repo này là bộ sưu tập nhiều thành phần; không cấp một giấy p
 | thesis-workbench | Phần mới MIT; snapshot prompt CC0; xem LICENSE, THIRD_PARTY_NOTICES.md và LICENSES/ bên trong |
 
 Giữ attribution và giấy phép khi phân phối từng thành phần. Nội dung gốc từ URL bên ngoài không tự đổi sang giấy phép repo. Các cấu hình và ví dụ ở đây phục vụ bộ công cụ của người viết; không chứa dữ liệu khảo sát hoặc bản luận văn thật.
+
+NOTICE gốc được lưu nguyên văn; các liên kết tương đối bên trong thuộc repository nguồn. Đọc [NOTICE tại commit đã ghim](https://github.com/Imbad0202/academic-research-skills/blob/ebc21bf2429643fe4c2495aa99e1bbacd926772b/NOTICE.md) để theo các liên kết đó.

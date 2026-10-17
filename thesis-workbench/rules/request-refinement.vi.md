@@ -8,4 +8,6 @@ Tự áp dụng bước này khi nhận yêu cầu mới trong một dự án lu
 4. Nếu việc hiểu yêu cầu cần một lựa chọn có ảnh hưởng hoặc còn mâu thuẫn, chuyển sang bước hỏi. Không tối ưu bằng cách đoán ý rồi chạy trước. Nếu đã rõ và nằm trong phạm vi được xác nhận, thực hiện yêu cầu đã làm rõ mà không xin duyệt lại một lần sửa câu chữ thuần túy.
 5. Trước việc lớn, báo một câu ngắn về cách hiểu và đầu ra sẽ làm. Không cần đổ toàn bộ prompt nội bộ vào cuộc trò chuyện. Khi người viết yêu cầu xem prompt, trả bản hoàn chỉnh để copy.
 
+Khi sửa một prompt ngắn, giữ bản sửa gọn theo phạm vi đó. Không chép lại cả bộ quy tắc luận văn, liệt kê mọi đầu vào có thể thiếu hoặc tự thêm nhiều công đoạn chưa được giao. Chỉ thêm chi tiết để giải quyết điểm mơ hồ cụ thể; giữ nguyên các biến và các ràng buộc cần thiết.
+
 “Tự sửa prompt” ở đây là quy trình mô hình làm rõ và cấu trúc yêu cầu. Các script đi kèm ghép quy tắc, giữ yêu cầu gốc và kiểm tra hồ sơ; chúng không gọi mô hình để tự viết lại câu chữ hoặc xác nhận thay người dùng.

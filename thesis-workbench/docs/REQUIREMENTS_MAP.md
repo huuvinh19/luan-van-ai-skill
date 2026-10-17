@@ -2,6 +2,8 @@
 
 | Yêu cầu | Nơi thực hiện |
 | --- | --- |
+| Chỉ tuyển prompt liên quan luận văn từ prompts.chat | 12 prompt có nguồn/hash trong upstream/manifest.json; công đoạn điều chỉnh trong PROVENANCE.md |
+| Tích hợp skill tối ưu prompt từ linshenkx/prompt-optimizer | skills/prompt-optimizer ở gốc repo; module optimize; request-refinement |
 | Đọc đề, rubric, dàn ý và tài liệu trước khi làm | `rules/core.vi.md` mục 1; module intake; `requirements.csv` |
 | Tách yêu cầu bắt buộc/gợi ý; hỏi đến khi hiểu phạm vi hiện tại | Mục 1; project-dialogue; intake/clarify; trạng thái câu hỏi trong project_state.json |
 | Giải thích ngắn, viết tự nhiên, có chiều sâu | Mục 2–3; draft; literature; review |
@@ -10,6 +12,7 @@
 | Không bịa dữ liệu, kết quả hoặc nguồn | Mục 2–4; sources; methodology; analysis |
 | Không lẫn lời dẫn chatbot; giọng văn nhất quán | Mục 3 và 5; draft; export |
 | Harvard mặc định; chuyển APA nếu giảng viên yêu cầu | Mục 4; project.json; build_prompt.py; citations |
+| Không giả nhận đã đọc đúng mẫu trích dẫn khi ảnh thiếu/không mở được | Mục 4; CITATION_POLICY; instructor_citation_guide để null khi chưa có |
 | Tác giả–năm cuối đúng câu, trước dấu chấm | Mục 4; CITATION_POLICY; citations |
 | Trích nguyên văn có ngoặc kép/định vị | Mục 4; CITATION_POLICY; citations |
 | Danh mục alphabet, metadata và đối chiếu hai chiều | Mục 4; CITATION_POLICY; citations |
@@ -24,3 +27,5 @@
 | Tự chấm công tâm, không ưu ái bài do mình viết hoặc tự cho điểm | candid-review; self-review.json; audit_self_review.py |
 
 Bảng này đối chiếu thiết kế chỉ dẫn với yêu cầu. Nó không phải kết quả đánh giá một luận văn cụ thể và không chứng nhận rằng mô hình luôn thực hiện đúng mọi chỉ dẫn.
+
+Kết quả đối chiếu nguồn, các điểm đã sửa và giới hạn còn lại: [đợt rà ngày 2026-10-17](AUDIT_2026-10-17.md).

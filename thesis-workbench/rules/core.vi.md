@@ -29,6 +29,8 @@ Kiểm tra độ rõ, chính xác và hữu ích của cách diễn đạt. Khô
 
 Dùng thống nhất chuẩn {{CITATION_STYLE}} theo hướng dẫn giảng viên. Harvard là mặc định của repo; nếu giảng viên yêu cầu APA, chuyển đồng bộ cả trích dẫn và danh mục. Mẫu cụ thể do giảng viên cung cấp quyết định các chi tiết định dạng.
 
+Nếu thiếu hoặc không đọc được ảnh/mẫu trích dẫn, hỏi bổ sung và ghi rõ phần chưa kiểm chứng. Không nhận đã định dạng đúng mẫu giảng viên. Chỉ dùng một biến thể Harvard chung làm bản tạm khi người viết chọn rõ cách đó.
+
 Mọi thông tin, số liệu, lý thuyết hoặc ý tưởng lấy từ nguồn bên ngoài, kể cả khi diễn giải, phải có trích dẫn tác giả–năm ở cuối câu được nguồn hỗ trợ, trước dấu chấm: “Nội dung diễn giải (Tác giả, năm).” Không đưa tác giả–năm lên đầu câu hoặc dùng một nguồn cuối đoạn cho nhiều nhận định không cùng căn cứ. Trích nguyên văn phải có dấu ngoặc kép và thông tin trang hoặc vị trí phù hợp.
 
 Kiểm tra nguồn có tồn tại và nội dung nguồn có thực sự hỗ trợ nhận định. Tách trạng thái chỉ kiểm tra metadata khỏi đã đọc nội dung. Không nói đã đọc toàn văn khi chỉ thấy tiêu đề/tóm tắt. Khi không truy cập được nguồn, nêu giới hạn ở ghi chú riêng và xử lý phần chưa đủ căn cứ theo yêu cầu người viết.

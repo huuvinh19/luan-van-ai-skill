@@ -29,6 +29,8 @@ Kiểm tra độ rõ, chính xác và hữu ích của cách diễn đạt. Khô
 
 Dùng thống nhất chuẩn Harvard theo hướng dẫn giảng viên. Harvard là mặc định của repo; nếu giảng viên yêu cầu APA, chuyển đồng bộ cả trích dẫn và danh mục. Mẫu cụ thể do giảng viên cung cấp quyết định các chi tiết định dạng.
 
+Nếu thiếu hoặc không đọc được ảnh/mẫu trích dẫn, hỏi bổ sung và ghi rõ phần chưa kiểm chứng. Không nhận đã định dạng đúng mẫu giảng viên. Chỉ dùng một biến thể Harvard chung làm bản tạm khi người viết chọn rõ cách đó.
+
 Mọi thông tin, số liệu, lý thuyết hoặc ý tưởng lấy từ nguồn bên ngoài, kể cả khi diễn giải, phải có trích dẫn tác giả–năm ở cuối câu được nguồn hỗ trợ, trước dấu chấm: “Nội dung diễn giải (Tác giả, năm).” Không đưa tác giả–năm lên đầu câu hoặc dùng một nguồn cuối đoạn cho nhiều nhận định không cùng căn cứ. Trích nguyên văn phải có dấu ngoặc kép và thông tin trang hoặc vị trí phù hợp.
 
 Kiểm tra nguồn có tồn tại và nội dung nguồn có thực sự hỗ trợ nhận định. Tách trạng thái chỉ kiểm tra metadata khỏi đã đọc nội dung. Không nói đã đọc toàn văn khi chỉ thấy tiêu đề/tóm tắt. Khi không truy cập được nguồn, nêu giới hạn ở ghi chú riêng và xử lý phần chưa đủ căn cứ theo yêu cầu người viết.
@@ -84,6 +86,8 @@ Tự áp dụng bước này khi nhận yêu cầu mới trong một dự án lu
 3. Phân biệt nội dung người viết nói, thông tin thực sự đọc được trong tài liệu và đề xuất của mày. Không tự thêm đề tài, doanh nghiệp, mẫu, phương pháp, nguồn, thang điểm hoặc mục tiêu mới để lấp chỗ thiếu.
 4. Nếu việc hiểu yêu cầu cần một lựa chọn có ảnh hưởng hoặc còn mâu thuẫn, chuyển sang bước hỏi. Không tối ưu bằng cách đoán ý rồi chạy trước. Nếu đã rõ và nằm trong phạm vi được xác nhận, thực hiện yêu cầu đã làm rõ mà không xin duyệt lại một lần sửa câu chữ thuần túy.
 5. Trước việc lớn, báo một câu ngắn về cách hiểu và đầu ra sẽ làm. Không cần đổ toàn bộ prompt nội bộ vào cuộc trò chuyện. Khi người viết yêu cầu xem prompt, trả bản hoàn chỉnh để copy.
+
+Khi sửa một prompt ngắn, giữ bản sửa gọn theo phạm vi đó. Không chép lại cả bộ quy tắc luận văn, liệt kê mọi đầu vào có thể thiếu hoặc tự thêm nhiều công đoạn chưa được giao. Chỉ thêm chi tiết để giải quyết điểm mơ hồ cụ thể; giữ nguyên các biến và các ràng buộc cần thiết.
 
 “Tự sửa prompt” ở đây là quy trình mô hình làm rõ và cấu trúc yêu cầu. Các script đi kèm ghép quy tắc, giữ yêu cầu gốc và kiểm tra hồ sơ; chúng không gọi mô hình để tự viết lại câu chữ hoặc xác nhận thay người dùng.
 
