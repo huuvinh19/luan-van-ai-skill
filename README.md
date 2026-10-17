@@ -9,7 +9,11 @@ AI cần góp ý thẳng, giải thích dễ hiểu và tự kiểm tra trước
 Dán câu này vào AI có thể mở link:
 
 ```text
-Đọc SKILL.md tại https://github.com/huuvinh19/luan-van-ai-skill và áp dụng cho dự án luận văn này. Hỏi rõ những điểm còn thiếu trước khi viết; tóm tắt cách hiểu để tao xác nhận.
+Đọc và áp dụng SKILL.md tại:
+https://github.com/huuvinh19/luan-van-ai-skill
+
+Hỏi rõ những điểm còn thiếu trước khi viết.
+Tóm tắt cách hiểu để tao xác nhận.
 ```
 
 Sau đó gửi đề, tiêu chí chấm và tài liệu đang có. Không cần tải hay giải nén. Nếu AI không mở được link, dán [nội dung SKILL.md](SKILL.md) vào chat.
