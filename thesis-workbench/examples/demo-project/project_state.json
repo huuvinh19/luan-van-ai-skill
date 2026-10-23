@@ -3,8 +3,39 @@
   "brief_summary": "GIẢ LẬP để kiểm thử: tính trung bình 10,20,30, trả trong chat, không phải dự án luận văn thực tế.",
   "user_confirmation": {
     "message": "GIẢ LẬP CHO UNIT TEST: đồng ý phạm vi ví dụ.",
-    "profile_sha256": "e48cd8b4906d9aacf5e40ce54033e8a5018552f61da685bcf8c701c25e6e8226",
-    "brief_sha256": "5cb8dc07010b2da6342073a0725ea303108a5e7e90eb39814f16aff538a9ea5f"
+    "profile_sha256": "444d9946a56c13036144a3679f6a2937748eb91c13dcd8d5199cc71dd087338c",
+    "brief_sha256": "5cb8dc07010b2da6342073a0725ea303108a5e7e90eb39814f16aff538a9ea5f",
+    "memory_sha256": "3d6073ef0988675a3a9349c86516d02b7c74fb7253c06fc00afb2c0861d33aae"
   },
-  "open_questions": []
+  "open_questions": [],
+  "active_prompt": {
+    "task": "analysis",
+    "reason": "GIẢ LẬP: minh họa phép tính trên dữ liệu có sẵn.",
+    "content": "# Phân tích dữ liệu marketing\n\nKiểm tra cấu trúc dữ liệu, đơn vị, mã biến, giá trị thiếu, ngoại lệ và các bước xử lý trước khi phân tích. Bảo toàn dữ liệu gốc; ghi các biến đổi và lựa chọn loại mẫu. Chọn thống kê, mã hóa hoặc mô hình theo câu hỏi và điều kiện dữ liệu; không chạy tất cả kiểm định chỉ vì có sẵn.\n\nNếu thực thi được, lưu mã/lệnh, dữ liệu đầu vào và output thực tế. Nếu chỉ có ảnh kết quả, đọc đúng chỉ số nhìn thấy; phần không rõ cần được xác minh. Không trình bày hướng dẫn chạy phần mềm như kết quả đã chạy.\n\nDiễn giải chiều, độ lớn, đơn vị, độ bất định và ý nghĩa thực tế của kết quả theo phương pháp phù hợp. Phân biệt có ý nghĩa thống kê với hữu ích trong marketing; phân biệt tương quan và quan hệ nhân quả. Với định tính, gắn chủ đề với dữ liệu thực tế và xem xét trường hợp trái chiều.\n\nĐặt bảng/hình hoặc bằng chứng phần mềm được yêu cầu cạnh phần giải thích tương ứng. Biểu đồ phải phản ánh dữ liệu gốc, có nhãn, đơn vị và nguồn rõ. Trả kết quả, diễn giải và giới hạn, kèm bằng chứng thực thi nếu có.\n"
+  },
+  "project_memory": {
+    "profile_sha256": "444d9946a56c13036144a3679f6a2937748eb91c13dcd8d5199cc71dd087338c",
+    "requirements": [
+      {
+        "id": "R1",
+        "text": "GIẢ LẬP: tính trung bình 10,20,30.",
+        "kind": "required",
+        "origin": "Phạm vi tự xác định trong ví dụ công cụ.",
+        "check": "Đối chiếu data_demo.csv và phép tính tổng chia 3."
+      }
+    ],
+    "outline": [
+      {
+        "id": "O1",
+        "title": "GIẢ LẬP: kết quả và diễn giải",
+        "requirement_ids": [
+          "R1"
+        ],
+        "evidence_needed": "data_demo.csv và output_demo.txt; tự đối chiếu phép tính."
+      }
+    ]
+  },
+  "known_errors": [
+    "GIẢ LẬP: không gọi dữ liệu demo là khảo sát thật."
+  ]
 }

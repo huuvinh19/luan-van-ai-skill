@@ -20,5 +20,6 @@
   "rubric_notes": "GIẢ LẬP: không chấm BTEC; chỉ kiểm tra công cụ.",
   "data_status": "provided",
   "data_notes": "GIẢ LẬP: data_demo.csv, output_demo.txt",
-  "context_revision": 1
+  "context_revision": 1,
+  "target_outcome": "GIẢ LẬP: tính đúng trung bình ba giá trị, không chấm điểm."
 }

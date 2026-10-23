@@ -13,3 +13,5 @@ Người viết có thể chat trực tiếp mà không có prompt. Nếu chưa 
 Đọc [danh mục công đoạn](thesis-workbench/prompts/README.md) và module liên quan khi cần. Giữ nguyên attribution và snapshot bên thứ ba. Không đưa bản thảo, dữ liệu khảo sát cá nhân hoặc khóa API vào repo công khai.
 
 Khi sửa bộ công cụ, sửa nguồn trong `thesis-workbench/rules/`, chạy `python scripts/build_skill.py`, sau đó `python scripts/build_skill.py --check`, `python thesis-workbench/scripts/verify_repo.py` và `python -m unittest discover -s thesis-workbench/tests -v`. Không sửa riêng bản tổng rồi bỏ quên nguồn. Dùng tên trung tính trong nội dung dùng chung; không tự điền danh tính người học vào mẫu.
+
+Sau phần hỏi bối cảnh, bắt buộc tự chọn và giữ prompt, lấy đề/tiêu chí/mục tiêu còn thiếu, bóc từng yêu cầu thành dàn ý có mã liên kết. Dùng hồ sơ dự án xuyên suốt để viết/sửa và kiểm tra cả dàn ý với đề gốc. Quy tắc cốt lõi ở thesis-workbench/rules/project-memory.vi.md; không hứa nhớ vĩnh viễn hoặc đưa dự án riêng vào repo công khai.

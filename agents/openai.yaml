@@ -1,4 +1,4 @@
 interface:
   display_name: "Luận Văn AI Skill"
-  short_description: "Hỏi rõ dự án, viết luận và phản biện có căn cứ"
-  default_prompt: "Dùng $luan-van-ai-skill để hỗ trợ luận văn của tôi, hỏi rõ dự án trước khi viết và kiểm tra nguồn trước khi trích dẫn."
+  short_description: "Chọn prompt, giữ yêu cầu và viết luận có căn cứ"
+  default_prompt: "Dùng $luan-van-ai-skill để hỗ trợ luận văn của tôi, hỏi rõ bối cảnh, chọn và giữ prompt phù hợp, lấy đề/tiêu chí/mục tiêu, lập dàn ý rồi đối chiếu khi viết và sửa."

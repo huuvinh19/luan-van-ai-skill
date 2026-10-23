@@ -12,7 +12,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_prompt import TASKS, assemble
-from project_gate import TASK_NAMES, brief_fingerprint, evaluate_gate, profile_fingerprint
+from project_gate import TASK_NAMES, brief_fingerprint, evaluate_gate, profile_fingerprint, memory_fingerprint
 
 
 class ProjectGateTests(unittest.TestCase):
@@ -24,6 +24,8 @@ class ProjectGateTests(unittest.TestCase):
         # All confirmations in these fixtures are explicitly synthetic test data.
         self.state["user_confirmation"]["profile_sha256"] = profile_fingerprint(self.profile)
         self.state["user_confirmation"]["brief_sha256"] = brief_fingerprint(self.state["brief_summary"])
+        self.state["project_memory"]["profile_sha256"] = profile_fingerprint(self.profile)
+        self.state["user_confirmation"]["memory_sha256"] = memory_fingerprint(self.state)
 
     def test_blank_context_asks_in_rounds_and_cannot_execute(self):
         result = evaluate_gate(None, None, "draft")
@@ -58,7 +60,7 @@ class ProjectGateTests(unittest.TestCase):
             with self.subTest(field=field):
                 profile = copy.deepcopy(self.profile)
                 profile[field] = value
-                self.assertEqual(evaluate_gate(profile, self.state, "draft")["status"], "confirm")
+                self.assertEqual(evaluate_gate(profile, self.state, "draft")["status"], "plan")
 
     def test_template_does_not_preselect_the_users_discipline(self):
         template = json.loads((ROOT / "templates/project.json").read_text(encoding="utf-8"))
@@ -68,15 +70,16 @@ class ProjectGateTests(unittest.TestCase):
 
     def test_following_round_asks_project_details_after_course_and_discipline(self):
         profile = {"course_name": "Software Engineering (GIẢ LẬP)", "discipline": "IT"}
-        result = evaluate_gate(profile, None, "draft")
+        result = evaluate_gate(profile, self.state, "draft")
         self.assertEqual(result["intake_stage"], "project_details")
-        self.assertEqual([q["id"] for q in result["questions"]], ["topic", "scope", "format"])
+        self.assertEqual([q["id"] for q in result["questions"]], ["assignment", "rubric", "target_outcome"])
         self.assertGreater(result["remaining_blocker_count"], 0)
         self.assertNotIn("course", {q["id"] for q in result["all_blockers"]})
         self.assertNotIn("discipline", {q["id"] for q in result["all_blockers"]})
 
     def test_complete_fields_without_confirmation_still_wait(self):
-        self.assertEqual(evaluate_gate(self.profile, None, "draft")["status"], "confirm")
+        self.state["user_confirmation"] = None
+        self.assertEqual(evaluate_gate(self.profile, self.state, "draft")["status"], "confirm")
 
     def test_confirmed_unchanged_project_continues_across_tasks(self):
         for task in ("draft", "review", "citations", "analysis"):
@@ -87,7 +90,7 @@ class ProjectGateTests(unittest.TestCase):
 
     def test_changed_topic_invalidates_old_confirmation(self):
         self.profile["topic"] = "Đề tài GIẢ LẬP khác"
-        self.assertEqual(evaluate_gate(self.profile, self.state, "draft")["status"], "confirm")
+        self.assertEqual(evaluate_gate(self.profile, self.state, "draft")["status"], "plan")
 
     def test_changed_brief_invalidates_old_confirmation(self):
         self.state["brief_summary"] += " Phạm vi GIẢ LẬP mới."
@@ -95,7 +98,7 @@ class ProjectGateTests(unittest.TestCase):
 
     def test_changed_context_revision_invalidates_old_confirmation(self):
         self.profile["context_revision"] += 1
-        self.assertEqual(evaluate_gate(self.profile, self.state, "review")["status"], "confirm")
+        self.assertEqual(evaluate_gate(self.profile, self.state, "review")["status"], "plan")
 
     def test_open_question_blocks_affected_task_only(self):
         self.state["open_questions"] = [{"id": "Q001", "question": "Mã biến GIẢ LẬP nào đang đúng?",
@@ -176,7 +179,7 @@ class ProjectGateTests(unittest.TestCase):
         self.assertIn("# Làm rõ dự án trước khi triển khai", content)
         self.assertNotIn("# Viết phần luận văn được giao", content)
         self.assertIn("Làm luôn {{topic}} với ${data}", content)
-        self.assertIn('"status": "confirm"', content)
+        self.assertIn('"status": "select_prompt"', content)
 
     def test_ready_build_uses_requested_module(self):
         content = assemble("draft", self.profile, state=self.state)
@@ -201,7 +204,7 @@ class ProjectGateTests(unittest.TestCase):
             (project / "project_state.json").unlink()
             waiting = subprocess.run([sys.executable, script, "--project", str(project)], capture_output=True, text=True)
             self.assertEqual(waiting.returncode, 1, waiting.stderr)
-            self.assertEqual(json.loads(waiting.stdout)["status"], "confirm")
+            self.assertEqual(json.loads(waiting.stdout)["status"], "select_prompt")
             (project / "project_state.json").write_text("[]", encoding="utf-8")
             invalid = subprocess.run([sys.executable, script, "--project", str(project)], capture_output=True, text=True)
             self.assertEqual(invalid.returncode, 2)

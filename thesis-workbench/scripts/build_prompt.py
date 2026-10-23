@@ -45,14 +45,14 @@ def assemble(task: str, profile: dict | None = None, *, root: Path = ROOT,
     if core.count("{{CITATION_STYLE}}") != 1:
         raise ValueError("Quy tắc phải có đúng một biến CITATION_STYLE.")
     sections = [core.replace("{{CITATION_STYLE}}", style).rstrip()]
-    for name in ("project-dialogue.vi.md", "request-refinement.vi.md", "candid-review.vi.md"):
+    for name in ("project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md"):
         sections.append((root / "rules" / name).read_text(encoding="utf-8").rstrip())
-    selected_task = task if gate["can_execute"] or task in {"intake", "clarify"} else "clarify"
+    selected_task = "outline" if gate["status"] == "plan" else task if gate["can_execute"] or task in {"intake", "clarify"} else "clarify"
     sections.append((root / "prompts" / TASKS[selected_task]).read_text(encoding="utf-8").rstrip())
     sections.append(
         "# Trạng thái chuẩn bị công việc\n\n"
         "Trạng thái dưới đây kiểm tra các khai báo trong hồ sơ, không chứng minh mô hình đã hiểu đúng. "
-        "Còn mâu thuẫn thực tế thì vẫn phải hỏi. Khi clarify hoặc confirm, chưa viết/phân tích bài. "
+        "Còn mâu thuẫn thực tế thì vẫn phải hỏi. Khi clarify, select_prompt hoặc confirm, chưa viết/phân tích bài. plan chỉ cho phép bóc tách yêu cầu và lập dàn ý chuẩn bị. "
         "prompt_only chỉ cho phép sửa prompt, không thực hiện bài luận.\n\n"
         "```json\n" + json.dumps(gate, ensure_ascii=False, indent=2) + "\n```"
     )

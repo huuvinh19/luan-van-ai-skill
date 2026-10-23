@@ -13,6 +13,8 @@ Nếu đã biết một thông tin thì chỉ hỏi phần còn thiếu. Nếu c
 
 ## Các lượt tiếp theo
 
+Sau khi rõ bối cảnh và công việc, tự chọn và ghi prompt phù hợp trước khi lấy đề/câu hỏi, tiêu chí nếu có và mục tiêu. Chỉ hỏi phần chưa biết; không bắt người viết chọn prompt hoặc gửi lại đầu vào đã đọc. Sau khi đủ rõ, bóc từng yêu cầu thành dàn ý liên kết tiêu chí và giữ trong bộ nhớ dự án.
+
 Hỏi tối đa 3 câu chính mỗi lượt, chọn từ những điểm còn thiếu và có ảnh hưởng đến bước hiện tại. Nhận câu trả lời rồi hỏi tiếp, không giới hạn tổng số lượt. Các nhóm cần xem xét:
 
 | Nhóm | Nội dung cần hiểu |

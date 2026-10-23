@@ -29,7 +29,7 @@ python scripts/project_gate.py --project examples/demo-project --task review
 
 Đọc `project.json` và `project_state.json` nếu có. `clarify` là còn câu hỏi; `confirm` là cần xác nhận bản tóm tắt; `ready` là hồ sơ khai báo cho phép triển khai. Exit 1 khi chưa sẵn sàng, 0 khi ready hoặc chỉ tối ưu prompt, 2 khi lỗi đầu vào. Câu hỏi được chia lượt tối đa 3 câu; vẫn giữ toàn bộ điểm chưa giải quyết để không bỏ sót.
 
-Chỉ sau xác nhận thực tế mới lưu message, profile_sha256 và brief_sha256 tương ứng. Không dùng fingerprint để tự tạo sự đồng ý. Đây là kiểm tra trạng thái khai báo, không chứng minh người viết đã xác nhận hoặc mô hình đã hiểu đúng. Mô hình phải hỏi tiếp nếu phát hiện mâu thuẫn ngay cả khi trạng thái máy là ready. Xem [PROJECT_DIALOGUE](PROJECT_DIALOGUE.md).
+Chỉ sau xác nhận thực tế mới lưu message, profile_sha256, brief_sha256 và memory_sha256 tương ứng. Không dùng fingerprint để tự tạo sự đồng ý. Đây là kiểm tra trạng thái khai báo, không chứng minh người viết đã xác nhận hoặc mô hình đã hiểu đúng. Mô hình phải hỏi tiếp nếu phát hiện mâu thuẫn ngay cả khi trạng thái máy là ready. Xem [PROJECT_DIALOGUE](PROJECT_DIALOGUE.md).
 
 ## Kiểm tra hồ sơ dự án
 
@@ -71,3 +71,9 @@ python -m unittest discover -s tests -v
 `verify_repo.py` đối chiếu hash snapshot được phân phối, JSON/CSV gốc, prompt tổng so với nguồn và các liên kết nội bộ. Manifest giúp phát hiện thay đổi so với bản đã ghi nhận, không phải chữ ký số xác thực độc lập. Tests bao gồm lỗi hồ sơ, bảo toàn biến trong bối cảnh, chuyển chuẩn trong prompt và snapshot bị sửa.
 
 Thay quy tắc/module thì sinh lại `PROMPT_LUAN_VAN.md`, chạy kiểm tra và tests. Khi cập nhật kho prompt upstream, giữ nguyên metadata tác giả, ghi commit mới, tuyển lại có đọc nội dung và cập nhật manifest/provenance; không tự nhập tất cả prompt làm chỉ dẫn thi hành.
+
+## Chọn prompt và bộ nhớ từ 1.3.0
+
+Gate có thêm select_prompt và plan, đều chưa cho thực hiện nội dung bài. select_prompt yêu cầu trợ lý chọn và giữ task/reason/content trong active_prompt trước khi lấy bộ đề/tiêu chí/mục tiêu còn thiếu. plan chuyển builder sang module outline để bóc tách yêu cầu và dàn ý. project_memory phải gắn với profile hiện hành; từng yêu cầu bắt buộc phải có mục dàn ý liên kết. Thay bảng yêu cầu/dàn ý làm xác nhận cũ hết hiệu lực.
+
+Script không gọi mô hình để chọn prompt, không tự ghi prompt hoặc lời xác nhận và không đánh giá đầy đủ từng ý trong đề gốc. AI thực hiện việc đọc/chọn/ghi hồ sơ; công cụ chỉ kiểm tra khai báo, liên kết và fingerprint. known_errors được giữ trong prompt ngữ cảnh để đọc lại, không chứng minh lỗi đã được tránh trên bài thật. Hồ sơ cũ thiếu trường mới phải bổ sung theo đầu vào thật, không tự đánh dấu ready.

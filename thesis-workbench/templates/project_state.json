@@ -2,5 +2,8 @@
   "schema_version": 1,
   "brief_summary": null,
   "user_confirmation": null,
-  "open_questions": []
+  "open_questions": [],
+  "active_prompt": null,
+  "project_memory": null,
+  "known_errors": []
 }

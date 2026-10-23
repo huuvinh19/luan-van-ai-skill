@@ -25,7 +25,7 @@ def validate_profile(profile: dict) -> None:
                   "topic", "research_question", "current_scope", "language",
                   "instructor_citation_guide", "target_language", "output_format",
                   "assignment_status", "assignment_notes", "rubric_status", "rubric_notes",
-                  "data_status", "data_notes"):
+                  "data_status", "data_notes", "target_outcome"):
         value = profile.get(field)
         if value is not None and not isinstance(value, str):
             raise ValueError(f"{field} phải là chuỗi hoặc null.")
@@ -45,6 +45,67 @@ def brief_fingerprint(summary: str) -> str:
     return hashlib.sha256(summary.encode("utf-8")).hexdigest()
 
 
+def memory_fingerprint(state: dict) -> str:
+    return profile_fingerprint(state.get("project_memory"))
+
+
+def validate_memory(state: dict) -> None:
+    prompt = state.get("active_prompt")
+    if prompt is not None:
+        if not isinstance(prompt, dict):
+            raise ValueError("active_prompt phải là object hoặc null.")
+        for field in ("task", "reason", "content"):
+            if not isinstance(prompt.get(field), str) or not prompt[field].strip():
+                raise ValueError(f"active_prompt.{field} phải có nội dung.")
+        if prompt["task"] not in TASK_NAMES:
+            raise ValueError("active_prompt.task không hợp lệ.")
+    errors = state.get("known_errors", [])
+    if not isinstance(errors, list) or not all(isinstance(x, str) and x.strip() for x in errors):
+        raise ValueError("known_errors phải là danh sách chuỗi có nội dung.")
+    memory = state.get("project_memory")
+    if memory is None:
+        return
+    if not isinstance(memory, dict) or not isinstance(memory.get("profile_sha256"), str):
+        raise ValueError("project_memory cần object có profile_sha256.")
+    ids = set()
+    for key, fields in (("requirements", ("id", "text", "origin", "check")),
+                        ("outline", ("id", "title", "evidence_needed"))):
+        rows = memory.get(key)
+        if not isinstance(rows, list):
+            raise ValueError(f"project_memory.{key} phải là danh sách.")
+        seen = set()
+        for row in rows:
+            if not isinstance(row, dict) or any(not isinstance(row.get(f), str) or not row[f].strip() for f in fields):
+                raise ValueError(f"Mỗi mục {key} cần {', '.join(fields)} có nội dung.")
+            if row["id"] in seen:
+                raise ValueError(f"ID trong {key} không được trùng.")
+            seen.add(row["id"])
+            if key == "requirements":
+                if row.get("kind") not in ("required", "suggestion"):
+                    raise ValueError("Yêu cầu phải phân biệt required hoặc suggestion.")
+                ids.add(row["id"])
+            else:
+                refs = row.get("requirement_ids")
+                if not isinstance(refs, list) or not refs or not all(isinstance(x, str) and x in ids for x in refs):
+                    raise ValueError("Mỗi mục dàn ý cần liên kết mã yêu cầu thực sự có trong hồ sơ.")
+
+
+def memory_gaps(state: dict | None, digest: str) -> list[str]:
+    memory = (state or {}).get("project_memory")
+    if not memory:
+        return ["Chưa bóc tách yêu cầu và lập dàn ý."]
+    gaps = []
+    if memory["profile_sha256"] != digest:
+        gaps.append("Đề/mục tiêu/phạm vi đã đổi; cần cập nhật bảng yêu cầu và dàn ý.")
+    if not memory["requirements"] or not memory["outline"]:
+        gaps.append("Bảng yêu cầu và dàn ý chưa có nội dung.")
+    covered = {rid for section in memory["outline"] for rid in section["requirement_ids"]}
+    missing = [r["id"] for r in memory["requirements"] if r["kind"] == "required" and r["id"] not in covered]
+    if missing:
+        gaps.append("Dàn ý chưa bao phủ yêu cầu bắt buộc: " + ", ".join(missing))
+    return gaps
+
+
 def load_state(path: Path) -> dict:
     state = json.loads(path.read_text(encoding="utf-8-sig"))
     validate_state(state)
@@ -54,6 +115,7 @@ def load_state(path: Path) -> dict:
 def validate_state(state: dict) -> None:
     if not isinstance(state, dict) or type(state.get("schema_version")) is not int or state["schema_version"] != 1:
         raise ValueError("project_state.json cần object có schema_version=1.")
+    validate_memory(state)
     summary = state.get("brief_summary")
     if summary is not None and not isinstance(summary, str):
         raise ValueError("brief_summary phải là chuỗi hoặc null.")
@@ -143,6 +205,8 @@ def evaluate_gate(profile: dict | None, state: dict | None, task: str) -> dict:
     rubric = profile.get("rubric_status")
     if rubric not in ("provided", "not_applicable") or not (profile.get("rubric_notes") or "").strip():
         ask("rubric", "Có rubric/tiêu chí cụ thể nào phải theo, hay phạm vi này không chấm theo rubric?", "Cần căn cứ kiểm tra kết quả, không tự tạo tiêu chí.")
+    if not (profile.get("target_outcome") or "").strip():
+        ask("target_outcome", "Mục tiêu mày muốn đạt được ở phần việc này là gì?", "Tách mục tiêu mong muốn khỏi tiêu chí chấm thực tế.")
     if task == "analysis":
         if profile.get("data_status") not in ("provided", "not_applicable") or not (profile.get("data_notes") or "").strip():
             ask("data", "Dữ liệu/output nào sẽ dùng, hay mày chỉ cần hướng dẫn phương pháp?", "Chưa rõ căn cứ và phạm vi phân tích.")
@@ -157,22 +221,32 @@ def evaluate_gate(profile: dict | None, state: dict | None, task: str) -> dict:
         and bool(confirmation.get("message", "").strip())
         and confirmation.get("profile_sha256") == digest
         and confirmation.get("brief_sha256") == brief_fingerprint(summary)
+        and confirmation.get("memory_sha256") == memory_fingerprint(state or {})
     )
+    gaps = memory_gaps(state, digest)
     if blockers:
         status, action = "clarify", "Chỉ đọc đầu vào để làm rõ và hỏi tối đa 3 câu chính; chưa triển khai nội dung bài."
+    elif gaps:
+        status, action = "plan", "Bóc tách từng yêu cầu, lập dàn ý liên kết tiêu chí và ghi project_memory; chưa viết/phân tích bài."
     elif not confirmed:
         status, action = "confirm", "Tóm tắt cách hiểu cụ thể, đợi người viết xác nhận; không tự ghi xác nhận."
     else:
         status, action = "ready", "Tiếp tục phạm vi đã được xác nhận; hỏi lại nếu phát hiện điểm mới ảnh hưởng cách làm."
-    questions = identity_questions or blockers[:3]
+    priority = [q for q in blockers if q["id"] in {"assignment", "rubric", "target_outcome"}]
+    questions = identity_questions or (priority + [q for q in blockers if q not in priority])[:3]
+    stage = "course_and_discipline" if identity_questions else "project_details" if blockers else status
     if identity_questions:
         action = "Lượt này chỉ hỏi môn/ngành còn thiếu; chưa triển khai bài. Sau câu trả lời, tiếp tục làm rõ dự án theo ngành thực tế."
+    elif not (state or {}).get("active_prompt"):
+        status, stage, questions = "select_prompt", "prompt_selection", []
+        action = "Trợ lý tự chọn, đọc và ghi prompt phù hợp vào active_prompt (task, reason, content), rồi lấy đề/câu hỏi, tiêu chí nếu có và mục tiêu; không bắt người dùng chọn prompt."
     return {
         "status": status, "can_execute": status == "ready", "requested_task": task,
-        "intake_stage": "course_and_discipline" if identity_questions else "project_details" if blockers else status,
+        "intake_stage": stage,
         "profile_sha256": digest, "questions": questions,
         "brief_sha256": brief_fingerprint(summary) if isinstance(summary, str) else None,
         "remaining_blocker_count": max(0, len(blockers) - len(questions)), "all_blockers": blockers,
+        "memory_gaps": gaps, "memory_sha256": memory_fingerprint(state or {}),
         "semantic_verification": "not_performed", "next_action": action,
     }
 

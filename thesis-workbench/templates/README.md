@@ -55,3 +55,13 @@ Mẫu trống chưa đủ điều kiện nộp. `audit_project.py` sẽ báo th�
 Trong `project_state.json`, `brief_summary` là cách hiểu đã đưa cho người viết xem. Chỉ ghi `user_confirmation` sau khi có xác nhận thực tế, gồm `message`, `profile_sha256` của hồ sơ và `brief_sha256` của bản tóm tắt tương ứng. Không tự tạo câu xác nhận để mở bước làm bài. CLI xuất fingerprint để lưu đúng phiên bản; hash không chứng minh nội dung đã được hiểu đúng.
 
 Mỗi câu hỏi trong `open_questions` có `id`, `question`, `status` (`open`/`resolved`), `blocking` (boolean), `affects` (danh sách task, trống là toàn dự án), và `answer` khi đã resolved. Câu hỏi chưa đến bước cần quyết định có thể ghi blocking=false; việc chọn trạng thái cần đúng bối cảnh, không dùng để lách điểm chưa hiểu. Xem [PROJECT_DIALOGUE](../docs/PROJECT_DIALOGUE.md).
+
+## Prompt và bộ nhớ dự án
+
+project.json có target_outcome: mục tiêu người viết muốn đạt, tách khỏi rubric thật. project_state.json có ba trường mới:
+
+- active_prompt: task, reason và content chứa prompt thực sự được chọn; không chỉ tên hay câu “đã nhớ”. Giữ chỉ dẫn công việc, không lưu suy nghĩ nội bộ.
+- project_memory: profile_sha256, requirements và outline. Mỗi yêu cầu có id, text, kind, origin và check; mỗi mục dàn ý có id, title, requirement_ids và evidence_needed. requirements.csv nếu sử dụng phải giữ cùng mã.
+- known_errors: danh sách lỗi đã gặp và cách tránh, đọc lại trước lần trả tiếp theo.
+
+Bộ mẫu để null khi chưa có thông tin; không điền khống để mở gate. Có thể xem cấu trúc đầy đủ trong project_state.json của ví dụ giả lập. Gate trả select_prompt khi chưa chọn, plan khi chưa có bản đồ yêu cầu/dàn ý hoặc hồ sơ đã đổi. Sau khi người viết xác nhận tóm tắt và kế hoạch, lưu thêm memory_sha256 do gate cung cấp; không tự tạo lời đồng ý. Đổi project_memory làm mất hiệu lực xác nhận cũ, cập nhật nhật ký lỗi thì không. Trong chat không có tệp, giữ các nội dung tương ứng trong ngữ cảnh và xuất khi chuyển chat.

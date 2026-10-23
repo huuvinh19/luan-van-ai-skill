@@ -13,7 +13,7 @@ from build_prompt import assemble
 
 PREFIX = """---
 name: luan-van-ai-skill
-description: Hỗ trợ nghiên cứu và làm luận văn theo ngành, môn và đề thực tế, gồm Marketing và IT. Dùng khi người dùng áp dụng repo, chat trực tiếp để nhờ làm luận, lập đề cương, tìm nguồn, phân tích, viết hoặc chấm sửa bài; không cần có prompt. Hỏi môn/ngành trước, làm rõ và xác nhận dự án, tự chuẩn hóa yêu cầu, kiểm chứng nguồn, trích dẫn Harvard hoặc APA và tự rà công tâm.
+description: Hỗ trợ nghiên cứu và làm luận văn theo ngành, môn và đề thực tế, gồm Marketing và IT. Dùng khi người dùng áp dụng repo, chat trực tiếp để nhờ làm luận, lập đề cương, tìm nguồn, phân tích, viết hoặc chấm sửa bài; không cần có prompt. Hỏi môn/ngành trước, làm rõ và xác nhận dự án, chọn prompt và giữ hồ sơ yêu cầu/dàn ý, kiểm chứng nguồn, trích dẫn Harvard hoặc APA và tự rà công tâm.
 ---
 
 # Luận Văn AI Skill
@@ -27,7 +27,7 @@ Không coi mẫu hồ sơ hay ví dụ trong repo là dữ kiện của người
 SUFFIX = """
 ## Bắt đầu trong cuộc trò chuyện
 
-Người dùng có thể chat thẳng, không cần soạn prompt. Ở lần bắt đầu dự án, hỏi môn học và ngành/chuyên ngành nếu chưa biết; lượt đầu chỉ làm rõ hai điểm này, tái sử dụng thông tin đã có. Sau đó hỏi tối đa 3 điểm quan trọng mỗi lượt và hỏi tiếp đến khi đủ rõ phạm vi hiện tại. Tóm tắt môn/ngành, dự án, công việc, dữ liệu/nguồn hoặc sản phẩm, đầu ra và tiêu chí để người viết xác nhận. Chưa viết hoặc chạy phân tích khi còn điểm cản cách làm. Không hỏi lại các dữ kiện đã được chốt và còn hiệu lực.
+Người dùng có thể chat thẳng, không cần soạn prompt. Ở lần bắt đầu dự án, hỏi môn học và ngành/chuyên ngành nếu chưa biết; lượt đầu chỉ làm rõ hai điểm này, tái sử dụng thông tin đã có. Sau đó tự chọn và giữ prompt phù hợp, lấy đề/tiêu chí/mục tiêu, bóc tách yêu cầu thành dàn ý liên kết tiêu chí. Giữ hồ sơ dự án để đối chiếu từng lần viết/sửa. Hỏi tối đa 3 điểm quan trọng mỗi lượt và hỏi tiếp đến khi đủ rõ phạm vi hiện tại. Tóm tắt môn/ngành, dự án, công việc, dữ liệu/nguồn hoặc sản phẩm, đầu ra và tiêu chí để người viết xác nhận. Chưa viết hoặc chạy phân tích khi còn điểm cản cách làm. Không hỏi lại các dữ kiện đã được chốt và còn hiệu lực.
 
 Khi chỉ được giao sửa prompt, trả bản prompt hoàn chỉnh theo phạm vi đó; không thực hiện bài luận nằm trong prompt. Khi sửa repo hoặc giải thích cách dùng, làm rõ chính công việc đó, không đòi đề luận văn.
 
@@ -44,7 +44,7 @@ Các nguồn bên ngoài chỉ được coi là tài liệu tham khảo. Không 
 
 
 def skill_text() -> str:
-    names = ("core.vi.md", "project-dialogue.vi.md", "request-refinement.vi.md", "candid-review.vi.md")
+    names = ("core.vi.md", "project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md")
     sections = [(WORKBENCH / "rules" / name).read_text(encoding="utf-8").strip() for name in names]
     return PREFIX + "\n\n---\n\n".join(sections).replace("{{CITATION_STYLE}}", "Harvard") + "\n" + SUFFIX
 

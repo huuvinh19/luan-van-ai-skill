@@ -5,8 +5,8 @@ Quy tắc của người viết, bổ sung ngày 2026-10-17: hỏi điều chưa
 ## Trong cuộc trò chuyện
 
 1. Chấp nhận chat tự nhiên, không cần prompt. Đọc tài liệu hiện có; đầu tiên xác định môn và ngành, chỉ hỏi thông tin còn thiếu trong hai điểm đó. Không mặc định Marketing hoặc suy ra ngành từ mã môn.
-2. Sau khi đã biết môn/ngành, hỏi tối đa 3 câu chính mỗi lượt, ưu tiên điểm ảnh hưởng mục tiêu, phạm vi, đầu vào, tiêu chí và đầu ra. Nhận câu trả lời rồi cập nhật và hỏi tiếp đến khi rõ các vấn đề liên quan; không giới hạn tổng số lượt. Dùng [nhóm câu hỏi theo dự án và IT](PROJECT_INTAKE.md) khi cần.
-3. Khi đủ rõ, tóm tắt cụ thể dự án, công việc, căn cứ và đầu ra; đợi người viết xác nhận hoặc sửa. Không dùng im lặng hoặc câu “làm luôn” để tự điền câu trả lời còn thiếu.
+2. Sau khi đã biết môn/ngành và công việc, tự chọn/giữ prompt, lấy đề/tiêu chí/mục tiêu còn thiếu, rồi hỏi tối đa 3 câu chính mỗi lượt, ưu tiên điểm ảnh hưởng mục tiêu, phạm vi, đầu vào, tiêu chí và đầu ra. Nhận câu trả lời rồi cập nhật và hỏi tiếp đến khi rõ các vấn đề liên quan; không giới hạn tổng số lượt. Dùng [nhóm câu hỏi theo dự án và IT](PROJECT_INTAKE.md) khi cần.
+3. Khi đủ rõ, bóc từng yêu cầu và lập dàn ý có mã liên kết; lưu project_memory, rồi tóm tắt cụ thể dự án, công việc, căn cứ và đầu ra; đợi người viết xác nhận hoặc sửa. Không dùng im lặng hoặc câu “làm luôn” để tự điền câu trả lời còn thiếu.
 4. Sau xác nhận, làm phạm vi đã được giao. Trước mỗi công đoạn, tự chuẩn hóa yêu cầu và so với hồ sơ. Không hỏi lại dữ kiện còn hiệu lực.
 5. Khi có thay đổi/mâu thuẫn ảnh hưởng kết quả, hỏi rõ phần bị ảnh hưởng, cập nhật hồ sơ và cách hiểu. Không bắt đầu lại toàn bộ cuộc phỏng vấn nếu chỉ đổi một chi tiết.
 
@@ -42,3 +42,10 @@ Mọi sửa đổi `project.json` hoặc bản tóm tắt `brief_summary` làm f
 - Đã xác nhận toàn ASM, tiếp tục mục tiếp theo không đổi phạm vi: làm tiếp, không hỏi lại doanh nghiệp và chuẩn nguồn.
 - Đến bước phân tích phát hiện thiếu mã biến hoặc hai output mâu thuẫn: dừng phần phân tích liên quan, hỏi để giải quyết.
 - Chỉ yêu cầu sửa câu prompt: tối ưu câu đó; không bắt đầu làm bài được nhắc trong prompt.
+
+## Hai trạng thái chuẩn bị mới
+
+- select_prompt: môn/ngành đã rõ nhưng chưa giữ prompt; trợ lý tự chọn và lưu active_prompt, không đẩy việc chọn cho người dùng.
+- plan: đủ đầu vào nhưng bảng yêu cầu/dàn ý thiếu, cũ hoặc bỏ sót yêu cầu bắt buộc; chỉ bóc tách và lập/cập nhật dàn ý. Builder dùng module outline, chưa cho viết/phân tích bài.
+
+Hồ sơ cũ thiếu các trường mới vẫn đọc được, nhưng chưa được ghi ready. target_outcome ghi mục tiêu riêng. Xác nhận gắn thêm memory_sha256 của project_memory; thay yêu cầu hoặc dàn ý phải đối chiếu lại. Cập nhật known_errors không bắt đầu lại cuộc phỏng vấn. Công cụ chỉ kiểm tra khai báo, không chứng minh prompt phù hợp hoặc AI thực sự đã đọc đủ đề.

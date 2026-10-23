@@ -5,3 +5,5 @@
 Giữ đúng dữ liệu và trải nghiệm thực tế người viết cung cấp. Phần đề xuất phải phân biệt với chính sách/kết quả có thật. Introduction nêu vấn đề, mục tiêu và phạm vi theo đề; conclusion tổng hợp kết quả đã trình bày, không thêm phát hiện mới chưa được chứng minh. Chỉ viết các phần đang được giao.
 
 Đưa trích dẫn ở cuối từng câu cần nguồn và cập nhật danh mục tương ứng. Nếu thiếu bằng chứng, xử lý phần đó theo yêu cầu đã thống nhất, đồng thời nêu giới hạn ở ghi chú riêng. Trả phần dùng trong bài tách khỏi nhận xét.
+
+Trước khi viết, đọc lại active_prompt, project_memory và known_errors liên quan. Đối chiếu từng đoạn với mã yêu cầu và mục dàn ý; dùng đề/rubric gốc để phát hiện cả lỗi của dàn ý. Sau khi sửa, cập nhật hồ sơ và kiểm tra lại phần thay đổi. Không ghi nhật ký hoặc bảng tự kiểm vào phần nộp bài.

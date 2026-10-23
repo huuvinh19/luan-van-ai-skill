@@ -30,3 +30,15 @@
 Bảng này đối chiếu thiết kế chỉ dẫn với yêu cầu. Nó không phải kết quả đánh giá một luận văn cụ thể và không chứng nhận rằng mô hình luôn thực hiện đúng mọi chỉ dẫn.
 
 Kết quả đối chiếu nguồn, các điểm đã sửa và giới hạn còn lại: [đợt rà ngày 2026-10-17](AUDIT_2026-10-17.md).
+
+## Bổ sung 2026-10-23: prompt và bộ nhớ dự án
+
+| Yêu cầu | Nơi thực hiện |
+| --- | --- |
+| Tự chọn prompt sau hỏi bối cảnh, không bắt người viết chọn | rules/project-memory.vi.md; gate select_prompt; active_prompt |
+| Giữ prompt thực sự dùng và lý do, dùng xuyên suốt chat | active_prompt.task/reason/content trong project_state.json; quy tắc bàn giao |
+| Sau chọn prompt lấy đề/câu hỏi, rubric nếu có và mục tiêu | project-dialogue.vi.md; thứ tự assignment/rubric/target_outcome của gate |
+| Bóc từng chi tiết của đề thành yêu cầu có căn cứ/cách kiểm tra | project_memory.requirements; prompts/01-intake.md và 02-outline.md |
+| Dàn ý liên kết đủ yêu cầu và dùng khi viết/sửa/tự rà | project_memory.outline; gate plan; prompts/07-draft.md và 08-review.md |
+| Giữ tiêu chí, thay đổi và lỗi từng mắc để tránh lặp | project_memory, known_errors, progress.md; fingerprint và xác nhận hiện hành |
+| Hồ sơ trong chat/tệp, không hứa trí nhớ vĩnh viễn | project-memory.vi.md; mẫu và quy tắc bàn giao |

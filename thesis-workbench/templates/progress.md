@@ -14,3 +14,13 @@
 - Thông tin mới có làm đổi phạm vi hoặc cần hỏi lại không:
 - Bước tiếp theo:
 - Ngày cập nhật:
+
+## Bộ nhớ đang dùng
+
+- Prompt/công đoạn đã chọn và lý do:
+- Mục tiêu muốn đạt (tách khỏi rubric):
+- Phiên bản bảng yêu cầu và dàn ý:
+- Yêu cầu còn chưa có bằng chứng:
+- Lỗi từng mắc và cách kiểm tra để tránh lặp:
+- Điểm mới thay thế yêu cầu cũ:
+- Tóm tắt/prompt bàn giao khi đổi chat:

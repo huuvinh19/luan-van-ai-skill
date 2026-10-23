@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-23",
+  "version": "1.3.0",
+  "baseline_commit": "1a2146e4049fa21f289f9891a86aac8e2f6c9042",
+  "method": "Ba ngữ cảnh mới, fork_turns=none, mô hình mặc định; chỉ giao skill và yêu cầu, không cung cấp đáp án hoặc chẩn đoán. Chỉ chat, không cho agent sửa tệp. Mọi đề/dữ liệu/xác nhận đều giả lập.",
+  "recording": "Ghi đầu vào và trích đoạn phản hồi thực tế liên quan; không phải toàn bộ vết thao tác hoặc đánh giá độc lập đa mô hình.",
+  "skill_sha256": "1d3d77fc928fefdb95a47f59bfdc52e5e73d45a66bdabde4d3dfd87b567ee7f5",
+  "cases": [
+    {
+      "id": "marketing-review-memory",
+      "initial_request": "Tao học Marketing, môn Marketing Insights and Analytics (5120). Tao đang cần mày chấm và sửa bài của tao, hiện chưa gửi đề và bài.",
+      "initial_response_excerpt": "Tao chọn prompt **review – Chấm và sửa nghiêm túc** để đối chiếu bài với đề và rubric, chỉ rõ lỗi, cách sửa và rà lại bản chỉnh.",
+      "asked_for": [
+        "Đề bài mới nhất và rubric, hướng dẫn giảng viên nếu có",
+        "Bài hiện tại và phần cần sửa",
+        "Mục tiêu muốn đạt"
+      ],
+      "followup_request": "Đề bài luyện giả lập: “Dựa trên bảng khảo sát, tính tỷ lệ mua của cả hai nhóm, so sánh bằng điểm phần trăm và đánh giá giới hạn khái quát hóa.” Bắt buộc không suy ra nhân quả. Rubric phần này: đúng phép tính; đủ hai nhóm; so sánh đúng đơn vị; giải thích được hạn chế chọn mẫu. Dữ liệu giả lập: nhóm email 10 người, 8 mua; nhóm mạng xã hội 10 người, 4 mua; mỗi người chỉ thuộc một nhóm, toàn bộ là mẫu thuận tiện trong một lớp. Không có thêm dữ liệu. Bài hiện tại của tao: “Có 12/20 người mua nên tỷ lệ là 80%. Email gây ra mua hàng nhiều hơn, vì vậy mọi khách hàng đều thích email.” Chỉ sửa đoạn này thành 100–130 từ tiếng Việt trong chat, dùng dữ liệu đã cho, không cần nguồn ngoài. Mục tiêu lâu dài là đạt D, nhưng chưa có thang P/M/D, bước này chỉ sửa nội dung theo các tiêu chí trên.",
+      "response_before_confirmation": "Tao hiểu: sửa riêng đoạn này thành **100–130 từ tiếng Việt**, chỉ dùng dữ liệu đã cho; tính đúng tỷ lệ của cả hai nhóm, so sánh bằng **điểm phần trăm**, giải thích hạn chế của mẫu thuận tiện trong một lớp và không suy ra nhân quả. Bước này đối chiếu bốn tiêu chí đã nêu, chưa xếp P/M/D. Mày xác nhận cách hiểu này chứ?",
+      "handoff_request": "Trước khi tao xác nhận, cho tao bản bàn giao để đem sang chat khác: prompt đang dùng, các yêu cầu đang áp dụng và dàn ý sửa đoạn. Chưa viết đoạn hoàn chỉnh.",
+      "handoff_prompt": "Hỗ trợ người học ngành Marketing, môn Marketing Insights and\nAnalytics (5120), bằng module review – Chấm và sửa nghiêm túc.\n\nSửa riêng đoạn trong hồ sơ bên dưới thành một đoạn 100–130 từ\ntiếng Việt. Đối chiếu đúng đề và bốn tiêu chí rubric đã cung cấp.\nGiữ nguyên dữ liệu; không thêm nguồn, dữ liệu, phương pháp hoặc\nthang điểm.\n\nKiểm tra phép tính của từng nhóm và tỷ lệ chung nếu sử dụng;\nso sánh hai nhóm bằng điểm phần trăm. Phân biệt mô tả quan sát\nvới suy luận nhân quả. Giải thích giới hạn khái quát hóa từ mẫu\nthuận tiện trong một lớp; không suy ra sở thích của mọi khách hàng.\n\nSau khi được xác nhận cách hiểu, viết đoạn sửa rồi tự rà lại\nphép tính, đủ hai nhóm, đơn vị so sánh, hạn chế chọn mẫu, các\nkhẳng định nhân quả và độ dài. Áp dụng cùng tiêu chí cho bản\ngốc và bản sửa; không tự đặt điểm hoặc xếp P/M/D.\n\nChỉ làm trong chat, không tạo hoặc sửa file.\nTrạng thái hiện tại: chờ người dùng xác nhận tóm tắt cách hiểu.\nYêu cầu bàn giao không được coi là xác nhận triển khai.",
+      "handoff_requirements_excerpt": "| Mã | Yêu cầu | Căn cứ |\n|---|---|---|\n| R1 | Tính đúng tỷ lệ mua, trình bày đủ hai nhóm | Đề và rubric |\n| R2 | So sánh bằng **điểm phần trăm** | Đề và rubric |\n| R3 | Giải thích hạn chế chọn mẫu và khái quát hóa | Đề và rubric |\n| R4 | Không suy ra nhân quả | Ràng buộc bắt buộc |\n| R5 | Một đoạn **100–130 từ tiếng Việt** | Yêu cầu người dùng |\n| R6 | Chỉ dùng dữ liệu đã cho, không cần nguồn ngoài | Yêu cầu người dùng |\n| R7 | Chỉ sửa đoạn này trong chat; không xếp P/M/D | Phạm vi hiện hành |",
+      "handoff_outline_excerpt": "1. **Số liệu mô tả — R1:** email 8/10=80%; mạng xã hội 4/10=40%. Nếu giữ tỷ lệ chung từ bản gốc, sửa thành 12/20=60%.\n2. **So sánh — R2:** tỷ lệ mua quan sát được ở nhóm email cao hơn **40 điểm phần trăm**.\n3. **Giới hạn diễn giải — R4:** chênh lệch quan sát được chưa chứng minh email gây ra mua hàng; dữ liệu mua hàng cũng không chứng minh mọi khách hàng thích email.\n4. **Giới hạn khái quát hóa — R3:** mẫu thuận tiện chỉ gồm 20 người trong một lớp, có thể không đại diện cho khách hàng rộng hơn.\n5. **Rà bản sửa — R5–R7:** kiểm tra đủ ý trong 100–130 từ, không thêm dữ kiện hoặc kết luận mức đạt.",
+      "confirmation": "Tao xác nhận bản bàn giao và dàn ý đó. Viết bản sửa theo đúng phạm vi đã chốt.",
+      "final_response": "Trong mẫu khảo sát, nhóm email có 8/10 người mua, tương ứng 80%, còn nhóm mạng xã hội có 4/10 người mua, tương ứng 40%. Tỷ lệ mua của nhóm email cao hơn 40 điểm phần trăm. Tính chung, có 12/20 người mua, tương ứng 60%. Tuy nhiên, chênh lệch quan sát được không chứng minh email gây ra mua hàng. Dữ liệu cũng không cho phép kết luận mọi khách hàng đều thích email. Do mẫu thuận tiện chỉ gồm 20 người trong một lớp, cách chọn này không bảo đảm tính đại diện cho khách hàng nói chung. Vì vậy, cần thận trọng khi khái quát hóa kết quả.",
+      "observations": [
+        "Chọn review trước khi xin bộ đề/bài/mục tiêu; không hỏi lại môn/ngành.",
+        "Xuất lại được prompt, dữ liệu, bảy yêu cầu và dàn ý liên kết mã; giữ trạng thái chưa xác nhận.",
+        "Sau xác nhận viết ngay, tính đúng 80%,40%,60% và 40 điểm phần trăm; không nhận mức D."
+      ],
+      "final_word_count_whitespace": 111
+    },
+    {
+      "id": "it-outline-and-changed-requirement",
+      "initial_request": "Tao học Kỹ thuật phần mềm, môn Thiết kế cơ sở dữ liệu. Cần lập dàn ý báo cáo thiết kế thư viện nhỏ, chưa viết báo cáo. Đây là toàn bộ đề tự đủ cho bước lập dàn ý: thiết kế mô hình logic phân biệt đầu sách và bản sao; giữ lịch sử mượn/trả; mô tả ràng buộc mỗi bản sao chỉ có một lượt chưa trả; đề xuất cách kiểm tra các ràng buộc. Bắt buộc có bảng thực thể/khóa, bảng quy tắc nghiệp vụ và các tình huống kiểm thử dự kiến; chưa chạy kiểm thử. Gợi ý có thể quản lý tiền phạt, nhưng phần này không bắt buộc. Không cần code, DBMS hay lý thuyết ngoài. Báo cáo sau này tối đa 800 từ tiếng Việt; hiện chỉ cần dàn ý trong chat. Rubric do giảng viên cung cấp gồm: thiết kế đáp ứng đúng nghiệp vụ, giải thích được khóa/quan hệ và kiểm thử bám ràng buộc. Mục tiêu của tao là có kế hoạch đủ để viết báo cáo đúng đề, không thêm tiền phạt. Lập dàn ý giúp tao.",
+      "initial_response_excerpt": "Tao chọn prompt **outline** để lập kế hoạch bám đề và rubric. Dàn ý dưới đây dành cho báo cáo tối đa **800 từ**, chỉ thiết kế logic, không thêm tiền phạt và chưa chạy kiểm thử.\n\nCác yêu cầu được đối chiếu: **R1** phân biệt đầu sách/bản sao; **R2** giữ lịch sử; **R3** mỗi bản sao tối đa một lượt chưa trả; **R4** đề xuất kiểm tra ràng buộc; **R5** đủ ba bảng bắt buộc.",
+      "observed_outline_sections": [
+        "Mục tiêu và phạm vi — 60 từ",
+        "Mô hình logic và giải thích khóa/quan hệ — 220 từ; R1,R2,R5",
+        "Quy tắc nghiệp vụ và cách bảo đảm — 200 từ; R2–R5",
+        "Tình huống kiểm thử dự kiến — 230 từ; R4,R5",
+        "Kết luận thiết kế — 40 từ"
+      ],
+      "followup_request": "Giảng viên vừa sửa đề: bắt buộc quản lý tiền phạt và có bảng quy tắc tính phạt, không còn là gợi ý. Nhưng thầy chưa cho cách tính tiền phạt. Đầu ra và môn/ngành giữ nguyên. Mày cập nhật phần liên quan trong kế hoạch giúp tao.",
+      "response_after_change_excerpt": "Tao cập nhật: **quản lý tiền phạt và bảng quy tắc tính phạt trở thành bắt buộc**. Quyết định loại tiền phạt khỏi phạm vi trước đây hết hiệu lực; các yêu cầu còn lại giữ nguyên.",
+      "observed_changes": [
+        "Thêm R6 quản lý tiền phạt và R7 bảng quy tắc tính phạt.",
+        "Giữ giới hạn 800 từ và các bảng/tình huống mượn trả cũ.",
+        "Bảng tiền phạt ghi chưa được cung cấp; cần chốt quyền tự đề xuất, điều kiện, công thức và dữ liệu trước khi hoàn thiện."
+      ],
+      "observations": [
+        "Không hỏi lại đầu vào đã có; chọn outline và liên kết yêu cầu với mục kế hoạch.",
+        "Phân biệt gợi ý với bắt buộc, cập nhật quyết định cũ đúng phần thay đổi.",
+        "Không bịa mức phạt hoặc kết quả kiểm thử."
+      ]
+    },
+    {
+      "id": "prompt-only-boundary",
+      "request": "Chỉ tối ưu prompt này cho gọn, giữ nguyên biến, trả bản hoàn chỉnh để copy, chưa thực hiện bài trong prompt: 'Viết thảo luận cho {{de_tai}} từ {{ket_qua}} trong ${so_tu} từ, nói rõ ý nghĩa, giới hạn và dùng {{nguon}} đúng chỗ; cái gì chưa rõ thì hỏi tao, đừng bịa.'",
+      "response": "Viết phần thảo luận cho {{de_tai}} dựa trên {{ket_qua}}, trong ${so_tu} từ. Làm rõ ý nghĩa, giới hạn và trích dẫn {{nguon}} tại các nhận định được nguồn hỗ trợ. Nếu thông tin cần thiết chưa rõ, hỏi tao trước khi viết; không bịa.",
+      "observations": [
+        "Giữ nguyên bốn biến; không hỏi toàn bộ dự án hoặc thực hiện bài luận."
+      ]
+    }
+  ],
+  "limits": [
+    "Cùng mô hình mặc định, hội thoại hữu hạn; chưa kiểm thử đa mô hình hay luận văn dài.",
+    "Hồ sơ và fingerprint chỉ kiểm tra khai báo; không chứng minh đã hiểu đủ đề hoặc nguồn đúng.",
+    "Bàn giao là văn bản trong chat, không có xác nhận đã ghi file hay lưu vĩnh viễn."
+  ],
+  "checks": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "scripts/build_skill.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: SKILL.md và prompt tổng khớp quy tắc nguồn.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "thesis-workbench/scripts/verify_repo.py"
+      ],
+      "exit_code": 0,
+      "stdout": "OK: snapshot, prompt tổng, module, giấy phép và link nội bộ khớp.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "thesis-workbench/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_blank_assignment_entry_does_not_pass_gate (test_project_gate.ProjectGateTests.test_blank_assignment_entry_does_not_pass_gate) ... ok\ntest_blank_context_asks_in_rounds_and_cannot_execute (test_project_gate.ProjectGateTests.test_blank_context_asks_in_rounds_and_cannot_execute) ... ok\ntest_build_replaces_draft_module_with_clarification (test_project_gate.ProjectGateTests.test_build_replaces_draft_module_with_clarification) ... ok\ntest_changed_brief_invalidates_old_confirmation (test_project_gate.ProjectGateTests.test_changed_brief_invalidates_old_confirmation) ... ok\ntest_changed_context_revision_invalidates_old_confirmation (test_project_gate.ProjectGateTests.test_changed_context_revision_invalidates_old_confirmation) ... ok\ntest_changed_topic_invalidates_old_confirmation (test_project_gate.ProjectGateTests.test_changed_topic_invalidates_old_confirmation) ... ok\ntest_cli_blocked_ready_and_invalid_states (test_project_gate.ProjectGateTests.test_cli_blocked_ready_and_invalid_states) ... ok\ntest_complete_fields_without_confirmation_still_wait (test_project_gate.ProjectGateTests.test_complete_fields_without_confirmation_still_wait) ... ok\ntest_confirmed_it_project_is_supported_without_marketing_default (test_project_gate.ProjectGateTests.test_confirmed_it_project_is_supported_without_marketing_default) ... ok\ntest_confirmed_unchanged_project_continues_across_tasks (test_project_gate.ProjectGateTests.test_confirmed_unchanged_project_continues_across_tasks) ... ok\ntest_course_code_does_not_infer_discipline (test_project_gate.ProjectGateTests.test_course_code_does_not_infer_discipline) ... ok\ntest_course_or_discipline_change_requires_new_confirmation (test_project_gate.ProjectGateTests.test_course_or_discipline_change_requires_new_confirmation) ... ok\ntest_following_round_asks_project_details_after_course_and_discipline (test_project_gate.ProjectGateTests.test_following_round_asks_project_details_after_course_and_discipline) ... ok\ntest_future_questions_are_preserved_in_general_prompt (test_project_gate.ProjectGateTests.test_future_questions_are_preserved_in_general_prompt) ... ok\ntest_invalid_profiles_are_rejected_by_gate_and_assembler (test_project_gate.ProjectGateTests.test_invalid_profiles_are_rejected_by_gate_and_assembler) ... ok\ntest_it_discipline_is_reused_while_course_is_unknown (test_project_gate.ProjectGateTests.test_it_discipline_is_reused_while_course_is_unknown) ... ok\ntest_missing_data_blocks_analysis (test_project_gate.ProjectGateTests.test_missing_data_blocks_analysis) ... ok\ntest_no_response_is_not_confirmation (test_project_gate.ProjectGateTests.test_no_response_is_not_confirmation) ... ok\ntest_open_question_blocks_affected_task_only (test_project_gate.ProjectGateTests.test_open_question_blocks_affected_task_only) ... ok\ntest_optimize_only_does_not_execute_underlying_thesis (test_project_gate.ProjectGateTests.test_optimize_only_does_not_execute_underlying_thesis) ... ok\ntest_ready_build_uses_requested_module (test_project_gate.ProjectGateTests.test_ready_build_uses_requested_module) ... ok\ntest_resolved_question_with_answer_is_not_asked_again (test_project_gate.ProjectGateTests.test_resolved_question_with_answer_is_not_asked_again) ... ok\ntest_resolved_without_answer_is_invalid (test_project_gate.ProjectGateTests.test_resolved_without_answer_is_invalid) ... ok\ntest_state_version_must_be_integer_one (test_project_gate.ProjectGateTests.test_state_version_must_be_integer_one) ... ok\ntest_task_names_agree_between_state_and_builder (test_project_gate.ProjectGateTests.test_task_names_agree_between_state_and_builder) ... ok\ntest_template_does_not_preselect_the_users_discipline (test_project_gate.ProjectGateTests.test_template_does_not_preselect_the_users_discipline) ... ok\ntest_unknown_question_task_is_rejected (test_project_gate.ProjectGateTests.test_unknown_question_task_is_rejected) ... ok\ntest_unknown_task_is_rejected_even_with_confirmed_profile (test_project_gate.ProjectGateTests.test_unknown_task_is_rejected_even_with_confirmed_profile) ... ok\ntest_changed_goal_requires_updated_requirements_and_outline (test_project_memory.ProjectMemoryTests.test_changed_goal_requires_updated_requirements_and_outline) ... ok\ntest_changed_outline_invalidates_its_previous_confirmation (test_project_memory.ProjectMemoryTests.test_changed_outline_invalidates_its_previous_confirmation) ... ok\ntest_error_log_is_preserved_without_restarting_confirmed_work (test_project_memory.ProjectMemoryTests.test_error_log_is_preserved_without_restarting_confirmed_work) ... ok\ntest_goal_is_asked_without_reasking_supplied_assignment_and_rubric (test_project_memory.ProjectMemoryTests.test_goal_is_asked_without_reasking_supplied_assignment_and_rubric) ... ok\ntest_missing_plan_selects_outline_instead_of_drafting (test_project_memory.ProjectMemoryTests.test_missing_plan_selects_outline_instead_of_drafting) ... ok\ntest_outline_must_cover_every_required_item (test_project_memory.ProjectMemoryTests.test_outline_must_cover_every_required_item) ... ok\ntest_prompt_must_be_selected_before_asking_for_assignment_bundle (test_project_memory.ProjectMemoryTests.test_prompt_must_be_selected_before_asking_for_assignment_bundle) ... ok\ntest_prompt_needs_actual_content_and_valid_task (test_project_memory.ProjectMemoryTests.test_prompt_needs_actual_content_and_valid_task) ... ok\ntest_suggestion_does_not_require_a_forced_section (test_project_memory.ProjectMemoryTests.test_suggestion_does_not_require_a_forced_section) ... ok\ntest_unknown_requirement_or_duplicate_id_is_invalid (test_project_memory.ProjectMemoryTests.test_unknown_requirement_or_duplicate_id_is_invalid) ... ok\ntest_candid_review_policy_is_wired_into_every_task (test_self_review.SelfReviewTests.test_candid_review_policy_is_wired_into_every_task) ... ok\ntest_consistent_review_is_clear_without_inventing_grade (test_self_review.SelfReviewTests.test_consistent_review_is_clear_without_inventing_grade) ... ok\ntest_duplicate_criterion_and_unknown_grade_basis_are_rejected (test_self_review.SelfReviewTests.test_duplicate_criterion_and_unknown_grade_basis_are_rejected) ... ok\ntest_grade_without_provided_scale_is_rejected (test_self_review.SelfReviewTests.test_grade_without_provided_scale_is_rejected) ... ok\ntest_met_without_evidence_is_rejected (test_self_review.SelfReviewTests.test_met_without_evidence_is_rejected) ... ok\ntest_open_finding_prevents_ready (test_self_review.SelfReviewTests.test_open_finding_prevents_ready) ... ok\ntest_ready_despite_unmet_criterion_is_rejected (test_self_review.SelfReviewTests.test_ready_despite_unmet_criterion_is_rejected) ... ok\ntest_resolved_finding_requires_recheck_evidence (test_self_review.SelfReviewTests.test_resolved_finding_requires_recheck_evidence) ... ok\ntest_unchecked_item_cannot_be_hidden (test_self_review.SelfReviewTests.test_unchecked_item_cannot_be_hidden) ... ok\ntest_cli_exit_codes_are_distinct (test_workbench.AuditTests.test_cli_exit_codes_are_distinct) ... ok\ntest_content_checked_without_location_and_duplicate_ids_fail (test_workbench.AuditTests.test_content_checked_without_location_and_duplicate_ids_fail) ... ok\ntest_demo_records_clear_with_explicit_semantic_limit (test_workbench.AuditTests.test_demo_records_clear_with_explicit_semantic_limit) ... ok\ntest_metadata_only_does_not_support_claim (test_workbench.AuditTests.test_metadata_only_does_not_support_claim) ... ok\ntest_missing_source_is_detected (test_workbench.AuditTests.test_missing_source_is_detected) ... ok\ntest_requirement_without_evidence_fails (test_workbench.AuditTests.test_requirement_without_evidence_fails) ... ok\ntest_unresolved_claim_and_unmet_requirement_fail (test_workbench.AuditTests.test_unresolved_claim_and_unmet_requirement_fail) ... ok\ntest_all_tasks_include_rules_and_resolve_style (test_workbench.PromptTests.test_all_tasks_include_rules_and_resolve_style) ... ok\ntest_apa_profile_changes_active_instruction_and_preserves_context (test_workbench.PromptTests.test_apa_profile_changes_active_instruction_and_preserves_context) ... ok\ntest_cli_writes_exact_output (test_workbench.PromptTests.test_cli_writes_exact_output) ... ok\ntest_invalid_profiles_and_task_fail (test_workbench.PromptTests.test_invalid_profiles_and_task_fail) ... ok\ntest_repository_is_consistent (test_workbench.RepositoryTests.test_repository_is_consistent) ... ok\ntest_stale_generated_prompt_is_detected (test_workbench.RepositoryTests.test_stale_generated_prompt_is_detected) ... ok\ntest_tampered_snapshot_is_detected (test_workbench.RepositoryTests.test_tampered_snapshot_is_detected) ... ok\n\n----------------------------------------------------------------------\nRan 61 tests in 0.302s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/dd4a1ecea387/quick_validate_skill.py",
+        "/workspace/scratch/dd4a1ecea387/luan-van-ai-skill"
+      ],
+      "exit_code": 0,
+      "stdout": "Skill is valid!\n",
+      "stderr": ""
+    }
+  ]
+}

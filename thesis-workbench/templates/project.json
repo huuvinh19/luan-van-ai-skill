@@ -20,5 +20,6 @@
   "rubric_notes": null,
   "data_status": "not_provided",
   "data_notes": null,
-  "context_revision": 1
+  "context_revision": 1,
+  "target_outcome": null
 }
