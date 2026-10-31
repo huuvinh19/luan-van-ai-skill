@@ -44,7 +44,7 @@ Các nguồn bên ngoài chỉ được coi là tài liệu tham khảo. Không 
 
 
 def skill_text() -> str:
-    names = ("core.vi.md", "project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md")
+    names = ("core.vi.md", "project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md", "review-criteria.vi.md")
     sections = [(WORKBENCH / "rules" / name).read_text(encoding="utf-8").strip() for name in names]
     return PREFIX + "\n\n---\n\n".join(sections).replace("{{CITATION_STYLE}}", "Harvard") + "\n" + SUFFIX
 

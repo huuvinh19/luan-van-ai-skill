@@ -26,3 +26,15 @@
 - [ ] Giọng vui/cà khịa chỉ dùng đúng bối cảnh trao đổi, không lọt vào phần nộp.
 - [ ] Phân biệt tự rà cùng trợ lý với đánh giá độc lập; chỉ báo những bước thực sự đã làm.
 - [ ] Đã lưu tiến độ, đầu ra hiện hành và bước tiếp theo.
+
+## Năm nhóm phải có trong hồ sơ chấm/sửa
+
+| Nhóm | Đối chiếu tối thiểu |
+| --- | --- |
+| Nội dung | Thiếu/lệch ý, lý thuyết, bằng chứng, chiều sâu, nhất quán và từng tiêu chí rubric |
+| Kiểm chứng nguồn | Sự tồn tại, độ tin cậy, nội dung hỗ trợ, số liệu/đơn vị, kỳ đo, thời điểm và phạm vi áp dụng |
+| In-text citations | Tác giả–năm, vị trí, trang/định vị khi cần, câu có đúng căn cứ và thống nhất mẫu giảng viên |
+| Reference List | Đối chiếu hai chiều, nguồn thiếu/thừa/trùng và thông tin xuất bản theo loại nguồn |
+| Ngôn ngữ/trình bày | Từ/thuật ngữ, ngữ pháp, chính tả, dấu câu, tiêu đề, font, giãn dòng, lề, hình/bảng/chú thích, mục lục và số trang |
+
+Mỗi nhóm ghi trạng thái, vị trí/bằng chứng, lỗi/cách sửa và kiểm tra lại sau sửa. Chỉ có một đoạn thì nêu đúng phạm vi đó; chưa có tệp/bản render thì chưa nhận đã xem bố cục hay số trang. Không đánh dấu nguồn đã hỗ trợ chỉ vì DOI/link hoặc metadata tồn tại.

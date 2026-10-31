@@ -9,6 +9,7 @@ import sys
 
 JUDGMENTS = {"met", "partly_met", "not_met", "not_checked"}
 VERDICTS = {"ready_for_scope", "needs_revision", "not_fully_checked"}
+REVIEW_AREAS = {"content", "source_verification", "in_text_citations", "reference_list", "language_presentation"}
 
 
 def audit_review(report: dict) -> dict:
@@ -32,12 +33,22 @@ def audit_review(report: dict) -> dict:
         flag("reviewer_mode_mismatch", "reviewer_mode", "Mẫu này là cùng trợ lý tự rà ở lượt riêng, không phải reviewer độc lập.")
     if not report["criteria"]:
         flag("no_criteria", "criteria", "Chưa có tiêu chí để tự đánh giá.")
+    review_type = report.get("review_type", "general")
+    if review_type not in ("general", "academic"):
+        flag("invalid_review_type", "review_type", "review_type chỉ nhận general hoặc academic.")
+    areas_seen = set()
     criteria_ids = set()
     judgments = []
     for index, item in enumerate(report["criteria"], 1):
         if not isinstance(item, dict):
             raise ValueError("Mỗi tiêu chí phải là object.")
         loc = f"criteria[{index}]"
+        if review_type == "academic":
+            area = item.get("review_area")
+            if not isinstance(area, str) or area not in REVIEW_AREAS:
+                flag("invalid_review_area", loc, "Tiêu chí học thuật cần review_area thuộc một trong năm nhóm kiểm tra.")
+            else:
+                areas_seen.add(area)
         cid = item.get("id")
         if not has_text(cid) or cid in criteria_ids:
             flag("invalid_criterion_id", loc, "ID tiêu chí trống hoặc trùng.")
@@ -53,6 +64,9 @@ def audit_review(report: dict) -> dict:
             flag("missing_review_evidence", loc, "Kết luận tiêu chí cần vị trí/bằng chứng.")
         if judgment in ("partly_met", "not_met", "not_checked") and not has_text(item.get("next_action")):
             flag("missing_next_action", loc, "Cần ghi việc sửa/kiểm tra tiếp theo.")
+    missing_areas = REVIEW_AREAS - areas_seen if review_type == "academic" else set()
+    if missing_areas:
+        flag("missing_review_areas", "criteria", "Chưa ghi kết quả các nhóm: " + ", ".join(sorted(missing_areas)))
     finding_ids = set()
     open_findings = False
     for index, item in enumerate(report["findings"], 1):
@@ -82,7 +96,7 @@ def audit_review(report: dict) -> dict:
     verdict = report.get("overall_verdict")
     if not isinstance(verdict, str) or verdict not in VERDICTS:
         flag("invalid_overall_verdict", "overall_verdict", "Kết luận chung không hợp lệ.")
-    if verdict == "ready_for_scope" and (not judgments or any(x != "met" for x in judgments) or open_findings):
+    if verdict == "ready_for_scope" and (not judgments or any(x != "met" for x in judgments) or open_findings or missing_areas):
         flag("premature_ready_verdict", "overall_verdict", "Chưa thể ghi sẵn sàng khi tiêu chí chưa đạt/chưa kiểm tra hoặc lỗi còn mở.")
     grade = report.get("grade")
     if grade is not None:

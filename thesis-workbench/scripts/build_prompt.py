@@ -45,7 +45,7 @@ def assemble(task: str, profile: dict | None = None, *, root: Path = ROOT,
     if core.count("{{CITATION_STYLE}}") != 1:
         raise ValueError("Quy tắc phải có đúng một biến CITATION_STYLE.")
     sections = [core.replace("{{CITATION_STYLE}}", style).rstrip()]
-    for name in ("project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md"):
+    for name in ("project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md", "review-criteria.vi.md"):
         sections.append((root / "rules" / name).read_text(encoding="utf-8").rstrip())
     selected_task = "outline" if gate["status"] == "plan" else task if gate["can_execute"] or task in {"intake", "clarify"} else "clarify"
     sections.append((root / "prompts" / TASKS[selected_task]).read_text(encoding="utf-8").rstrip())

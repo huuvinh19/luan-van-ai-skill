@@ -65,3 +65,7 @@ project.json có target_outcome: mục tiêu người viết muốn đạt, tác
 - known_errors: danh sách lỗi đã gặp và cách tránh, đọc lại trước lần trả tiếp theo.
 
 Bộ mẫu để null khi chưa có thông tin; không điền khống để mở gate. Có thể xem cấu trúc đầy đủ trong project_state.json của ví dụ giả lập. Gate trả select_prompt khi chưa chọn, plan khi chưa có bản đồ yêu cầu/dàn ý hoặc hồ sơ đã đổi. Sau khi người viết xác nhận tóm tắt và kế hoạch, lưu thêm memory_sha256 do gate cung cấp; không tự tạo lời đồng ý. Đổi project_memory làm mất hiệu lực xác nhận cũ, cập nhật nhật ký lỗi thì không. Trong chat không có tệp, giữ các nội dung tương ứng trong ngữ cảnh và xuất khi chuyển chat.
+
+## Hồ sơ tự rà năm nhóm
+
+self-review.json mặc định review_type=academic, có sẵn năm tiêu chí ở trạng thái not_checked. review_area nhận content, source_verification, in_text_citations, reference_list hoặc language_presentation. Điền bằng chứng, lý do, việc sửa/kiểm tra tiếp và giới hạn thực tế; có thể tách thêm tiêu chí trong cùng nhóm. Không xóa nhóm chưa kiểm tra để ghi ready. Báo cáo general cũ vẫn đọc được, phục vụ kiểm tra công cụ hoặc phạm vi khác; không coi nó là bằng chứng đã rà đủ năm nhóm học thuật.

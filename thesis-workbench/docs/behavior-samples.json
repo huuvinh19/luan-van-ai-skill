@@ -17,5 +17,34 @@
     "Chỉ hai trường hợp giả lập, không đo tỉ lệ thành công.",
     "Chưa thử đa mô hình, hội thoại dài hoặc mọi mức căng thẳng của người dùng.",
     "Đây không phải hai reviewer độc lập chấm repo hay bài luận."
+  ],
+  "additional_runs": [
+    {
+      "date": "2026-10-31",
+      "version": "1.3.1",
+      "method": "Một ngữ cảnh mới fork_turns=none, dùng skill và yêu cầu bên dưới; không cho đáp án hoặc chẩn đoán. Sau tóm tắt, người kiểm thử xác nhận thay người dùng giả lập. Chỉ trả trong chat, không tạo/sửa file hoặc tra web.",
+      "request": "Tao học Marketing, môn Marketing Insights and Analytics (5120). Đây là toàn bộ một bài tập luyện giả lập, không dùng cho dự án thật. Nhờ mày chấm ngắn và sửa đoạn này cho đúng đề; chưa cần chấm P/M/D. Đề: mô tả tỷ lệ mua trong mẫu, nêu ý nghĩa và giới hạn suy luận. Rubric: đúng phép tính, giải thích trong phạm vi mẫu, không kết luận nhân quả khi chưa đủ căn cứ. Mục tiêu là sửa đúng nội dung và chỉ ra các vấn đề nguồn, trích dẫn, danh mục, ngôn ngữ và trình bày còn tồn tại. Dùng Harvard chung tạm thời, không có mẫu riêng của giảng viên. Đầu ra: nhận xét ngắn theo các phần cần kiểm tra và bản sửa ngắn, không yêu cầu số từ.\n\nDữ liệu của bài tập: mẫu thuận tiện 20 người, 12 người mua; đo một lần, không có nhóm đối chứng. Bài hiện tại: “Khảo sát cho thấy 80% khách hàng Việt Nam mua hàng (Nguyen, 2024). Theo Tran (2023), quảng cáo chắc chắn làm doanh thu tăng 40%. Kết quã này chứng minh quảng cáo hiệu quả với mọi doanh nghiệp.”\n\nReference List hiện có, toàn bộ metadata chưa được xác minh; không có đoạn nguồn hoặc bản sách/báo:\nNguyen, A. (2025) Marketing report. Publisher X.\nNguyen, A. (2025) Marketing report. Publisher X.\nLe, B. (2021) Consumer behaviour. Publisher Y.\n\nTao chỉ gửi văn bản thuần ở trên, không có Word/PDF/ảnh hay bản render; nhưng cứ nhận xét cả việc trình bày theo những gì mày kiểm tra được. Đừng yêu cầu tao cung cấp thêm dữ liệu cho phép tính vì đã có đủ.",
+      "first_response_observation": "Trợ lý đề xuất tóm tắt phạm vi và hỏi xác nhận, chưa chấm/sửa, không hỏi lại dữ liệu.",
+      "confirmation": "Đúng, tao xác nhận cách hiểu đó. Chấm và sửa theo đúng phạm vi đã chốt; trả kết quả trực tiếp cho tao.",
+      "response": "Đoạn hiện tại **chưa đáp ứng đề**: sai tỷ lệ, suy rộng khỏi mẫu và kết luận nhân quả thiếu căn cứ.\n\n| Phần kiểm tra | Nhận xét và cách sửa |\n|---|---|\n| **Nội dung — chưa đáp ứng** | 12/20 × 100 = 60%, không phải 80%. Chỉ được diễn giải trong mẫu 20 người. Thiết kế đo một lần, không có nhóm đối chứng không chứng minh tác động quảng cáo; dữ liệu cũng không hỗ trợ mức tăng doanh thu 40% hay kết luận cho mọi doanh nghiệp. |\n| **Kiểm chứng nguồn — chưa kiểm tra** | Chỉ có metadata chưa xác minh, không có nội dung nguồn. Chưa thể xác nhận nguồn tồn tại, đáng tin cậy hoặc hỗ trợ các nhận định. Không đủ căn cứ cũng không đồng nghĩa nguồn chắc chắn giả. |\n| **Trích dẫn trong bài — chưa đáp ứng** | Nguyen (2024) không khớp năm 2025 trong danh mục; không tự đổi năm để làm khớp. Tran (2023) thiếu mục tương ứng. Tỷ lệ tự tính từ dữ liệu bài tập không được gán cho Nguyen. |\n| **Reference List — chưa đáp ứng** | Nguyen bị lặp nguyên mục; đây không phải căn cứ để thêm 2025a/2025b. Le (2021) không được dẫn trong toàn bộ đoạn đã gửi. Nếu giữ các nguồn sau khi xác minh, sắp alphabet: Le trước Nguyen. Bản sửa dưới đây không sử dụng nguồn ngoài nên không giữ các mục này. |\n| **Ngôn ngữ và trình bày — đáp ứng một phần** | Sửa “Kết quã” thành “Kết quả”; bỏ các khẳng định vượt bằng chứng như “chắc chắn”, “chứng minh”, “mọi doanh nghiệp”. Đã kiểm tra văn bản; chưa kiểm tra được font, giãn dòng, căn lề, phân trang hoặc bố cục thực tế. |\n\n**Bản sửa ngắn:**\n\n> Trong mẫu thuận tiện gồm 20 người của bài tập giả lập, có 12 người mua hàng, tương ứng 60% (12/20 × 100). Kết quả cho thấy người mua chiếm đa số trong mẫu được khảo sát. Tuy nhiên, mẫu nhỏ và cách chọn mẫu thuận tiện không đủ cơ sở để suy rộng tỷ lệ này cho khách hàng Việt Nam. Dữ liệu được đo một lần, không có nhóm đối chứng và không cung cấp thông tin về tác động quảng cáo hoặc thay đổi doanh thu. Vì vậy, chưa thể kết luận quảng cáo làm tăng doanh thu hay có hiệu quả với mọi doanh nghiệp.",
+      "recording_note": "Giữ nội dung phản hồi; ký hiệu toán LaTeX trong ô phép tính được chuyển sang văn bản để lưu gọn.",
+      "observations": [
+        "Rà đủ năm nhóm và sửa được phần nội dung từ dữ liệu đã đủ.",
+        "Không đổi metadata thành đã kiểm chứng, không tự đổi năm để làm khớp citation.",
+        "Phát hiện nguồn lặp, nguồn chưa được dùng, citation thiếu entry; không giữ trích dẫn không có căn cứ trong bản sửa.",
+        "Báo chưa kiểm tra font/giãn dòng/lề/bố cục từ văn bản thuần, không chặn sửa nội dung."
+      ],
+      "technical_checks": {
+        "unit_integration_tests": 66,
+        "passed": 66,
+        "generated_skill_prompt": "matched",
+        "repository_snapshot_modules_licenses_links": "passed",
+        "installed_skill_frontmatter": "passed"
+      },
+      "limits": [
+        "Một hội thoại hữu hạn trong mô hình mặc định; không chứng minh mọi AI luôn tuân thủ.",
+        "Đã chủ ý không tra web và không có tệp định dạng, nên ca này kiểm tra việc khai báo giới hạn chứ không chứng minh nguồn hay bố cục có thật đã được kiểm chứng."
+      ]
+    }
   ]
 }

@@ -77,3 +77,7 @@ Thay quy tắc/module thì sinh lại `PROMPT_LUAN_VAN.md`, chạy kiểm tra v�
 Gate có thêm select_prompt và plan, đều chưa cho thực hiện nội dung bài. select_prompt yêu cầu trợ lý chọn và giữ task/reason/content trong active_prompt trước khi lấy bộ đề/tiêu chí/mục tiêu còn thiếu. plan chuyển builder sang module outline để bóc tách yêu cầu và dàn ý. project_memory phải gắn với profile hiện hành; từng yêu cầu bắt buộc phải có mục dàn ý liên kết. Thay bảng yêu cầu/dàn ý làm xác nhận cũ hết hiệu lực.
 
 Script không gọi mô hình để chọn prompt, không tự ghi prompt hoặc lời xác nhận và không đánh giá đầy đủ từng ý trong đề gốc. AI thực hiện việc đọc/chọn/ghi hồ sơ; công cụ chỉ kiểm tra khai báo, liên kết và fingerprint. known_errors được giữ trong prompt ngữ cảnh để đọc lại, không chứng minh lỗi đã được tránh trên bài thật. Hồ sơ cũ thiếu trường mới phải bổ sung theo đầu vào thật, không tự đánh dấu ready.
+
+## Kiểm tra hồ sơ năm nhóm từ 1.3.1
+
+Với review_type=academic, audit_self_review.py yêu cầu mọi tiêu chí có review_area hợp lệ và đủ năm nhóm. Nhóm thiếu hoặc chưa kiểm tra ngăn kết luận ready_for_scope; not_checked phải có việc cần làm và giới hạn. Báo cáo không ghi review_type được xử lý như general để giữ tương thích hồ sơ công cụ cũ. clear chỉ cho biết các khai báo nhất quán, không có nghĩa AI đã đọc nguồn, xem bố cục hoặc chấm bài đúng.

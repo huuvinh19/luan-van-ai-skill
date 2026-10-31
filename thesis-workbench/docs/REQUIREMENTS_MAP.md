@@ -42,3 +42,7 @@ Kết quả đối chiếu nguồn, các điểm đã sửa và giới hạn cò
 | Dàn ý liên kết đủ yêu cầu và dùng khi viết/sửa/tự rà | project_memory.outline; gate plan; prompts/07-draft.md và 08-review.md |
 | Giữ tiêu chí, thay đổi và lỗi từng mắc để tránh lặp | project_memory, known_errors, progress.md; fingerprint và xác nhận hiện hành |
 | Hồ sơ trong chat/tệp, không hứa trí nhớ vĩnh viễn | project-memory.vi.md; mẫu và quy tắc bàn giao |
+
+## Bổ sung 2026-10-31: năm nhóm rà bài
+
+Cả năm yêu cầu mới được đưa vào rules/review-criteria.vi.md và được ghép vào SKILL.md, prompt tổng, mọi công đoạn. prompts/08-review.md, 09-citations.md và 14-self-review.md, CHECKLIST cùng mẫu self-review hướng dẫn áp dụng. Nhóm JSON tương ứng là content, source_verification, in_text_citations, reference_list và language_presentation; audit_self_review.py phát hiện nhóm thiếu hoặc trạng thái chưa kiểm tra bị giấu sau kết luận ready. Nguồn, câu dẫn và hình thức vẫn cần đọc/xem thực tế; code không tự xác minh chúng.

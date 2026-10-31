@@ -7,3 +7,5 @@ Với mỗi tiêu chí, ghi judgment là met, partly_met, not_met hoặc not_che
 Sửa trực tiếp lỗi thuộc phạm vi được giao rồi đối chiếu lại bản cuối. Nếu báo lỗi đã resolved, ghi thay đổi và căn cứ kiểm tra sau sửa. Trả phần hoàn chỉnh tách khỏi nhận xét, nêu giới hạn còn lại. Không tự cho điểm hoặc nhận đạt D nếu chưa có rubric và bằng chứng tương ứng.
 
 Có thể ghi hồ sơ theo templates/self-review.json. Đây là cùng trợ lý tự rà ở lượt riêng, không phải một reviewer độc lập. Script audit_self_review.py chỉ kiểm tra cấu trúc và mâu thuẫn khai báo, không tự đọc/chấm chất lượng bài hoặc xác minh bằng chứng.
+
+Với bài học thuật, tự rà đủ năm nhóm nội dung, nguồn, in-text citations, Reference List, ngôn ngữ/trình bày theo quy tắc đi kèm. Hồ sơ self-review dùng review_type=academic; mỗi tiêu chí gắn một review_area và năm nhóm đều phải có kết quả, kể cả not_checked. Chỉ có văn bản thuần thì chưa xác nhận font, giãn dòng, căn lề, bố cục hình/bảng, mục lục hoặc số trang. Sửa phần đã đủ đầu vào rồi nêu phần cần tệp/bằng chứng riêng.

@@ -3,10 +3,59 @@
   "artifact": null,
   "review_basis": null,
   "reviewer_mode": "same_assistant_separate_pass",
-  "criteria": [],
+  "criteria": [
+    {
+      "id": "REV1",
+      "review_area": "content",
+      "criterion": "Kiểm tra nội dung",
+      "judgment": "not_checked",
+      "evidence": "",
+      "reason": "Chưa thực hiện kiểm tra.",
+      "next_action": "Đọc đề/rubric và bài, đối chiếu từng tiêu chí với bằng chứng."
+    },
+    {
+      "id": "REV2",
+      "review_area": "source_verification",
+      "criterion": "Kiểm chứng nguồn",
+      "judgment": "not_checked",
+      "evidence": "",
+      "reason": "Chưa thực hiện kiểm tra.",
+      "next_action": "Xác minh nguồn và nội dung hỗ trợ, số liệu, thời điểm, phạm vi."
+    },
+    {
+      "id": "REV3",
+      "review_area": "in_text_citations",
+      "criterion": "Soát in-text citations",
+      "judgment": "not_checked",
+      "evidence": "",
+      "reason": "Chưa thực hiện kiểm tra.",
+      "next_action": "Đối chiếu câu với nguồn, tác giả–năm, vị trí và trang khi cần."
+    },
+    {
+      "id": "REV4",
+      "review_area": "reference_list",
+      "criterion": "Soát Reference List",
+      "judgment": "not_checked",
+      "evidence": "",
+      "reason": "Chưa thực hiện kiểm tra.",
+      "next_action": "Đối chiếu hai chiều và kiểm tra thông tin xuất bản theo mẫu."
+    },
+    {
+      "id": "REV5",
+      "review_area": "language_presentation",
+      "criterion": "Soát ngôn ngữ và trình bày",
+      "judgment": "not_checked",
+      "evidence": "",
+      "reason": "Chưa thực hiện kiểm tra.",
+      "next_action": "Rà văn bản và xem tệp/bản render hiện hành; ghi phần chưa kiểm tra được."
+    }
+  ],
   "findings": [],
-  "remaining_limits": [],
-  "overall_verdict": null,
+  "remaining_limits": [
+    "Mẫu chưa được thực hiện; chưa xác minh bài, nguồn hoặc định dạng."
+  ],
+  "overall_verdict": "not_fully_checked",
   "grade": null,
-  "grading_basis": null
+  "grading_basis": null,
+  "review_type": "academic"
 }
