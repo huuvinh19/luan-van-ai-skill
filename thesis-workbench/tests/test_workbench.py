@@ -36,6 +36,29 @@ class PromptTests(unittest.TestCase):
         self.assertIn("${market}", content)
         self.assertIn(json.dumps(profile, ensure_ascii=False, indent=2), content)
 
+    def test_numbered_style_works_through_cli_without_reverting_to_author_year(self):
+        guide = "Mẫu môn học: đánh số theo lần xuất hiện, dẫn lại cùng nguồn dùng cùng số."
+        with tempfile.TemporaryDirectory() as tmp:
+            profile_path = Path(tmp) / "project.json"
+            profile_path.write_text(json.dumps({"citation_style": "IEEE", "instructor_citation_guide": guide}))
+            result = subprocess.run([sys.executable, str(ROOT / "scripts/build_prompt.py"), "--task", "citations",
+                                     "--profile", str(profile_path)], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Dùng thống nhất chuẩn IEEE", result.stdout)
+        self.assertNotIn("Dùng thống nhất chuẩn Harvard", result.stdout)
+        self.assertIn(guide, result.stdout)
+
+    def test_custom_style_preserves_guide_and_exposes_missing_formatting_evidence(self):
+        name = "Mẫu K: dùng chú thích có số mũ."
+        provided = assemble("citations", {"citation_style": "custom", "instructor_citation_guide": name})
+        missing = assemble("citations", {"citation_style": "custom", "instructor_citation_guide": None})
+        self.assertIn(name, provided)
+        self.assertNotIn("Hồ sơ chọn chuẩn riêng nhưng chưa cung cấp mẫu.", provided)
+        self.assertIn("Hồ sơ chọn chuẩn riêng nhưng chưa cung cấp mẫu.", missing)
+        for output in (provided, missing):
+            self.assertIn("Dùng thống nhất chuẩn riêng của bài", output)
+            self.assertNotIn("Dùng thống nhất chuẩn Harvard", output)
+
     def test_invalid_profiles_and_task_fail(self):
         with self.assertRaises(ValueError):
             assemble("unknown")

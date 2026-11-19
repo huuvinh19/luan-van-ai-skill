@@ -10,13 +10,15 @@
 | Giải thích ngắn, viết tự nhiên, có chiều sâu | Mục 2–3; draft; literature; review |
 | Phân biệt nguồn, phân tích dữ liệu và suy luận | Mục 2; `CITATION_POLICY.md`; claim_type trong claims.csv |
 | Tránh sáo rỗng, lặp ý, danh sách vụn và lạm dụng gạch dài | Mục 3; draft; review; CHECKLIST |
+| Kiểm tra lựa chọn theo câu hỏi; ghi nhận kết quả phù hợp dù trái dự đoán | Mục 1; methodology; analysis; WORKFLOW; CHECKLIST |
+| Rà theo động từ đề, chi tiết tình huống và căn cứ của đề xuất | review-criteria mục 1; review; self-review.json |
 | Không bịa dữ liệu, kết quả hoặc nguồn | Mục 2–4; sources; methodology; analysis |
 | Không lẫn lời dẫn chatbot; giọng văn nhất quán | Mục 3 và 5; draft; export |
-| Harvard mặc định; chuyển APA nếu giảng viên yêu cầu | Mục 4; project.json; build_prompt.py; citations |
+| Theo chuẩn của bài; Harvard mặc định, chuyển cả bài khi giảng viên yêu cầu chuẩn khác | Mục 4; project.json; build_prompt.py; citations |
 | Không giả nhận đã đọc đúng mẫu trích dẫn khi ảnh thiếu/không mở được | Mục 4; CITATION_POLICY; instructor_citation_guide để null khi chưa có |
-| Tác giả–năm cuối đúng câu, trước dấu chấm | Mục 4; CITATION_POLICY; citations |
+| Cấu hình tác giả–năm mặc định: cuối đúng câu, trước dấu chấm; các kiểu khác theo đề | Mục 4; CITATION_POLICY; citations |
 | Trích nguyên văn có ngoặc kép/định vị | Mục 4; CITATION_POLICY; citations |
-| Danh mục alphabet, metadata và đối chiếu hai chiều | Mục 4; CITATION_POLICY; citations |
+| Danh mục xếp theo chuẩn (alphabet hoặc thứ tự số theo yêu cầu), metadata và đối chiếu hai chiều | Mục 4; CITATION_POLICY; citations |
 | Tự kiểm tra yêu cầu, kiến thức, phương pháp, nguồn và hình thức | Mục 5; review; CHECKLIST |
 | Sửa lỗi trước khi gửi; nêu riêng phần thiếu căn cứ | Mục 5; review; export; progress.md |
 | Áp dụng xuyên suốt; tách nhận xét và phần nộp | Mục 5; toàn bộ module; AGENTS.md |

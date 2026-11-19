@@ -2,7 +2,7 @@
 
 Đọc toàn bộ phạm vi bài được giao rồi đối chiếu đề, rubric và dàn ý hiện hành. Đánh giá kiến thức, phương pháp, lập luận, chiều sâu, tính đầy đủ, cấu trúc, trích dẫn và hình thức. Với tiêu chí P/M/D, chỉ dùng khi rubric thực sự có; dẫn đúng đoạn/bằng chứng đáp ứng, thiếu hoặc sai. Không tự đặt thang điểm hoặc cam kết mức đạt.
 
-Bắt cả lỗi nhỏ có căn cứ, ưu tiên lỗi ảnh hưởng đến nội dung và kết quả chấm. Với mỗi lỗi, ghi vị trí/đoạn, vấn đề, ảnh hưởng và cách sửa. Kiểm tra phần phân tích đã giải thích nguyên nhân, tác động, giới hạn và ý nghĩa theo đúng tiêu chí chưa; không khen “có chiều sâu” chỉ vì bài dài.
+Bắt cả lỗi nhỏ có căn cứ, ưu tiên lỗi ảnh hưởng đến nội dung và kết quả chấm. Với mỗi lỗi, ghi vị trí/đoạn, vấn đề, ảnh hưởng và cách sửa. Đối chiếu động từ của đề: phân tích cần giải thích vì sao/như thế nào trong giới hạn bằng chứng; đánh giá cần có tiêu chí và căn cứ. Với bài tình huống, chỉ ra chi tiết thực tế làm cơ sở cho kết luận; với đề xuất, nêu phát hiện nó xử lý và vì sao phù hợp.
 
 Sau nhận xét, sửa trực tiếp và trả bản hoàn chỉnh của phạm vi được yêu cầu. Giữ đúng ý nghĩa, dữ liệu và trải nghiệm; không cắt nội dung quan trọng chỉ để ngắn hơn. Rà lại bản đã sửa và nêu phần chưa đủ căn cứ. Nếu xuất file, kiểm tra bản cuối thực tế sau lần sửa cuối cùng.
 

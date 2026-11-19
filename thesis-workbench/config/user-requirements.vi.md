@@ -1,6 +1,6 @@
 # Yêu cầu gốc của người viết, nhận ngày 2026-10-17
 
-Lưu nội dung yêu cầu làm luận văn được cung cấp trong phiên tạo repo; chuẩn hóa xuống dòng và cách viết URL. Chỉ dẫn này là đầu vào để hợp nhất, không phải bản luận văn.
+Lưu nội dung yêu cầu làm luận văn được cung cấp trong phiên tạo repo; chuẩn hóa xuống dòng và cách viết URL. Đây là yêu cầu gốc tại thời điểm tạo repo. Khi dùng, đọc quy tắc hiện hành trong SKILL.md: chuẩn giảng viên yêu cầu có ưu tiên hơn cấu hình Harvard ban đầu.
 
 Tham khảo bài sau và áp dụng các nguyên tắc bên dưới:
 https://help.brandsvietnam.com/vi/article/dau-hieu-nhan-biet-noi-dung-duoc-viet-boi-ai-3zy07d/

@@ -5,7 +5,7 @@
 3. Lấy câu hỏi/đề bài, rubric nếu có và mục tiêu muốn đạt; chỉ hỏi phần còn thiếu. Tiếp tục làm rõ đầu vào/ràng buộc ảnh hưởng phạm vi hiện tại, tối đa ba câu chính mỗi lượt.
 4. Bóc từng câu/mệnh đề thành yêu cầu R1… có nội dung, bắt buộc/gợi ý, vị trí căn cứ và cách kiểm tra. Không tự tạo rubric hoặc coi mục tiêu điểm là kết quả chấm.
 5. Lập dàn ý theo đề; mỗi mục liên kết yêu cầu, ý phân tích và bằng chứng cần có. Kiểm tra mọi yêu cầu bắt buộc có nơi đáp ứng, mỗi mục nằm trong phạm vi; lưu project_memory.
-6. Tóm tắt cách hiểu và dàn ý cho người viết xác nhận, rồi thực hiện phạm vi đã giao. Không xin phép lại từng mục đã được giao; không viết kết quả khi còn điểm cản cách làm.
+6. Tóm tắt cách hiểu và dàn ý cho người viết xác nhận, rồi thực hiện phạm vi đã giao. Trước quyết định ảnh hưởng hướng bài, kiểm tra cách làm trả lời đúng câu hỏi rồi ghi lại lựa chọn và lý do. Nếu cách làm không phù hợp, dừng phần phụ thuộc và đề xuất sửa; nếu bị đề ấn định thì hỏi rõ mâu thuẫn. Không xin phép lại cho những việc đã rõ.
 7. Trước khi trả từng phần, đọc lại bộ nhớ và đối chiếu đề/rubric → yêu cầu → dàn ý → đoạn/bằng chứng thực tế. Sửa cả dàn ý nếu nó hiểu sai đề; đọc lại bản cuối sau sửa.
 8. Ghi lỗi và cách tránh vào known_errors/tiến độ; cập nhật hồ sơ khi yêu cầu thay đổi. Chỉ làm rõ phần bị ảnh hưởng. Xuất prompt và tóm tắt hồ sơ hiện hành khi bàn giao sang chat khác.
 

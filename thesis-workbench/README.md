@@ -25,7 +25,7 @@ Khi chỉ cần một công đoạn, đọc [danh mục prompt](prompts/README.m
 | [rules/core.vi.md](rules/core.vi.md) | Quy tắc dùng chung; nguồn để tạo prompt tổng |
 | [prompts/](prompts/README.md) | 11 prompt công đoạn, điều phối, tối ưu prompt, làm rõ dự án và tự chấm |
 | [docs/WORKFLOW.md](docs/WORKFLOW.md) | Từ đọc đề đến kiểm tra bản nộp |
-| [docs/CITATION_POLICY.md](docs/CITATION_POLICY.md) | Harvard, đối chiếu nguồn và chuyển APA khi được yêu cầu |
+| [docs/CITATION_POLICY.md](docs/CITATION_POLICY.md) | Theo chuẩn của bài, đối chiếu dấu dẫn và nguồn theo hai chiều |
 | [templates/](templates/README.md) | Hồ sơ dự án, bảng yêu cầu, nguồn, nhận định và nhật ký tiến độ |
 | [examples/](examples/README.md) | Cách đưa dữ liệu vào mẫu, bằng tình huống giả lập được ghi rõ |
 | [upstream/](docs/PROVENANCE.md) | 12 prompt gốc, tác giả đóng góp, commit và mã kiểm tra |

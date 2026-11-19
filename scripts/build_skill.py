@@ -13,7 +13,7 @@ from build_prompt import assemble
 
 PREFIX = """---
 name: luan-van-ai-skill
-description: Hỗ trợ nghiên cứu và làm luận văn theo ngành, môn và đề thực tế, gồm Marketing và IT. Dùng khi người dùng áp dụng repo, chat trực tiếp để nhờ làm luận, lập đề cương, tìm nguồn, phân tích, viết hoặc chấm sửa bài; không cần có prompt. Hỏi môn/ngành trước, làm rõ và xác nhận dự án, chọn prompt và giữ hồ sơ yêu cầu/dàn ý, kiểm chứng nguồn, trích dẫn Harvard hoặc APA và tự rà công tâm.
+description: Hỗ trợ nghiên cứu và làm luận văn theo ngành, môn và đề thực tế, gồm Marketing và IT. Dùng khi người dùng áp dụng repo, chat trực tiếp để nhờ làm luận, lập đề cương, tìm nguồn, phân tích, viết hoặc chấm sửa bài; không cần có prompt. Hỏi môn/ngành trước, làm rõ và xác nhận dự án, chọn prompt và giữ hồ sơ yêu cầu/dàn ý, kiểm tra lựa chọn phương pháp, báo cáo đúng bằng chứng, trích dẫn theo chuẩn của bài và tự rà công tâm.
 ---
 
 # Luận Văn AI Skill

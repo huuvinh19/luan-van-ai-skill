@@ -11,7 +11,7 @@
       "judgment": "not_checked",
       "evidence": "",
       "reason": "Chưa thực hiện kiểm tra.",
-      "next_action": "Đọc đề/rubric và bài, đối chiếu từng tiêu chí với bằng chứng."
+      "next_action": "Đối chiếu động từ đề, cách làm và từng kết luận với bằng chứng; gắn đề xuất với phát hiện và trường hợp thực tế khi đề yêu cầu."
     },
     {
       "id": "REV2",
@@ -20,7 +20,7 @@
       "judgment": "not_checked",
       "evidence": "",
       "reason": "Chưa thực hiện kiểm tra.",
-      "next_action": "Xác minh nguồn và nội dung hỗ trợ, số liệu, thời điểm, phạm vi."
+      "next_action": "Đọc phần nguồn hỗ trợ; so giá trị, đơn vị, kỳ đo, phạm vi; tách điều nguồn nói, phép tính và suy luận."
     },
     {
       "id": "REV3",
@@ -29,7 +29,7 @@
       "judgment": "not_checked",
       "evidence": "",
       "reason": "Chưa thực hiện kiểm tra.",
-      "next_action": "Đối chiếu câu với nguồn, tác giả–năm, vị trí và trang khi cần."
+      "next_action": "Đối chiếu câu/ý với nguồn; kiểm tra tác giả–năm, số hoặc chú thích và định vị theo chuẩn của bài."
     },
     {
       "id": "REV4",

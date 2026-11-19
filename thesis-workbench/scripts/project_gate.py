@@ -12,12 +12,17 @@ TASK_NAMES = {"general", "intake", "outline", "sources", "literature", "methodol
               "analysis", "draft", "review", "citations", "translate", "export", "optimize", "clarify", "self-review"}
 
 
+# Other institutional or publisher styles use "custom" and the project guide.
+CITATION_STYLES = ("Harvard", "APA", "IEEE", "Vancouver", "Chicago", "MLA", "AMA", "custom")
+
+
 def validate_profile(profile: dict) -> None:
     """Validate the same input contract for both CLI and imported callers."""
     if not isinstance(profile, dict):
         raise ValueError("Hồ sơ phải là một JSON object.")
-    if profile.get("citation_style", "Harvard") not in ("Harvard", "APA"):
-        raise ValueError("citation_style chỉ nhận Harvard hoặc APA.")
+    if profile.get("citation_style", "Harvard") not in CITATION_STYLES:
+        raise ValueError("Chọn một citation_style: " + ", ".join(CITATION_STYLES)
+                         + ". Với chuẩn khác, chọn custom và ghi tên/mẫu trong instructor_citation_guide.")
     limit = profile.get("word_limit")
     if limit is not None and (type(limit) is not int or limit <= 0):
         raise ValueError("word_limit phải là số nguyên dương hoặc null.")

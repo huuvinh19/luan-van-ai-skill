@@ -9,6 +9,7 @@
 - Những việc thực sự đã hoàn thành:
 - Bản thảo/đầu ra hiện hành:
 - Nguồn/dữ liệu đã kiểm tra và phạm vi đọc:
+- Lựa chọn ảnh hưởng hướng bài: câu hỏi, phương án/chỉ tiêu, lý do phù hợp hoặc điểm phải làm rõ:
 - Chỉnh sửa đã được chấp nhận:
 - Phần thiếu căn cứ/câu hỏi cần người viết trả lời:
 - Thông tin mới có làm đổi phạm vi hoặc cần hỏi lại không:

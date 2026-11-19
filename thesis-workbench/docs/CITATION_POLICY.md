@@ -2,9 +2,9 @@
 
 ## Chuẩn áp dụng
 
-Mặc định Harvard theo mẫu giảng viên mà người viết cung cấp. Đặt `citation_style` trong hồ sơ thành `Harvard` hoặc `APA`. Ghi đường dẫn/mô tả hướng dẫn vào `instructor_citation_guide`; để `null` khi chưa có, không tự cho rằng đã đọc mẫu. Chi tiết nhiều tác giả, cùng năm, loại tài liệu và dấu câu phải được đối chiếu với hướng dẫn thực tế.
+Đề và mẫu giảng viên quyết định chuẩn, phiên bản, vị trí dấu dẫn và thứ tự danh mục. Ghi chuẩn vào `citation_style`: có thể chọn Harvard (mặc định), APA, IEEE, Vancouver, Chicago, MLA hoặc AMA. Với chuẩn riêng hoặc chuẩn khác, chọn `custom`, ghi tên/biến thể và mẫu vào `instructor_citation_guide`. Nếu chưa có mẫu, để trống trường hướng dẫn, hỏi phần cần biết khi định dạng; không nhận đã đối chiếu hoặc tự thay chuẩn riêng bằng Harvard.
 
-Yêu cầu riêng của người viết: trích dẫn tác giả–năm nằm ở cuối câu được hỗ trợ, trước dấu chấm. Đây là lựa chọn trình bày của dự án, không phải tuyên bố rằng mọi hệ Harvard/APA đều cấm cách dẫn nguồn trong câu.
+Khi bài dùng cấu hình tác giả–năm mặc định của dự án, đặt dấu dẫn ở cuối câu được hỗ trợ, trước dấu chấm. Một đề yêu cầu cách khác thì theo đề. Với kiểu đánh số, theo từng số từ câu đến đúng mục, kiểm tra số dùng lại và thứ tự theo mẫu. Với kiểu chú thích, kiểm tra dấu dẫn và chú thích tương ứng.
 
 Ví dụ hình thức, không phải nguồn thật:
 
@@ -16,7 +16,7 @@ Mỗi câu có nội dung vay mượn phải có nguồn tương ứng, kể c�
 
 | Loại | Căn cứ cần giữ | Cách xử lý |
 | --- | --- | --- |
-| external | Nguồn đã đọc và vị trí hỗ trợ | Trích tác giả–năm ở đúng câu; có entry danh mục |
+| external | Nguồn đã đọc và vị trí hỗ trợ | Trích đúng câu/ý theo chuẩn của bài; đối chiếu với mục nguồn tương ứng |
 | data | Dữ liệu, bước xử lý và output thật | Nêu nguồn dữ liệu và nguồn phép tính; không gán kết quả tự tính cho bài báo |
 | interpretation | Kết quả/nguồn làm nền và lập luận | Nêu rõ đây là diễn giải; trích nguồn của tiền đề khi cần |
 
@@ -32,8 +32,8 @@ DOI hợp lệ về hình thức không chứng minh bài báo tồn tại hoặ
 
 ## Danh mục và các trường hợp thiếu
 
-Sắp xếp alphabet theo tác giả/tổ chức và định dạng theo loại nguồn. Lưu DOI nếu có; với web, giữ URL và ngày truy cập khi hướng dẫn yêu cầu. Mỗi trích dẫn trong bài phải có entry danh mục, mỗi entry phải được dùng đúng phạm vi hoặc xử lý theo loại danh mục giảng viên yêu cầu.
+Sắp xếp theo tác giả/tổ chức nếu chuẩn yêu cầu alphabet, hoặc theo số/thứ tự xuất hiện khi đề quy định; định dạng theo loại nguồn. Lưu DOI nếu có; với web, giữ URL và ngày truy cập khi hướng dẫn yêu cầu. Mỗi trích dẫn trong bài phải có entry danh mục, mỗi entry phải được dùng đúng phạm vi hoặc xử lý theo loại danh mục giảng viên yêu cầu.
 
 Không tự đặt tác giả, năm, trang hoặc tiêu đề. Với metadata thiếu, đối chiếu hướng dẫn và hỏi khi ảnh hưởng đến tính đúng; phần chưa giải quyết được nêu ở ghi chú riêng. Với cùng tác giả/cùng năm, cần cách phân biệt rõ theo hướng dẫn. Không tự xóa hậu tố làm hai nguồn trở nên không phân biệt được.
 
-Khi chuyển APA theo yêu cầu mới, cập nhật nhất quán cả thân bài, danh mục và các trường hợp đặc biệt, rồi kiểm tra lại. `build_prompt.py` đổi chuẩn trong chỉ dẫn; nó không tự định dạng hoặc sửa citation của bản luận văn.
+Khi chuyển chuẩn theo yêu cầu mới, cập nhật nhất quán cả thân bài, danh mục và các trường hợp đặc biệt, rồi kiểm tra lại. `build_prompt.py` đổi chuẩn trong chỉ dẫn; nó không tự định dạng hoặc sửa citation của bản luận văn.

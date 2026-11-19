@@ -44,7 +44,12 @@ def assemble(task: str, profile: dict | None = None, *, root: Path = ROOT,
     core = (root / "rules/core.vi.md").read_text(encoding="utf-8")
     if core.count("{{CITATION_STYLE}}") != 1:
         raise ValueError("Quy tắc phải có đúng một biến CITATION_STYLE.")
-    sections = [core.replace("{{CITATION_STYLE}}", style).rstrip()]
+    label = "riêng của bài" if style == "custom" else style
+    sections = [core.replace("{{CITATION_STYLE}}", label).rstrip()]
+    if style == "custom" and not (profile.get("instructor_citation_guide") or "").strip():
+        sections.append("Hồ sơ chọn chuẩn riêng nhưng chưa cung cấp mẫu. "
+                        "Hỏi tên chuẩn hoặc xin đoạn mẫu trước khi định dạng phần chưa rõ. "
+                        "Vẫn có thể đối chiếu nhận định với nguồn và phát hiện mục trùng.")
     for name in ("project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md", "review-criteria.vi.md"):
         sections.append((root / "rules" / name).read_text(encoding="utf-8").rstrip())
     selected_task = "outline" if gate["status"] == "plan" else task if gate["can_execute"] or task in {"intake", "clarify"} else "clarify"

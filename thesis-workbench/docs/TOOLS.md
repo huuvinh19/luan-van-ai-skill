@@ -14,7 +14,7 @@ python scripts/build_prompt.py --task citations --profile path/to/project.json
 
 Task hợp lệ xem `prompts/README.md` hoặc `--help`. Nếu không truyền `--out`, prompt được in stdout. Khi có `--profile`, JSON được đưa vào như dữ liệu bối cảnh, giữ nguyên giá trị của người viết. `null` không bị điền bằng thông tin tự tạo. Đường dẫn nguồn trong hồ sơ không đồng nghĩa nội dung nguồn đã được truy cập.
 
-`citation_style` nhận đúng `Harvard` hoặc `APA`; `word_limit` là số nguyên dương hoặc `null`. Script thay chuẩn trong quy tắc, không đọc/sửa luận văn. `--request-file` giữ nguyên yêu cầu gốc trong JSON để mô hình làm rõ ý nghĩa và cấu trúc. Không có lời gọi mô hình hay API trong script.
+`citation_style` nhận một giá trị: `Harvard` (mặc định), `APA`, `IEEE`, `Vancouver`, `Chicago`, `MLA`, `AMA` hoặc `custom`. Ví dụ, với mẫu đánh số riêng của khoa, dùng `custom` và ghi tên/mô tả hoặc đường dẫn vào `instructor_citation_guide`. Cần đọc hướng dẫn để định dạng; chương trình chỉ ghép prompt, không tự đọc mẫu, đổi dấu dẫn hoặc sắp lại danh mục. `word_limit` là số nguyên dương hoặc `null`. `--request-file` giữ nguyên yêu cầu gốc trong JSON để mô hình làm rõ ý nghĩa và cấu trúc. Không có lời gọi mô hình hay API trong script.
 
 Với task làm bài, nếu hồ sơ chưa rõ hoặc chưa xác nhận, script thay module công đoạn bằng module hỏi/làm rõ. Tạo được file prompt trả 0 không có nghĩa được phép làm bài: đọc trạng thái trong prompt. Lỗi đầu vào trả exit code 2. `--task optimize` chỉ sửa prompt, không thực hiện nhiệm vụ bên trong.
 
