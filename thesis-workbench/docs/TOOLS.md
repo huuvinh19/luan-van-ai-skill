@@ -16,6 +16,8 @@ Task hợp lệ xem `prompts/README.md` hoặc `--help`. Nếu không truyền `
 
 `citation_style` nhận một giá trị: `Harvard` (mặc định), `APA`, `IEEE`, `Vancouver`, `Chicago`, `MLA`, `AMA` hoặc `custom`. Ví dụ, với mẫu đánh số riêng của khoa, dùng `custom` và ghi tên/mô tả hoặc đường dẫn vào `instructor_citation_guide`. Cần đọc hướng dẫn để định dạng; chương trình chỉ ghép prompt, không tự đọc mẫu, đổi dấu dẫn hoặc sắp lại danh mục. `word_limit` là số nguyên dương hoặc `null`. `--request-file` giữ nguyên yêu cầu gốc trong JSON để mô hình làm rõ ý nghĩa và cấu trúc. Không có lời gọi mô hình hay API trong script.
 
+Khi ghép prompt chấm, tự rà hoặc trích dẫn, bộ tiêu chí chung chỉ xuất hiện một lần. Nếu `active_prompt.content` bắt đầu bằng nguyên văn module hiện hành hoặc một mẫu chung cũ đã biết (đến 1.4.0), phần hiển thị của hồ sơ dùng `content_ref` và giữ nguyên phần yêu cầu viết thêm phía sau. Mẫu đã tự viết/sửa bên trong được giữ nguyên, không đoán trùng theo từ khóa. File hồ sơ và rubric gốc không bị ghi đè.
+
 Với task làm bài, nếu hồ sơ chưa rõ hoặc chưa xác nhận, script thay module công đoạn bằng module hỏi/làm rõ. Tạo được file prompt trả 0 không có nghĩa được phép làm bài: đọc trạng thái trong prompt. Lỗi đầu vào trả exit code 2. `--task optimize` chỉ sửa prompt, không thực hiện nhiệm vụ bên trong.
 
 Khi thiếu môn hoặc ngành, gate ưu tiên hỏi hai điểm đó trước (`intake_stage=course_and_discipline`), giữ các câu hỏi dự án khác để xử lý ở lượt sau. Không có prompt viết sẵn không cản việc hỗ trợ trong chat; script không phải điều kiện để bắt đầu. Ngành IT được xử lý theo đề và sản phẩm thực tế, không có mặc định ngành Marketing.

@@ -1,6 +1,6 @@
 # Chọn prompt theo việc cần làm
 
-Luôn dùng `rules/core.vi.md`, `rules/project-dialogue.vi.md`, `rules/request-refinement.vi.md` và `rules/candid-review.vi.md` cùng module. `build_prompt.py` ghép tự động, thay chuẩn trích dẫn và chuyển sang module làm rõ nếu hồ sơ chưa đủ điều kiện. Trong chat thông thường, dùng prompt tổng trước; AI cần hỏi/xác nhận, tự làm rõ yêu cầu, phản biện có căn cứ và tự rà xuyên suốt dự án.
+Dùng quy tắc chung cùng module được chọn. Khi rà bài, các module chấm, tự rà và trích dẫn cùng dùng [một bộ tiêu chí](../rules/review-criteria.vi.md); chỉ đầu ra của công đoạn khác nhau. `build_prompt.py` ghép tự động, thay chuẩn trích dẫn và chuyển sang module làm rõ nếu hồ sơ chưa đủ điều kiện. Trong chat thông thường, dùng prompt tổng trước; AI cần hỏi/xác nhận, tự làm rõ yêu cầu, phản biện có căn cứ và tự rà xuyên suốt dự án.
 
 | Task cho CLI | File | Kết quả cần có |
 | --- | --- | --- |

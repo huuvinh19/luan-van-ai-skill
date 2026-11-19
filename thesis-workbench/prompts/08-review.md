@@ -1,13 +1,5 @@
 # Chấm và sửa nghiêm túc
 
-Đọc toàn bộ phạm vi bài được giao rồi đối chiếu đề, rubric và dàn ý hiện hành. Đánh giá kiến thức, phương pháp, lập luận, chiều sâu, tính đầy đủ, cấu trúc, trích dẫn và hình thức. Với tiêu chí P/M/D, chỉ dùng khi rubric thực sự có; dẫn đúng đoạn/bằng chứng đáp ứng, thiếu hoặc sai. Không tự đặt thang điểm hoặc cam kết mức đạt.
+Dùng [năm nhóm rà bài](../rules/review-criteria.vi.md) đã có trong prompt chung. Đọc phạm vi được giao và rubric hiện hành. Ưu tiên lỗi làm thay đổi kết luận hoặc mức đáp ứng đề, sau đó đến các lỗi nhỏ có căn cứ.
 
-Bắt cả lỗi nhỏ có căn cứ, ưu tiên lỗi ảnh hưởng đến nội dung và kết quả chấm. Với mỗi lỗi, ghi vị trí/đoạn, vấn đề, ảnh hưởng và cách sửa. Đối chiếu động từ của đề: phân tích cần giải thích vì sao/như thế nào trong giới hạn bằng chứng; đánh giá cần có tiêu chí và căn cứ. Với bài tình huống, chỉ ra chi tiết thực tế làm cơ sở cho kết luận; với đề xuất, nêu phát hiện nó xử lý và vì sao phù hợp.
-
-Sau nhận xét, sửa trực tiếp và trả bản hoàn chỉnh của phạm vi được yêu cầu. Giữ đúng ý nghĩa, dữ liệu và trải nghiệm; không cắt nội dung quan trọng chỉ để ngắn hơn. Rà lại bản đã sửa và nêu phần chưa đủ căn cứ. Nếu xuất file, kiểm tra bản cuối thực tế sau lần sửa cuối cùng.
-
-Áp dụng cùng tiêu chí bất kể bài do ai viết. Không mặc nhiên nhận người viết đúng vì họ khẳng định; kiểm tra rồi phản biện điểm sai/thiếu căn cứ bằng lý do cụ thể. Có thể nói thẳng và đùa nhẹ khi phù hợp trong nhận xét, giữ giọng học thuật ở phần nộp. Tự rà không phải một đánh giá độc lập; không tự đặt điểm số hoặc kết luận đạt D để chiều người viết.
-
-Dùng bộ nhớ hiện hành để đối chiếu yêu cầu gốc → mục dàn ý → vị trí/bằng chứng trong bài. Nếu dàn ý bỏ sót đề, sửa dàn ý trước; không chấm đạt chỉ vì bài bám một dàn ý sai. Lưu lỗi thực tế và cách tránh lặp vào known_errors hoặc tiến độ, rồi kiểm tra bản cuối đã sửa.
-
-Bắt buộc áp dụng năm nhóm trong rules/review-criteria.vi.md: nội dung; kiểm chứng nguồn; in-text citations; Reference List; ngôn ngữ và trình bày. Với báo cáo rà toàn bài, ghi đủ năm nhóm cùng vị trí/bằng chứng, lỗi, cách sửa và trạng thái sau sửa. Phân biệt phần đọc được với phần chưa kiểm tra, không nhận đã kiểm tra nguồn hoặc bố cục chỉ từ lời người viết. Nếu ghi JSON, dùng review_type=academic và review_area tương ứng.
+Trả nhận xét rồi bản đã sửa nếu được giao sửa; nếu chỉ được nhờ chấm, giữ nguyên bản gốc. Có thể gộp nhiều vị trí mắc cùng lỗi khi nguyên nhân và cách sửa giống nhau. Để toàn bộ lời nhận xét ngoài phần dùng trong bài.

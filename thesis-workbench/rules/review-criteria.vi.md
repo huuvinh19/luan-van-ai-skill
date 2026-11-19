@@ -1,33 +1,42 @@
 # Năm nhóm kiểm tra bài học thuật
 
-Áp dụng khi viết, chấm, sửa và tự rà bản học thuật, trong đúng phần được giao. Dùng đề/rubric hiện hành và hồ sơ dự án làm căn cứ; không tự mở rộng thành kiểm tra cả luận văn khi chỉ có một đoạn. Việc chỉ sửa prompt hoặc sửa repo không phải chấm bài học thuật.
+Đây là bộ tiêu chí chung duy nhất khi rà bài, dù bài do người học hay trợ lý viết. Đề, rubric và mẫu giảng viên hiện hành quyết định bài phải đạt gì. Dùng năm nhóm để kiểm tra trong phạm vi được giao; không biến chúng thành năm tiêu chí tính điểm thay cho rubric.
 
-## 1. Kiểm tra nội dung
+## 1. Nội dung và lập luận
 
-Đối chiếu từng yêu cầu với đoạn trả lời và bằng chứng cụ thể; chỉ ra phần thiếu, lệch trọng tâm, sai lý thuyết hoặc mâu thuẫn giữa văn bản, số liệu và kết luận. Đề yêu cầu **phân tích**: bài đã giải thích vì sao và như thế nào, hay mới kể lại? Đề yêu cầu **đánh giá**: nhận định dựa trên tiêu chí và bằng chứng nào? Nếu có **đề xuất**, chỉ ra phát hiện nó xử lý và giải thích vì sao biện pháp phù hợp. Nếu phải **áp dụng vào một trường hợp**, nêu chi tiết nào của chính trường hợp đó làm căn cứ; không cho là đã áp dụng chỉ vì có tên tổ chức. Xem lại độ phù hợp của cách làm với câu hỏi. Đối chiếu dàn ý với đề gốc; tên mục hay độ dài không chứng minh bài đã đáp ứng.
+Lần từ từng yêu cầu của đề/rubric đến đoạn, bảng hoặc kết quả thực sự trả lời nó. Chỉ ra chỗ thiếu, lệch trọng tâm, sai lý thuyết, thiếu bằng chứng hoặc mâu thuẫn. Đừng chấm theo một dàn ý sai. Với phương pháp đã chọn, đối chiếu kết luận với câu hỏi và giới hạn của cách làm; chỉ phân tích lại khi có lý do cụ thể.
 
-## 2. Kiểm chứng nguồn
+- **Phân tích:** đoạn đã giải thích vì sao và như thế nào, hay mới kể lại?
+- **Đánh giá:** nhận định dựa trên tiêu chí nào và bằng chứng gì?
+- **Áp dụng vào tình huống:** chi tiết nào của chính trường hợp đó làm cơ sở cho kết luận?
+- **Đề xuất:** biện pháp xử lý phát hiện nào, và vì sao phù hợp?
 
-Kiểm tra nguồn có thật, tác giả/tổ chức và nơi xuất bản; đánh giá độ tin cậy và mức phù hợp với loại nhận định. Đọc phần nội dung thực sự hỗ trợ câu, không chỉ nhìn tiêu đề, đường dẫn hoặc DOI. Xác minh số liệu, đơn vị, mẫu số, kỳ đo, thời điểm xuất bản và phạm vi áp dụng: đối tượng, địa bàn, ngành hoặc điều kiện nghiên cứu. Phân biệt năm dữ liệu với năm xuất bản. Ghi rõ điều nguồn xác nhận, kết quả người viết tự tính từ dữ liệu nào và suy luận dựa trên kết quả đó; không gán phép tính hay suy luận cho nguồn, không biến quan sát thành kết luận nhân quả.
+Chỉ dùng câu hỏi tương ứng với yêu cầu thật. Tên mục hoặc độ dài không chứng minh bài đã đáp ứng.
 
-Ghi đúng mức truy cập: chỉ metadata, đã đọc trích đoạn, hay đã đọc nội dung liên quan. Nguồn đáng tin cậy vẫn có thể không hỗ trợ câu đang dẫn. Không đọc được thì ghi chưa kiểm chứng nội dung; không coi lời khẳng định của người dùng hoặc trạng thái tự khai là bằng chứng xác minh.
+## 2. Nguồn và dữ liệu
 
-## 3. Soát in-text citations
+Xác minh nguồn có thật, ai công bố, độ tin cậy và đoạn nào thực sự hỗ trợ nhận định. Đối chiếu số liệu với nguồn hoặc dữ liệu gốc: giá trị, đơn vị, mẫu số, kỳ đo, đối tượng và phạm vi áp dụng. Phân biệt năm dữ liệu với năm xuất bản; điều nguồn xác nhận với phép tính và suy luận của người viết. Không gán phép tính cho một bài báo hay diễn giải quan sát thành nhân quả khi thiết kế không cho phép.
 
-Theo đúng chuẩn của bài: so tác giả và năm nếu dùng tác giả–năm; nếu dùng số, đối chiếu từng số với đúng mục và thứ tự mà mẫu quy định; nếu dùng chú thích, so ký hiệu và nội dung chú thích. Gắn dấu dẫn với đúng câu hoặc ý, kể cả diễn giải. Kiểm tra vị trí, trang/định vị khi cần và mức khẳng định so với đoạn nguồn hỗ trợ. Không bịa vị trí, không ép tác giả–năm hoặc một cách đặt dấu câu lên mọi đề.
+Ghi đúng mức đã kiểm tra: mới có thông tin xuất bản (metadata), đã đọc trích đoạn, hay đã đọc phần liên quan. Một DOI có thật, một nguồn uy tín hoặc lời bảo đảm của người học không chứng minh nguồn hỗ trợ câu đó. Không truy cập được thì nêu giới hạn; chưa xác minh không đồng nghĩa nguồn giả.
 
-## 4. Soát Reference List
+## 3. Trích dẫn trong bài
 
-Đối chiếu hai chiều giữa trích dẫn và danh mục nguồn đã trích: từng dấu dẫn chỉ đúng tài liệu và mỗi mục được dẫn trong phạm vi kiểm tra. Phát hiện nguồn thiếu, thừa, trùng, sai tác giả/năm hoặc sai số dẫn. Nếu đề yêu cầu thêm tài liệu đã đọc nhưng không trích, kiểm tra riêng phần đó. Kiểm tra tiêu đề, phiên bản, tạp chí/nhà xuất bản, tập/số/trang, DOI, URL và ngày truy cập theo loại nguồn và mẫu đã chọn. Sắp xếp và định dạng nhất quán theo hướng dẫn của bài; không tự tạo thông tin xuất bản còn thiếu. Khi chỉ đọc một phần bài, không kết luận nguồn không được dùng trong toàn bài hoặc xóa nguồn có thể được dẫn ở phần chưa đọc.
+Kiểm tra dấu dẫn ngay ở câu hoặc ý mượn nguồn, kể cả diễn giải. Theo chuẩn của bài: đúng tác giả–năm, số thứ tự hoặc ký hiệu chú thích; không dồn một nguồn cuối đoạn cho nhiều nhận định khác căn cứ. Với cấu hình tác giả–năm mặc định của dự án, đặt ở cuối câu trước dấu chấm: “Nội dung diễn giải (Tác giả, năm).” Dùng vị trí khác nếu đề quy định. Trích nguyên văn cần ngoặc kép hoặc trích khối và trang/vị trí theo mẫu; không tự điền số trang.
 
-## 5. Soát ngôn ngữ và trình bày
+## 4. Danh mục tài liệu tham khảo
 
-Kiểm tra lựa chọn từ, thuật ngữ, ngữ pháp, chính tả, dấu câu, giọng văn, liên kết đoạn và ý lặp không bổ sung thông tin. Đối chiếu tiêu đề/cấp mục, font, giãn dòng, căn lề, hình/bảng, đơn vị, nhãn, chú thích, nguồn, dẫn chiếu, mục lục và số trang với mẫu của bài khi có. Hình/bảng phải ở đúng mục và thực sự hiển thị; bản dịch phải giữ dữ liệu, ý nghĩa và trích dẫn.
+Đối chiếu hai chiều: từng dấu dẫn trỏ đúng tài liệu, từng mục trong danh mục nguồn đã trích có chỗ dùng. So tác giả/năm hoặc số dẫn, kể cả số dùng lại; tìm mục thiếu, thừa, trùng hay sai thông tin xuất bản. Kiểm tra tiêu đề, ấn bản, nơi xuất bản/tạp chí, tập, số, trang, DOI nếu có, URL và ngày truy cập khi cần theo loại tài liệu. Không bịa mục còn thiếu. Xếp theo tác giả hoặc theo số đúng với mẫu; phân biệt các nguồn cùng tác giả/năm theo hướng dẫn nếu cần.
 
-Phân biệt kiểm tra văn bản với kiểm tra tệp đã định dạng. Chỉ nhận đã kiểm tra font, căn lề, bố cục, hình/bảng hoặc số trang khi đã xem được bằng chứng tương ứng trong tệp/bản render hiện hành sau lần sửa cuối. Với văn bản thuần hoặc thiếu tệp/mẫu, sửa được phần nào thì làm phần đó, nêu riêng các mục hình thức chưa kiểm tra; không tự chặn việc sửa nội dung đã đủ đầu vào.
+Nếu chỉ đọc một đoạn thì không kết luận một mục thừa trong toàn bài. Tách danh mục nguồn đã trích khỏi phần tài liệu đọc thêm nếu đề yêu cầu cả hai.
 
-## Ghi kết quả, sửa và kiểm tra lại
+## 5. Ngôn ngữ và trình bày
 
-Giữ kết quả của cả năm nhóm trong hồ sơ tự rà; khi giao báo cáo chấm/sửa toàn bài hoặc được yêu cầu kiểm tra chi tiết, trình bày rõ năm nhóm. Với việc nhỏ, báo ngắn lỗi và giới hạn liên quan, không đổ cả checklist vào phần nộp. Mỗi nhận xét cần vị trí, bằng chứng, ảnh hưởng và cách xử lý; dùng đã đáp ứng, đáp ứng một phần, chưa đáp ứng hoặc chưa kiểm tra. Nêu phạm vi đã đọc và phần còn thiếu căn cứ.
+Rà từ ngữ, thuật ngữ, ngữ pháp, chính tả, dấu câu, giọng văn, liên kết đoạn và ý lặp. Đối chiếu với mẫu của bài khi có: cấp tiêu đề, font, giãn dòng, lề, hình/bảng, đơn vị, chú thích, nguồn, dẫn chiếu, mục lục và số trang. Bản dịch phải giữ ý, số liệu và trích dẫn. Chỉ xác nhận hình/bảng hiển thị, bố cục hoặc phân trang khi đã xem bằng chứng tương ứng ở bản cuối sau sửa. Nếu chỉ có văn bản thuần, vẫn sửa nội dung và nêu phần hình thức chưa kiểm tra.
 
-Sửa lỗi trong phạm vi được giao, rồi đọc lại bản cuối để đối chiếu từng thay đổi. Chỉ ghi lỗi đã sửa khi thay đổi và kiểm tra lại có thật; cập nhật known_errors để tránh lặp. Nếu dùng templates/self-review.json, đặt review_type=academic và gắn review_area cho năm nhóm: content, source_verification, in_text_citations, reference_list, language_presentation. Công cụ kiểm tra khai báo không tự kiểm chứng nguồn, đọc file hoặc chấm chất lượng bài; không dùng số nhóm đã đánh dấu để tự suy ra điểm.
+## Ghi kết quả một lần
+
+Ghi mỗi lỗi một lần ở nhóm giải thích đúng nguyên nhân nhất: vị trí, bằng chứng, ảnh hưởng, cách sửa và trạng thái. Nếu lỗi ảnh hưởng nhiều tiêu chí của đề, dẫn lại mã lỗi ở các tiêu chí liên quan; không chép lại nhận xét hoặc tự trừ điểm thêm. Hai lỗi cần hai cách sửa vẫn ghi riêng dù ở cùng một câu. Ví dụ: nguồn không nói “tăng 40%” là một lỗi về căn cứ; dấu dẫn đúng dạng không vì thế mà sai. Nếu tài liệu đó còn thiếu trong danh mục thì đây là lỗi riêng.
+
+Trong hồ sơ tự rà, ghi kết quả cả năm nhóm: đã đáp ứng, đáp ứng một phần, chưa đáp ứng hoặc chưa kiểm tra. Khi chấm toàn bài hay được yêu cầu chi tiết, cho người viết thấy kết quả từng nhóm; khi sửa một đoạn, chỉ báo điều hữu ích cho đoạn đó. Nêu rõ giới hạn. Chỉ cho điểm hoặc nhận định mức P/M/D khi có thang/rubric thật và bằng chứng tương ứng; không cam kết điểm.
+
+Tự rà bản cuối trong một lượt riêng với cùng tiêu chí. Sửa trong phạm vi được giao rồi kiểm tra lại phần bị ảnh hưởng; chỉ ghi đã sửa khi có bằng chứng sau sửa. Cập nhật lỗi từng mắc vào hồ sơ dự án. Một lần sửa không đòi chấm lại toàn bài trừ khi thay đổi lan sang phần khác, có căn cứ mới hoặc người viết yêu cầu. Hồ sơ JSON học thuật dùng `review_type=academic` và `review_area`; kiểm tra tự động chỉ đối chiếu khai báo.

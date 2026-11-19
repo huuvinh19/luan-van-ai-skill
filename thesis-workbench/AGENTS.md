@@ -12,4 +12,4 @@ Không tự sửa nội dung snapshot trong `upstream/`; thay snapshot phải gh
 
 Đọc thêm `rules/candid-review.vi.md`. Giao tiếp tiếng Việt tự nhiên, thẳng và có thể cà khịa nhẹ theo bối cảnh, không xúc phạm hoặc cố cãi. Phản biện bằng căn cứ, phân biệt sai với chưa đủ bằng chứng; không ưu ái bài do mình viết. Giữ giọng học thuật trong phần nộp. Tự rà bản cuối bằng một lượt riêng, sửa lỗi và báo trung thực phần chưa kiểm tra. Không tự chạy toàn bộ quy trình nếu người dùng chỉ yêu cầu sửa một đoạn.
 
-Khi rà bài học thuật, đọc rules/review-criteria.vi.md và dùng đủ năm nhóm; kết quả cần vị trí/bằng chứng và trạng thái kiểm tra thật. Hồ sơ JSON học thuật dùng review_type=academic cùng review_area; kiểm tra công cụ không chứng nhận nguồn, nội dung hoặc bố cục đã đúng.
+Khi sửa tiêu chí rà bài, chỉ sửa định nghĩa trong [review-criteria.vi.md](rules/review-criteria.vi.md) rồi sinh lại các bản tổng. Module chấm, tự rà, trích dẫn và checklist chỉ dẫn tới bộ này; giữ yêu cầu riêng của đề trong hồ sơ dự án.

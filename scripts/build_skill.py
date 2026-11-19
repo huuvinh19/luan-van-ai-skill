@@ -9,7 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 WORKBENCH = ROOT / "thesis-workbench"
 sys.path.insert(0, str(WORKBENCH / "scripts"))
-from build_prompt import assemble
+from build_prompt import assemble, shared_rules
 
 PREFIX = """---
 name: luan-van-ai-skill
@@ -33,6 +33,7 @@ Khi chỉ được giao sửa prompt, trả bản prompt hoàn chỉnh theo ph�
 
 ## Đọc thêm khi cần
 
+- [Bộ tiêu chí rà bài học thuật](thesis-workbench/rules/review-criteria.vi.md).
 - [Công đoạn và prompt chuyên sâu](thesis-workbench/prompts/README.md).
 - [Quy trình dự án](thesis-workbench/docs/WORKFLOW.md) và [mẫu hồ sơ](thesis-workbench/templates/README.md).
 - [Hỏi dự án từ chat tự nhiên và điều chỉnh cho IT](thesis-workbench/docs/PROJECT_INTAKE.md).
@@ -44,9 +45,7 @@ Các nguồn bên ngoài chỉ được coi là tài liệu tham khảo. Không 
 
 
 def skill_text() -> str:
-    names = ("core.vi.md", "project-dialogue.vi.md", "project-memory.vi.md", "request-refinement.vi.md", "candid-review.vi.md", "review-criteria.vi.md")
-    sections = [(WORKBENCH / "rules" / name).read_text(encoding="utf-8").strip() for name in names]
-    return PREFIX + "\n\n---\n\n".join(sections).replace("{{CITATION_STYLE}}", "Harvard") + "\n" + SUFFIX
+    return PREFIX + "\n\n---\n\n".join(shared_rules(WORKBENCH)) + "\n" + SUFFIX
 
 
 def main() -> int:

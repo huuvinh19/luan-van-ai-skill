@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from build_prompt import assemble
+from build_prompt import TASKS, assemble
 from project_gate import evaluate_gate
 
 
@@ -80,6 +80,49 @@ class ProjectMemoryTests(unittest.TestCase):
     def test_changed_outline_invalidates_its_previous_confirmation(self):
         self.state["project_memory"]["outline"][0]["title"] += " có nội dung mới"
         self.assertEqual(evaluate_gate(self.profile, self.state, "draft")["status"], "confirm")
+
+    def test_stock_review_and_framework_appear_once_at_each_review_stage(self):
+        criteria = (ROOT / "rules/review-criteria.vi.md").read_text().strip()
+        for task in ("review", "self-review", "citations"):
+            with self.subTest(task=task):
+                module = (ROOT / "prompts" / TASKS[task]).read_text()
+                self.state["active_prompt"] = {"task": task, "reason": "module chấm đang dùng", "content": module}
+                saved = copy.deepcopy(self.state)
+                output = assemble(task, self.profile, state=self.state)
+                self.assertEqual(output.count(criteria), 1)
+                self.assertEqual(output.count(module.splitlines()[0]), 1)
+                self.assertIn('"status": "ready"', output)
+                self.assertEqual(self.state, saved)
+
+    def test_review_template_with_course_rubric_keeps_exact_addendum(self):
+        module = (ROOT / "prompts" / TASKS["review"]).read_text().strip()
+        note = "Tiêu chí R7 của khoa: giữ hai hàng riêng.\n  Giữ vị trí {{đơn_vị}} và ký hiệu."
+        self.state["active_prompt"] = {"task": "review", "reason": "Có rubric riêng", "content": module + "\n\n" + note}
+        original = copy.deepcopy(self.state)
+        output = assemble("review", self.profile, state=self.state)
+        view = json.loads(output.rsplit("```json\n", 1)[1].split("\n```", 1)[0])
+        self.assertEqual(view["active_prompt"]["project_instructions"], note)
+        self.assertEqual(view["project_memory"], self.state["project_memory"])
+        self.assertEqual(output.count(module.splitlines()[0]), 1)
+        self.assertEqual(self.state, original)
+
+    def test_edited_review_template_is_preserved_even_with_matching_title(self):
+        module = (ROOT / "prompts" / TASKS["review"]).read_text()
+        title, rest = module.split("\n", 1)
+        content = title + "\nChỉ thực hiện đúng rubric của trường.\n" + rest
+        self.state["active_prompt"] = {"task": "review", "content": content, "reason": "rubric của trường"}
+        output = assemble("review", self.profile, state=self.state)
+        view = json.loads(output.rsplit("```json\n", 1)[1].split("\n```", 1)[0])
+        self.assertEqual(view["active_prompt"], self.state["active_prompt"])
+
+    def test_review_memory_does_not_run_review_before_confirmation(self):
+        module = (ROOT / "prompts" / TASKS["review"]).read_text().strip()
+        self.state["active_prompt"] = {"task": "review", "reason": "Rà bài", "content": module}
+        self.state["user_confirmation"] = None
+        output = assemble("review", self.profile, state=self.state)
+        self.assertIn('"status": "confirm"', output)
+        self.assertNotIn(module.splitlines()[0], output)
+        self.assertIn('"content_ref": "prompts/08-review.md"', output)
 
     def test_error_log_is_preserved_without_restarting_confirmed_work(self):
         self.state["known_errors"].append("GIẢ LẬP: kiểm tra lại mẫu số trước khi tính tỷ lệ.")

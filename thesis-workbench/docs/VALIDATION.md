@@ -40,3 +40,13 @@ Ba tình huống giả lập trong ba cuộc trao đổi riêng, đã xác nhậ
 | Hai phiếu nội bộ giả lập về kho: 8/10 kiện chậm trong một ca đã đợi ở bàn kiểm mã; quy trình quy định một người/ca. Bản nháp quy lỗi cho thiếu xe; mẫu bắt buộc đánh số theo lần xuất hiện. | Chỉ ra việc mua xe thiếu căn cứ, giới hạn nhận định ở ca được quan sát; đề xuất thử bố trí thêm người và so thời gian chờ. Phân biệt quy định với nguyên nhân đã được chứng minh. Sửa danh mục trùng/thiếu và dùng [1], [2] theo mẫu, không xếp alphabet. |
 
 68/68 kiểm tra tự động đạt. Hai ca mới kiểm tra việc tạo prompt từ hồ sơ dùng chuẩn đánh số và mẫu riêng (có/thiếu hướng dẫn). Đã kiểm tra bản sinh khớp nguồn, liên kết, giấy phép và snapshot. Các phép kiểm tra này không tự đánh giá độ phù hợp của phương pháp hay sự thật của một tài liệu bên ngoài.
+
+## Cập nhật 1.4.1 — Gộp tiêu chí rà luận văn
+
+Kiểm tra bản 1.4.0 cho thấy quy tắc chung, module chấm/tự rà và checklist cùng mô tả lại việc đối chiếu rubric, xác minh nguồn và soát trích dẫn. Riêng CHECKLIST có 25 ô rồi thêm một bảng năm nhóm. Mẫu nhận xét có hai bảng cùng yêu cầu vị trí và cách sửa. Trên hồ sơ minh họa đã xác nhận, khi lưu nguyên module chấm vào active_prompt, nội dung module được ghép hai lần.
+
+Bản mới có một [bộ tiêu chí](../rules/review-criteria.vi.md) cho báo cáo chấm và tự rà. CHECKLIST còn ba bước giao bài; mẫu nhận xét còn một bảng. Bản đọc qua GitHub và prompt tạo bằng lệnh đều lấy phần quy tắc từ cùng nguồn. Trong cả ba công đoạn chấm, tự rà và trích dẫn, hồ sơ lưu module nguyên mẫu chỉ hiển thị module đó một lần; phần người học viết thêm vẫn còn.
+
+Đã thử chín phiên bản module chung cũ tìm thấy trong lịch sử, mỗi phiên bản với và không có ghi chú riêng (18 đầu vào). Mẫu cũ được dẫn về bản hiện hành, ghi chú riêng còn nguyên và hồ sơ gốc không bị sửa. Bốn kiểm tra hồi quy mới gồm: module hiện hành không nhân đôi; giữ phần rubric viết thêm; không rút mất prompt đã biên tập; không đưa nội dung module chấm vào bước chờ xác nhận. Tổng 72 kiểm tra tự động đạt.
+
+Hai bài thử bằng văn bản trong hai cuộc trao đổi riêng: (1) chấm toàn một đoạn về chương trình tích điểm: phân biệt tỷ lệ đúng với kết luận nhân quả thiếu căn cứ, xác nhận vị trí dấu dẫn đúng, nhận ra mục danh mục bị lặp và nêu giới hạn khi chưa thấy tệp định dạng; (2) kiểm tra lại một câu có hai nhận xét trước đó: xác nhận đã có đủ tử số/mẫu số và sửa “10%” thành “10 điểm phần trăm”, chỉ trả một câu và một ghi chú. Đây là kiểm tra trên dữ liệu bài tập, không phải chứng nhận mọi đầu ra đều hết lặp.

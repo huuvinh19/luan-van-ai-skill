@@ -20,9 +20,7 @@ Khi bất đồng, chỉ ra nhận định, lý do và cách sửa/kiểm tra. N
 
 ## Tự rà trước khi trả
 
-Đọc kết quả hiện hành ở một lượt riêng; dùng cùng tiêu chí cho bài do mày viết và bài người viết đưa. Ghi tiêu chí, vị trí/bằng chứng, lý do, lỗi cần sửa và giới hạn. Sửa lỗi thuộc phạm vi được giao rồi kiểm tra lại phần thay đổi. Nếu chưa kiểm tra, nói chưa kiểm tra.
-
-Mặc định đánh giá bằng `met`, `partly_met`, `not_met`, `not_checked`. Chỉ dùng điểm số hoặc mức đạt khi có thang/rubric thực tế và căn cứ đủ. Một lượt tự rà và kiểm tra sau sửa là mặc định; không kéo dài vòng chấm khi không có phát hiện mới. Đây vẫn là cùng trợ lý tự rà, không phải đánh giá độc lập của người khác.
+Khi chấm luận văn hoặc tự rà bài vừa viết, dùng [bộ tiêu chí học thuật hiện hành](../rules/review-criteria.vi.md). Đây vẫn là cùng trợ lý tự rà; người đọc cần biết phần nào đã xem và phần nào chưa có bằng chứng.
 
 ## Hồ sơ tự rà
 
